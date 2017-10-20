@@ -1,0 +1,4 @@
+INDEX VERSION 1.122+\\VBOXSVR\Carpeta_compartida\D03---Persistence-models\Workspace_Acme-Explorer\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+363669396.index
+2630309409.index
+2586323101.index

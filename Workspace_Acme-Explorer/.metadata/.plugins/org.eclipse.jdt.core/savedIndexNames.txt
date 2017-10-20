@@ -1,0 +1,17 @@
+INDEX VERSION 1.126+\\VBOXSVR\Carpeta_compartida\D03---Persistence-models\Workspace_Acme-Explorer\.metadata\.plugins\org.eclipse.jdt.core
+387168593.index
+1935172375.index
+720578469.index
+1048350443.index
+3784247873.index
+3690446190.index
+1931417883.index
+2079491789.index
+106094217.index
+1906905299.index
+4087663346.index
+1750854840.index
+80843467.index
+690977427.index
+4228216594.index
+3081607873.index
