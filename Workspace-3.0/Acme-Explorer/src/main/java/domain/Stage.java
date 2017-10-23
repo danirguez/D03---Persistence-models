@@ -1,17 +1,25 @@
 package domain;
 
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 public class Stage extends DomainEntity {
+	
+	// Constructors
+	
+	public Stage() {
+		super();
+	}
+	
+	// Attributes
 
 	private String title;
 	private String description;
 	private Double price;
-
-	private Trip trip;
 
 	@NotBlank
 	public String getTitle() {
@@ -31,17 +39,22 @@ public class Stage extends DomainEntity {
 		this.description = description;
 	}
 
-	@NotEmpty
+	@Min(0)
 	public Double getPrice() {
 		return price;
 	}
 
-	@NotEmpty
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	// Relationships
+	
+	private Trip trip;
 
+	@NotNull
 	@Valid
+	@ManyToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -49,4 +62,5 @@ public class Stage extends DomainEntity {
 	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
+	
 }

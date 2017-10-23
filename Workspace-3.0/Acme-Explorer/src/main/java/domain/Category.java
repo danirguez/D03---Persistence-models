@@ -1,16 +1,23 @@
 package domain;
 
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Category extends DomainEntity {
 	
+	// Constructors
+	
+	public Category() {
+		super();
+	}
+	
+	// Attributes
+	
 	private String name;
 	
-	private Category categoryParent;
-	private Trip trip;
-
 	@NotBlank
 	public String getName() {
 		return name;
@@ -20,6 +27,11 @@ public class Category extends DomainEntity {
 		this.name = name;
 	}
 	
+	// Relationships
+	
+	private Category categoryParent;
+	private Trip trip;
+	
 	@Valid
 	public Category getCategoryParent() {
 		return categoryParent;
@@ -28,8 +40,10 @@ public class Category extends DomainEntity {
 	public void setCategoryParent(Category categoryParent) {
 		this.categoryParent = categoryParent;
 	}
-
+	
+	@NotNull
 	@Valid
+	@ManyToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -37,4 +51,5 @@ public class Category extends DomainEntity {
 	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
+	
 }
