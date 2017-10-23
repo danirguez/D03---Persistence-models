@@ -2,4 +2,7 @@
 <section name="Workbench">
 	<section name="JavaElementSearchActions">
 	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="3" key="pageIndex"/>
+	</section>
 </section>
