@@ -1,6 +1,0 @@
-INDEX VERSION 1.122+\\VBOXSVR\dp\Projects\D03---Persistence-models\Workspace-2.0\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4172193559.index
-1430775334.index
-568622606.index
-1191818639.index
-2356770385.index
