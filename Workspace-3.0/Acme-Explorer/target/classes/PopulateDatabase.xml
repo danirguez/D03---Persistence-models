@@ -60,4 +60,226 @@
 	
 	<!-- Other domain beans come here -->	
 	
+	
+								<!-- RANGER -->
+	
+	<!-- RANGER1 -->
+	
+	<bean id="ranger1" class="domain.Ranger">
+	<property name="name" value="Mario" />
+	<property name="surname" value="Sánchez" />
+	<property name="email" value="codec993@gmail.com" />
+	<property name="phoneNumber" value="+34123456789" />
+	<property name="address" value="C/Estrasburgo" />
+	<property name="socialID" value="123456789" />
+	<property name="photo" value="url de la foto" />
+	<property name="nick" value="codec" />
+	<property name="nameSocialNetwork" value="Soiram" />
+	<property name="socialNetwork" value="www.example.com" />
+	<property name="userAccount" ref="userAccount1" />
+	<property name="cv" ref="cv1" />
+	<property name="trip" ref="trip1" />
+	<property name="folders">
+		<list>
+			<ref bean="folder1"/>
+			<ref bean="folder2"/>
+			<ref bean="folder3"/>
+			<ref bean="folder4"/>
+			<ref bean="folder5"/>
+		</list>
+	</property>
+	<property name="sent">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	<property name="received">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	</bean>
+	
+	
+	<!-- RANGER2 -->
+	
+	<bean id="ranger1" class="domain.Ranger">
+	<property name="name" value="Alfonso" />
+	<property name="surname" value="Sánchez" />
+	<property name="email" value="codec993@gmail.com" />
+	<property name="phoneNumber" value="+34123456789" />
+	<property name="address" value="C/Estrasburgo" />
+	<property name="socialID" value="123456789" />
+	<property name="photo" value="url de la foto" />
+	<property name="nick" value="codec" />
+	<property name="nameSocialNetwork" value="Soiram" />
+	<property name="socialNetwork" value="www.example.com" />
+	<property name="cv" ref="cv1" />
+	<property name="trip" ref="trip1" />
+	<property name="userAccount" ref="userAccount1" />
+	<property name="folders">
+		<list>
+			<ref bean="folder1"/>
+			<ref bean="folder2"/>
+			<ref bean="folder3"/>
+			<ref bean="folder4"/>
+			<ref bean="folder5"/>
+		</list>
+	</property>
+	<property name="sent">
+		<list>
+			<ref bean="message1"/>
+			<ref bean="message2"/>
+		</list>
+	</property>
+	<property name="received">
+		<list>
+			<ref bean="message1"/>
+			<ref bean="message2"/>
+		</list>
+	</property>
+	</bean>
+	
+
+									<!-- CV -->
+	
+	<!-- CV1 -->
+	
+	<bean id="cv1" class="domain.CV">
+	<property name="ticker" value="221017-ABCD" />
+	<property name="ranger" ref="ranger1" />
+	<property name="personalRecord" ref="personalRecord1" />
+	</bean>
+	
+	<!-- CV2 -->
+	
+	<bean id="cv2" class="domain.CV">
+	<property name="ticker" value="221017-ABCE" />
+	<property name="ranger" ref="ranger1" />
+	<property name="personalRecord" ref="personalRecord1" />
+	<property name="esdorserRecord">
+		<list>
+			<ref bean="endorserRecord1"/>
+			<ref bean="endorserRecord2"/>
+		</list>
+	</property>
+	<property name="miscellaneousRecord">
+		<list>
+			<ref bean="miscellaneousRecord1"/>
+			<ref bean="miscellaneousRecord2"/>
+		</list>
+	</property>
+	<property name="profesionalRecord">
+		<list>
+			<ref bean="profesionalRecord1"/>
+			<ref bean="profesionalRecord2"/>
+		</list>
+	</property>
+	<property name="educationRecord">
+		<list>
+			<ref bean="educationRecord1"/>
+			<ref bean="educationRecord2"/>
+		</list>
+	</property>
+	</bean>
+	
+	
+	
+							   <!-- ENDORSERRECORD -->
+	
+	<!-- ENDORSERRECORD1 -->
+	
+	<bean id="endorserRecord1" class="domain.EndorserRecord">
+	<property name="endorserName" value="Mario" />
+	<property name="email" value="codec993@gmail.com" />
+	<property name="phoneNumber" value="+34123456789" />
+	<property name="likedln" value="www.likedlin.com" />
+	<property name="comment" value="Comentario..." />
+	</bean>
+	
+	<!-- ENDORSERRECORD2 -->
+	
+	<bean id="endorserRecord2" class="domain.EndorserRecord">
+	<property name="endorserName" value="Daniel" />
+	<property name="email" value="codec993@gmail.com" />
+	<property name="phoneNumber" value="+34123456789" />
+	<property name="likedln" value="www.likedlin.com" />
+	<property name="comment" value="Comentario..." />
+	</bean>
+	
+	
+	
+							<!-- MISCELLANEOUSRECORD -->
+	
+	<!-- MISCELLANEOUSRECORD1 -->
+	<bean id="miscellaneousRecord1" class="domain.MiscellaneousRecord">
+	<property name="title" value="Título1" />
+	<property name="link" value="www.example.com" />
+	<property name="comment" value="Comentario..." />
+	</bean>
+	
+	<!-- MISCELLANEOUSRECORD2 -->
+	<bean id="miscellaneousRecord2" class="domain.MiscellaneousRecord">
+	<property name="title" value="Título2" />
+	<property name="link" value="www.example.com" />
+	<property name="comment" value="Comentario..." />
+	</bean>
+	
+	
+	
+	
+							<!-- PROFESIONALRECORD -->
+	
+	<!-- PROFESIONALRECORD1 -->
+	<bean id="profesionalRecord1" class="domain.ProfesionalRecord">
+	<property name="companyName" value="Nombre empresa1" />
+	<property name="period"> <null/> </property>
+	<property name="start" value="2017/08/03" />
+	<property name="endOrActual" value="2017/08/18" />
+	<property name="rol" value="rol1" />
+	<property name="link" value="www.example.com" />
+	<property name="comment" value="Comentario..." />
+	</bean>
+	
+	<!-- PROFESIONALRECORD2 -->
+	<bean id="profesionalRecord1" class="domain.ProfesionalRecord">
+	<property name="companyName" value="Nombre empresa2" />
+	<property name="period"> <null/> </property>
+	<property name="start" value="2017/08/04" />
+	<property name="endOrActual" value="2017/08/19" />
+	<property name="rol" value="rol1" />
+	<property name="link" value="www.example.com" />
+	<property name="comment" value="Comentario..." />
+	</bean>
+	
+	
+							<!-- EDUCATIONRECORD -->
+	
+	<!-- EDUCATIONRECORD1 -->
+	<bean id="educationRecord1" class="domain.EducationRecord">
+	<property name="title" value="Título" />
+	<property name="period"> <null/> </property>
+	<property name="start" value="2017/08/03" />
+	<property name="end" value="2017/08/18" />
+	</bean>
+	
+	
+	<!-- EDUCATIONRECORD2 -->
+	<bean id="educationRecord2" class="domain.EducationRecord">
+	<property name="title" value="Título2" />
+	<property name="period"> <null/> </property>
+	<property name="start" value="2017/08/04" />
+	<property name="end" value="2017/08/19" />
+	</bean>
+	
+	
+							<!-- PERSONALRECORD -->	
+	
+	<bean id="personalRecord1" class="domain.PersonalRecord">
+	<property name="name" value="Mario" />
+	<property name="photo" value="url de la foto" />
+	<property name="phoneNumber" value="+34123456789" />
+	<property name="likedln" value="www.likedlin.com" />
+	</bean>
+	
 </beans>
