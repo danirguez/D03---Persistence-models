@@ -282,4 +282,62 @@
 	<property name="likedln" value="www.likedlin.com" />
 	</bean>
 	
+							<!-- CATEGORY -->	
+	
+	<!-- CATEGORY1 -->				
+	<bean id="category1" class="domain.Category">
+	<property name="name" value="Safari" />
+	<property name="categoryParent" ref="Adventures" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+	<!-- CATEGORY2 -->	
+	<bean id="category2" class="domain.Category">
+	<property name="name" value="Zoo" />
+	<property name="categoryParent" ref="category1" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+							<!-- LEGALTEXT -->	
+							
+	<bean id="legalText1" class="domain.LegalText">
+	<property name="title" value="Second" />
+	<property name="body" value="A comment of something" />
+	<property name="numberLaw" value="23" />
+	<property name="moment" value="23/10/2017" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+							<!-- STAGE -->	
+							
+	<!-- STAGE1 -->
+	<bean id="stage1" class="domain.Stage">
+	<property name="title" value="First" />
+	<property name="description" value="Something" />
+	<property name="price" value="528" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+	<!-- STAGE2 -->
+	<bean id="stage2" class="domain.Stage">
+	<property name="title" value="Second" />
+	<property name="description" value="Something" />
+	<property name="price" value="650" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+							<!-- TAG -->
+	
+	<!-- TAG1 -->		
+	<bean id="tag1" class="domain.Tag">
+	<property name="name" value="Adventure" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+	<!-- TAG2 -->
+	<bean id="tag2" class="domain.Tag">
+	<property name="name" value="Another" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
 </beans>
