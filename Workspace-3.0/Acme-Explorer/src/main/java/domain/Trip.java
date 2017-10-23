@@ -4,13 +4,29 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Trip extends DomainEntity{
+	
+	// Constructors
+	
+	public Trip() {
+		super();
+	}
+	
+	// Attributes
 
 	private String ticker;
 	private String title;
@@ -20,38 +36,11 @@ public class Trip extends DomainEntity{
 	private Date tripStart;
 	private Date tripEnd;
 
-	/* Relaciones */
-
-	private LegalText legalText;
-	private Ranger ranger;
-	private Collection<Survival> survival;
-	private Manager manager;
-	private Audit audit;
-	private Collection<Note> note;
-	private Collection<SponsorShip> sponsorShip;
-	private Explorer explorer;
-	private Collection<Story> story;
-	private Collection<Tag> tag;
-	private Collection<Stage> stage;
-	private Collection<Category> category;
-	private Application application;
-	
 	private final Integer VAT_TAX = 21;
-
-	@NotBlank
-	@Valid
-	public LegalText getLegalText() {
-		return legalText;
-	}
-
-	public void setLegalText(LegalText legalText) {
-		this.legalText = legalText;
-	}
 
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[0-9]{6}-[A-Z]{4}")
-	@Valid
 	public String getTicker() {
 		return ticker;
 	}
@@ -77,7 +66,18 @@ public class Trip extends DomainEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	@NotEmpty
+	@ElementCollection
+	public Collection<String> getRequirement() {
+		return requirement;
+	}
 
+	public void setRequirement(Collection<String> requirement) {
+		this.requirement = requirement;
+	}
+
+	@Min(0)
 	public Double getPrice() {
 		Double price = 0.;
 		
@@ -88,16 +88,9 @@ public class Trip extends DomainEntity{
 		return price;
 	}
 
-	@NotBlank
-	public Collection<String> getRequirement() {
-		return requirement;
-	}
-
-	public void setRequirement(Collection<String> requirement) {
-		this.requirement = requirement;
-	}
-
-	@NotEmpty
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getPublication() {
 		return publication;
 	}
@@ -106,7 +99,9 @@ public class Trip extends DomainEntity{
 		this.publication = publication;
 	}
 
-	@NotEmpty
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getTripStart() {
 		return tripStart;
 	}
@@ -115,7 +110,9 @@ public class Trip extends DomainEntity{
 		this.tripStart = tripStart;
 	}
 
-	@NotEmpty
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getTripEnd() {
 		return tripEnd;
 	}
@@ -123,8 +120,37 @@ public class Trip extends DomainEntity{
 	public void setTripEnd(Date tripEnd) {
 		this.tripEnd = tripEnd;
 	}
+	
+	// Relationships
+
+	private LegalText legalText;
+	private Ranger ranger;
+	private Collection<Survival> survival;
+	private Manager manager;
+	private Audit audit;
+	private Collection<Note> note;
+	private Collection<SponsorShip> sponsorShip;
+	private Explorer explorer;
+	private Collection<Story> story;
+	private Collection<Tag> tag;
+	private Collection<Stage> stage;
+	private Collection<Category> category;
+	private Application application;
+	
+	@Valid
+	@ManyToOne(optional = false)
+	@NotNull
+	public LegalText getLegalText() {
+		return legalText;
+	}
+
+	public void setLegalText(LegalText legalText) {
+		this.legalText = legalText;
+	}
 
 	@Valid
+	@ManyToOne(optional = false)
+	@NotNull
 	public Ranger getRanger() {
 		return ranger;
 	}
@@ -134,6 +160,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Collection<Survival> getSurvival() {
 		return survival;
 	}
@@ -143,6 +171,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@ManyToOne(optional = false)
+	@NotNull
 	public Manager getManager() {
 		return manager;
 	}
@@ -152,6 +182,8 @@ public class Trip extends DomainEntity{
 	}
 	
 	@Valid
+	@ManyToOne(optional = false)
+	@NotNull
 	public Audit getAudit() {
 		return audit;
 	}
@@ -161,6 +193,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Collection<SponsorShip> getSponsorShip() {
 		return sponsorShip;
 	}
@@ -170,6 +204,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Collection<Note> getNote() {
 		return note;
 	}
@@ -179,6 +215,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@ManyToOne(optional = false)
+	@NotNull
 	public Explorer getExplorer() {
 		return explorer;
 	}
@@ -188,6 +226,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Collection<Story> getStory() {
 		return story;
 	}
@@ -197,6 +237,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Collection<Tag> getTag() {
 		return tag;
 	}
@@ -206,6 +248,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Collection<Stage> getStage() {
 		return stage;
 	}
@@ -215,6 +259,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Collection<Category> getCategory() {
 		return category;
 	}
