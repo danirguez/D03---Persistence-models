@@ -2,12 +2,21 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+
+@Entity
+@Access(AccessType.PROPERTY)
 public class CV extends DomainEntity {
 
 	private String ticker;
@@ -32,6 +41,7 @@ public class CV extends DomainEntity {
 	}
 
 	@Valid
+	@OneToOne(optional=false)
 	public Ranger getRanger() {
 		return ranger;
 	}
@@ -41,6 +51,7 @@ public class CV extends DomainEntity {
 	}
 
 	@Valid
+	@OneToOne(cascade = CascadeType.ALL, optional=false)
 	public PersonalRecord getPersonalRecord() {
 		return personalRecord;
 	}
@@ -49,6 +60,7 @@ public class CV extends DomainEntity {
 		this.personalRecord = personalRecord;
 	}
 
+	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<EndorserRecord> getEndorserRecord() {
 		return endorserRecord;
 	}
@@ -57,6 +69,7 @@ public class CV extends DomainEntity {
 		this.endorserRecord = endorserRecord;
 	}
 
+	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<MiscellaneousRecord> getMiscellaneousRecord() {
 		return miscellaneousRecord;
 	}
@@ -65,6 +78,7 @@ public class CV extends DomainEntity {
 		this.miscellaneousRecord = miscellaneousRecord;
 	}
 
+	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<ProfesionalRecord> getProfesionalRecord() {
 		return profesionalRecord;
 	}
@@ -73,6 +87,7 @@ public class CV extends DomainEntity {
 		this.profesionalRecord = profesionalRecord;
 	}
 
+	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<EducationRecord> getEducationRecord() {
 		return educationRecord;
 	}

@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -13,6 +18,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class ProfesionalRecord extends DomainEntity {
 
 	private String companyName;
@@ -21,7 +28,6 @@ public class ProfesionalRecord extends DomainEntity {
 	private String rol;
 	private String link;
 	private Collection<String> comment;
-
 
 	@NotBlank
 	public String getCompanyName() {
@@ -42,6 +48,7 @@ public class ProfesionalRecord extends DomainEntity {
 	}
 
 	@NotEmpty
+	@Temporal(TemporalType.DATE)
 	@Past
 	public Date getStart() {
 		return start;
@@ -51,6 +58,7 @@ public class ProfesionalRecord extends DomainEntity {
 		this.start = start;
 	}
 
+	@Temporal(TemporalType.DATE)
 	public Date getEndOrActual() {
 		return endOrActual;
 	}
