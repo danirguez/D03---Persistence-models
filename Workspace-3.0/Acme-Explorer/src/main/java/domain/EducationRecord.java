@@ -4,18 +4,23 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class EducationRecord {
 
 	private String title;
 	private Date start;
 	private Date end;
-	
+
 
 	@NotBlank
 	public String getTitle() {
@@ -28,6 +33,7 @@ public class EducationRecord {
 
 	//En caso de salir Null en End, significará que no ha acabado el período
 	@Size(min = 2, max = 2)
+	//@Temporal(TemporalType.DATE)
 	public Collection<Date> getPeriod() {
 		Collection<Date> res = new ArrayList<Date>();
 		res.add(start);
