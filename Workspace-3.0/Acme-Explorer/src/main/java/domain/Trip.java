@@ -128,7 +128,6 @@ public class Trip extends DomainEntity{
 	
 	// Relationships
 
-	private LegalText legalText;
 	private Ranger ranger;
 	private Collection<Survival> survival;
 	private Manager manager;
@@ -142,17 +141,6 @@ public class Trip extends DomainEntity{
 	private Collection<Category> category;
 	private Application application;
 	
-	@Valid
-	@ManyToOne(optional = false)
-	@NotNull
-	public LegalText getLegalText() {
-		return legalText;
-	}
-
-	public void setLegalText(LegalText legalText) {
-		this.legalText = legalText;
-	}
-
 	@Valid
 	@ManyToOne(optional = false)
 	@NotNull

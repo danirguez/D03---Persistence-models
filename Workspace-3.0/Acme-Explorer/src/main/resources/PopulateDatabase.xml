@@ -76,7 +76,7 @@
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount2" />
 	<property name="cv" ref="cv1" />
 	<property name="trip" ref="trip1" />
 	<property name="folders">
@@ -116,7 +116,7 @@
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="cv" ref="cv1" />
 	<property name="trip" ref="trip1" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount2" />
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -338,6 +338,91 @@
 	<bean id="tag2" class="domain.Tag">
 	<property name="name" value="Another" />
 	<property name="trip" ref="trip1" />
+	</bean>
+	
+									<!-- ADMINISTRATOR -->
+	
+	<!-- ADMINISTRATOR1 -->
+	
+	<bean id="administrator1" class="domain.Administrator">
+	<property name="name" value="Dani" />
+	<property name="surname" value="Radriguez" />
+	<property name="email" value="dani.r.lopez@hotmail.com" />
+	<property name="phoneNumber" value="+34 (253) 4655" />
+	<property name="address" value="C/ Lugo" />
+	<property name="socialID" value="123456789" />
+	<property name="photo" value="url de la foto" />
+	<property name="nick" value="danirl" />
+	<property name="nameSocialNetwork" value="LucasFilm" />
+	<property name="socialNetwork" value="www.micasa.com" />
+	<property name="userAccount" ref="userAccount3" />
+	<property name="folders">
+		<list>
+			<ref bean="folder1"/>
+			<ref bean="folder2"/>
+			<ref bean="folder3"/>
+			<ref bean="folder4"/>
+			<ref bean="folder5"/>
+		</list>
+	</property>
+	<property name="sent">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	<property name="received">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	</bean>
+	
+										<!-- TRIP -->
+	
+	<!-- TRIP1 -->
+	
+	<bean id="trip1" class="domain.Trip">
+	<property name="ticker" value="171020-JUHE" />
+	<property name="title" value="Beach" />
+	<property name="description" value="Something" />
+	<property name="requirement" value="Other" />
+	<property name="publication" value="24/10/17" />
+	<property name="tripStart" value="12/12/17" />
+	<property name="tripEnd" value="20/12/17" />
+	<property name="ranger" ref="ranger1" />
+	<property name="manager" ref="manager1" />
+	<property name="audit" ref="audit1" />
+	<property name="survival">
+		<list>
+			<ref bean="survival1"/>
+			<ref bean="survival2"/>
+		</list>
+	</property>
+	<property name="note">
+		<list>
+			<ref bean="note1"/>
+			<ref bean="note2"/>
+		</list>
+	</property>
+	</bean>
+	
+		<!-- TRIP2 -->
+	
+	<bean id="trip2" class="domain.Trip">
+	<property name="ticker" value="171021-KSFE" />
+	<property name="title" value="Beach1" />
+	<property name="description" value="Something" />
+	<property name="requirement" value="Other" />
+	<property name="publication" value="25/10/17" />
+	<property name="tripStart" value="25/12/17" />
+	<property name="tripEnd" value="28/12/17" />
+	<property name="ranger" ref="ranger2" />
+	<property name="esdorserRecord">
+		<list>
+			<ref bean="endorserRecord1"/>
+			<ref bean="endorserRecord2"/>
+		</list>
+	</property>
 	</bean>
 	
 </beans>
