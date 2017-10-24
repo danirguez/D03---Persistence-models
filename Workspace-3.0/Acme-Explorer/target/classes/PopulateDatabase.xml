@@ -308,6 +308,14 @@
 	<property name="trip" ref="trip1" />
 	</bean>
 	
+	<bean id="legalText2" class="domain.LegalText">
+	<property name="title" value="Second" />
+	<property name="body" value="A comment of something" />
+	<property name="numberLaw" value="26" />
+	<property name="moment" value="23/10/2017" />
+	<property name="trip" ref="trip2" />
+	</bean>
+	
 							<!-- STAGE -->	
 							
 	<!-- STAGE1 -->
@@ -392,6 +400,8 @@
 	<property name="ranger" ref="ranger1" />
 	<property name="manager" ref="manager1" />
 	<property name="audit" ref="audit1" />
+	<property name="application" ref="application1" />
+	<property name="legalText" ref="legalText1" />
 	<property name="survival">
 		<list>
 			<ref bean="survival1"/>
@@ -402,6 +412,36 @@
 		<list>
 			<ref bean="note1"/>
 			<ref bean="note2"/>
+		</list>
+	</property>
+	<property name="sponsorship">
+		<list>
+			<ref bean="sponsorship1"/>
+			<ref bean="sponsorship2"/>
+		</list>
+	</property>
+	<property name="story">
+		<list>
+			<ref bean="story1"/>
+			<ref bean="story2"/>
+		</list>
+	</property>
+	<property name="tag">
+		<list>
+			<ref bean="tag1"/>
+			<ref bean="tag2"/>
+		</list>
+	</property>
+	<property name="stage">
+		<list>
+			<ref bean="stage1"/>
+			<ref bean="stage2"/>
+		</list>
+	</property>
+	<property name="category">
+		<list>
+			<ref bean="category1"/>
+			<ref bean="category2"/>
 		</list>
 	</property>
 	</bean>
@@ -417,10 +457,50 @@
 	<property name="tripStart" value="25/12/17" />
 	<property name="tripEnd" value="28/12/17" />
 	<property name="ranger" ref="ranger2" />
-	<property name="esdorserRecord">
+	<property name="manager" ref="manager1" />
+	<property name="audit" ref="audit1" />
+	<property name="application" ref="application1" />
+	<property name="legalText" ref="legalText1" />
+	<property name="survival">
 		<list>
-			<ref bean="endorserRecord1"/>
-			<ref bean="endorserRecord2"/>
+			<ref bean="survival1"/>
+			<ref bean="survival2"/>
+		</list>
+	</property>
+	<property name="note">
+		<list>
+			<ref bean="note1"/>
+			<ref bean="note2"/>
+		</list>
+	</property>
+	<property name="sponsorship">
+		<list>
+			<ref bean="sponsorship1"/>
+			<ref bean="sponsorship2"/>
+		</list>
+	</property>
+	<property name="story">
+		<list>
+			<ref bean="story1"/>
+			<ref bean="story2"/>
+		</list>
+	</property>
+	<property name="tag">
+		<list>
+			<ref bean="tag1"/>
+			<ref bean="tag2"/>
+		</list>
+	</property>
+	<property name="stage">
+		<list>
+			<ref bean="stage1"/>
+			<ref bean="stage2"/>
+		</list>
+	</property>
+	<property name="category">
+		<list>
+			<ref bean="category1"/>
+			<ref bean="category2"/>
 		</list>
 	</property>
 	</bean>
