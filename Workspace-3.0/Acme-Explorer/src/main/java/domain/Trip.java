@@ -3,10 +3,14 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -18,6 +22,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Trip extends DomainEntity{
 	
 	// Constructors
@@ -123,31 +129,18 @@ public class Trip extends DomainEntity{
 	
 	// Relationships
 
-	private LegalText legalText;
 	private Ranger ranger;
 	private Collection<Survival> survival;
 	private Manager manager;
 	private Audit audit;
 	private Collection<Note> note;
-	private Collection<SponsorShip> sponsorShip;
-	private Explorer explorer;
+	private Collection<Sponsorship> sponsorship;
 	private Collection<Story> story;
 	private Collection<Tag> tag;
 	private Collection<Stage> stage;
 	private Collection<Category> category;
 	private Application application;
 	
-	@Valid
-	@ManyToOne(optional = false)
-	@NotNull
-	public LegalText getLegalText() {
-		return legalText;
-	}
-
-	public void setLegalText(LegalText legalText) {
-		this.legalText = legalText;
-	}
-
 	@Valid
 	@ManyToOne(optional = false)
 	@NotNull
@@ -195,12 +188,12 @@ public class Trip extends DomainEntity{
 	@Valid
 	@OneToMany(mappedBy = "trip")
 	@NotNull
-	public Collection<SponsorShip> getSponsorShip() {
-		return sponsorShip;
+	public Collection<Sponsorship> getSponsorship() {
+		return sponsorship;
 	}
 
-	public void setSponsorShip(Collection<SponsorShip> sponsorShip) {
-		this.sponsorShip = sponsorShip;
+	public void setSponsorship(Collection<Sponsorship> sponsorship) {
+		this.sponsorship = sponsorship;
 	}
 
 	@Valid
@@ -212,17 +205,6 @@ public class Trip extends DomainEntity{
 
 	public void setNote(Collection<Note> note) {
 		this.note = note;
-	}
-
-	@Valid
-	@ManyToOne(optional = false)
-	@NotNull
-	public Explorer getExplorer() {
-		return explorer;
-	}
-
-	public void setExplorer(Explorer explorer) {
-		this.explorer = explorer;
 	}
 
 	@Valid
@@ -270,6 +252,7 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToOne(optional=false)
 	public Application getApplication() {
 		return application;
 	}

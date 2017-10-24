@@ -2,21 +2,32 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Explorer extends Actor{
-
-	private Finder finder;
-	private EmergencyList emergencyList;
-	private Collection<Story> stories;
-	private Trip trip;
-	private Application application;
+	
+	//Constructors
 	
 	public Explorer() {
 		super();
 	}
 	
+	// Relationships
+	
+	private Finder finder;
+	private Collection<Emergency> emergency;
+	private Collection<Story> stories;
+	private Application application;
+	
 	@Valid
+	@OneToOne(optional=false)
 	public Finder getFinder(){
 		return finder;
 	}
@@ -26,12 +37,13 @@ public class Explorer extends Actor{
 	}
 	
 	@Valid
-	public EmergencyList getEmergencyList(){
-		return emergencyList;
+	
+	public Collection<Emergency> getEmergency(){
+		return emergency;
 	}
 	
-	public void setEmergencyList(EmergencyList emergencyList){
-		this.emergencyList = emergencyList;
+	public void setEmergency(Collection<Emergency> emergency){
+		this.emergency = emergency;
 	}
 	
 	@Valid
@@ -44,15 +56,7 @@ public class Explorer extends Actor{
 	}
 	
 	@Valid
-	public Trip getTrip(){
-		return trip;
-	}
-	
-	public void setTrip(Trip trip){
-		this.trip = trip;
-	}
-	
-	@Valid
+	@OneToMany
 	public Application getApplication() {
 		return application;
 	}

@@ -1,21 +1,33 @@
 package domain;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Sponsor extends Actor{
 
-	private SponsorShip sponsorShip;
 
+	//Constructors
+	
 	public Sponsor(){
 		super();
 	}
 	
+	// Relationships
+	
+	private Sponsorship sponsorship;
+	
 	@Valid
-	public SponsorShip getSponsorShip() {
-		return sponsorShip;
+	@OneToOne(mappedBy="Sponsorship",optional=false)
+	public Sponsorship getSponsorship() {
+		return sponsorship;
 	}
 
-	public void setSponsorShip(SponsorShip sponsorShip) {
-		this.sponsorShip = sponsorShip;
+	public void setSponsorship(Sponsorship sponsorship) {
+		this.sponsorship = sponsorship;
 	}
 }

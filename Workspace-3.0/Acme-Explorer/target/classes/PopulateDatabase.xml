@@ -76,7 +76,7 @@
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount2" />
 	<property name="cv" ref="cv1" />
 	<property name="trip" ref="trip1" />
 	<property name="folders">
@@ -116,7 +116,7 @@
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="cv" ref="cv1" />
 	<property name="trip" ref="trip1" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount2" />
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -280,6 +280,229 @@
 	<property name="photo" value="url de la foto" />
 	<property name="phoneNumber" value="+34123456789" />
 	<property name="likedln" value="www.likedlin.com" />
+	</bean>
+	
+							<!-- CATEGORY -->	
+	
+	<!-- CATEGORY1 -->				
+	<bean id="category1" class="domain.Category">
+	<property name="name" value="Safari" />
+	<property name="categoryParent" ref="Adventures" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+	<!-- CATEGORY2 -->	
+	<bean id="category2" class="domain.Category">
+	<property name="name" value="Zoo" />
+	<property name="categoryParent" ref="category1" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+							<!-- LEGALTEXT -->	
+							
+	<bean id="legalText1" class="domain.LegalText">
+	<property name="title" value="Second" />
+	<property name="body" value="A comment of something" />
+	<property name="numberLaw" value="23" />
+	<property name="moment" value="23/10/2017" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+	<bean id="legalText2" class="domain.LegalText">
+	<property name="title" value="Second" />
+	<property name="body" value="A comment of something" />
+	<property name="numberLaw" value="26" />
+	<property name="moment" value="23/10/2017" />
+	<property name="trip" ref="trip2" />
+	</bean>
+	
+							<!-- STAGE -->	
+							
+	<!-- STAGE1 -->
+	<bean id="stage1" class="domain.Stage">
+	<property name="title" value="First" />
+	<property name="description" value="Something" />
+	<property name="price" value="528" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+	<!-- STAGE2 -->
+	<bean id="stage2" class="domain.Stage">
+	<property name="title" value="Second" />
+	<property name="description" value="Something" />
+	<property name="price" value="650" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+							<!-- TAG -->
+	
+	<!-- TAG1 -->		
+	<bean id="tag1" class="domain.Tag">
+	<property name="name" value="Adventure" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+	<!-- TAG2 -->
+	<bean id="tag2" class="domain.Tag">
+	<property name="name" value="Another" />
+	<property name="trip" ref="trip1" />
+	</bean>
+	
+									<!-- ADMINISTRATOR -->
+	
+	<!-- ADMINISTRATOR1 -->
+	
+	<bean id="administrator1" class="domain.Administrator">
+	<property name="name" value="Dani" />
+	<property name="surname" value="Radriguez" />
+	<property name="email" value="dani.r.lopez@hotmail.com" />
+	<property name="phoneNumber" value="+34 (253) 4655" />
+	<property name="address" value="C/ Lugo" />
+	<property name="socialID" value="123456789" />
+	<property name="photo" value="url de la foto" />
+	<property name="nick" value="danirl" />
+	<property name="nameSocialNetwork" value="LucasFilm" />
+	<property name="socialNetwork" value="www.micasa.com" />
+	<property name="userAccount" ref="userAccount3" />
+	<property name="folders">
+		<list>
+			<ref bean="folder1"/>
+			<ref bean="folder2"/>
+			<ref bean="folder3"/>
+			<ref bean="folder4"/>
+			<ref bean="folder5"/>
+		</list>
+	</property>
+	<property name="sent">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	<property name="received">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	</bean>
+	
+										<!-- TRIP -->
+	
+	<!-- TRIP1 -->
+	
+	<bean id="trip1" class="domain.Trip">
+	<property name="ticker" value="171020-JUHE" />
+	<property name="title" value="Beach" />
+	<property name="description" value="Something" />
+	<property name="requirement" value="Other" />
+	<property name="publication" value="24/10/17" />
+	<property name="tripStart" value="12/12/17" />
+	<property name="tripEnd" value="20/12/17" />
+	<property name="ranger" ref="ranger1" />
+	<property name="manager" ref="manager1" />
+	<property name="audit" ref="audit1" />
+	<property name="application" ref="application1" />
+	<property name="legalText" ref="legalText1" />
+	<property name="survival">
+		<list>
+			<ref bean="survival1"/>
+			<ref bean="survival2"/>
+		</list>
+	</property>
+	<property name="note">
+		<list>
+			<ref bean="note1"/>
+			<ref bean="note2"/>
+		</list>
+	</property>
+	<property name="sponsorship">
+		<list>
+			<ref bean="sponsorship1"/>
+			<ref bean="sponsorship2"/>
+		</list>
+	</property>
+	<property name="story">
+		<list>
+			<ref bean="story1"/>
+			<ref bean="story2"/>
+		</list>
+	</property>
+	<property name="tag">
+		<list>
+			<ref bean="tag1"/>
+			<ref bean="tag2"/>
+		</list>
+	</property>
+	<property name="stage">
+		<list>
+			<ref bean="stage1"/>
+			<ref bean="stage2"/>
+		</list>
+	</property>
+	<property name="category">
+		<list>
+			<ref bean="category1"/>
+			<ref bean="category2"/>
+		</list>
+	</property>
+	</bean>
+	
+		<!-- TRIP2 -->
+	
+	<bean id="trip2" class="domain.Trip">
+	<property name="ticker" value="171021-KSFE" />
+	<property name="title" value="Beach1" />
+	<property name="description" value="Something" />
+	<property name="requirement" value="Other" />
+	<property name="publication" value="25/10/17" />
+	<property name="tripStart" value="25/12/17" />
+	<property name="tripEnd" value="28/12/17" />
+	<property name="ranger" ref="ranger2" />
+	<property name="manager" ref="manager1" />
+	<property name="audit" ref="audit1" />
+	<property name="application" ref="application1" />
+	<property name="legalText" ref="legalText1" />
+	<property name="survival">
+		<list>
+			<ref bean="survival1"/>
+			<ref bean="survival2"/>
+		</list>
+	</property>
+	<property name="note">
+		<list>
+			<ref bean="note1"/>
+			<ref bean="note2"/>
+		</list>
+	</property>
+	<property name="sponsorship">
+		<list>
+			<ref bean="sponsorship1"/>
+			<ref bean="sponsorship2"/>
+		</list>
+	</property>
+	<property name="story">
+		<list>
+			<ref bean="story1"/>
+			<ref bean="story2"/>
+		</list>
+	</property>
+	<property name="tag">
+		<list>
+			<ref bean="tag1"/>
+			<ref bean="tag2"/>
+		</list>
+	</property>
+	<property name="stage">
+		<list>
+			<ref bean="stage1"/>
+			<ref bean="stage2"/>
+		</list>
+	</property>
+	<property name="category">
+		<list>
+			<ref bean="category1"/>
+			<ref bean="category2"/>
+		</list>
+	</property>
 	</bean>
 	
 </beans>

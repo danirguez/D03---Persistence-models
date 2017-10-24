@@ -2,6 +2,11 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
@@ -9,14 +14,21 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
-public class SponsorShip extends DomainEntity{
+@Entity
+@Access(AccessType.PROPERTY)
+public class Sponsorship extends DomainEntity{
 
+	//Constructors
+	
+	public Sponsorship(){
+		super();
+	}
+	
+	// Attributes
+	
 	private String banner;
 	private String infoPage;
 	private CC creditCard;
-	
-	private Sponsor sponsor;
-	private Collection<Trip> trips;
 	
 
 	@URL
@@ -49,7 +61,13 @@ public class SponsorShip extends DomainEntity{
 		this.creditCard = creditCard;
 	}
 	
+	// Relationships
+	
+	private Sponsor sponsor;
+	private Collection<Trip> trips;
+	
 	@Valid
+	@OneToOne(optional=false)
 	public Sponsor getSponsor() {
 		return sponsor;
 	}
@@ -59,6 +77,7 @@ public class SponsorShip extends DomainEntity{
 	}
 
 	@Valid
+	@ManyToMany
 	public Collection<Trip> getTrips() {
 		return trips;
 	}
