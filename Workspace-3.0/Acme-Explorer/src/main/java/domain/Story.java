@@ -2,20 +2,29 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Story extends DomainEntity {
 
+	//Constructors
+	
+	public Story(){
+		super();
+	}
+	
+	// Attributes
+	
 	private String title;
 	private String pieceText;
 	private Collection<String> link;
-
-	private Trip trip;
-	private Explorer explorer;
-	private Explorer writer;
 
 	@NotBlank
 	public String getTitle() {
@@ -44,6 +53,12 @@ public class Story extends DomainEntity {
 	public void setLink(Collection<String> link) {
 		this.link = link;
 	}
+	
+	// Relationships
+
+	private Trip trip;
+	private Explorer explorer;
+	private Explorer writer;
 
 	@Valid
 	public Trip getTrip() {

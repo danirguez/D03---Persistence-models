@@ -1,18 +1,28 @@
 package domain;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Emergency extends DomainEntity{
 
+	//Constructors
+	
+	public Emergency(){
+		super();
+	}
+	
+	// Attributes
+	
 	private String name;
 	private String email;
 	private String phoneNumber;
-	
-	private Explorer explorer;
-	private EmergencyList emergencyList;
 	
 	@NotBlank
 	public String getName(){
@@ -40,6 +50,10 @@ public class Emergency extends DomainEntity{
 		this.phoneNumber = phoneNumber;
 	}
 	
+	// Relationships
+	
+	private Explorer explorer;
+	
 	@Valid
 	public Explorer getExplorer(){
 		return explorer;
@@ -47,15 +61,6 @@ public class Emergency extends DomainEntity{
 	
 	public void setExplorer(Explorer explorer){
 		this.explorer = explorer;
-	}
-	
-	@Valid
-	public EmergencyList getEmergencyList() {
-		return emergencyList;
-	}
-
-	public void setEmergencyList(EmergencyList emergencyList) {
-		this.emergencyList = emergencyList;
 	}
 
 }
