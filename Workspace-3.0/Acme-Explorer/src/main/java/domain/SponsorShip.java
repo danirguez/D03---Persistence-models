@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
@@ -14,11 +16,11 @@ import org.hibernate.validator.constraints.URL;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class SponsorShip extends DomainEntity{
+public class Sponsorship extends DomainEntity{
 
 	//Constructors
 	
-	public SponsorShip(){
+	public Sponsorship(){
 		super();
 	}
 	
@@ -65,6 +67,7 @@ public class SponsorShip extends DomainEntity{
 	private Collection<Trip> trips;
 	
 	@Valid
+	@OneToOne(optional=false)
 	public Sponsor getSponsor() {
 		return sponsor;
 	}
@@ -74,6 +77,7 @@ public class SponsorShip extends DomainEntity{
 	}
 
 	@Valid
+	@ManyToMany
 	public Collection<Trip> getTrips() {
 		return trips;
 	}

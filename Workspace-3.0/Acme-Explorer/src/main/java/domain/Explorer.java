@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 @Entity
@@ -22,10 +24,10 @@ public class Explorer extends Actor{
 	private Finder finder;
 	private Collection<Emergency> emergency;
 	private Collection<Story> stories;
-	private Trip trip;
 	private Application application;
 	
 	@Valid
+	@OneToOne(optional=false)
 	public Finder getFinder(){
 		return finder;
 	}
@@ -35,6 +37,7 @@ public class Explorer extends Actor{
 	}
 	
 	@Valid
+	
 	public Collection<Emergency> getEmergency(){
 		return emergency;
 	}
@@ -53,15 +56,7 @@ public class Explorer extends Actor{
 	}
 	
 	@Valid
-	public Trip getTrip(){
-		return trip;
-	}
-	
-	public void setTrip(Trip trip){
-		this.trip = trip;
-	}
-	
-	@Valid
+	@OneToMany
 	public Application getApplication() {
 		return application;
 	}

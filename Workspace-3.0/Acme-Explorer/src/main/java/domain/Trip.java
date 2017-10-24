@@ -10,6 +10,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -134,8 +135,7 @@ public class Trip extends DomainEntity{
 	private Manager manager;
 	private Audit audit;
 	private Collection<Note> note;
-	private Collection<SponsorShip> sponsorShip;
-	private Explorer explorer;
+	private Collection<Sponsorship> sponsorship;
 	private Collection<Story> story;
 	private Collection<Tag> tag;
 	private Collection<Stage> stage;
@@ -200,12 +200,12 @@ public class Trip extends DomainEntity{
 	@Valid
 	@OneToMany(mappedBy = "trip")
 	@NotNull
-	public Collection<SponsorShip> getSponsorShip() {
-		return sponsorShip;
+	public Collection<Sponsorship> getSponsorship() {
+		return sponsorship;
 	}
 
-	public void setSponsorShip(Collection<SponsorShip> sponsorShip) {
-		this.sponsorShip = sponsorShip;
+	public void setSponsorship(Collection<Sponsorship> sponsorship) {
+		this.sponsorship = sponsorship;
 	}
 
 	@Valid
@@ -217,17 +217,6 @@ public class Trip extends DomainEntity{
 
 	public void setNote(Collection<Note> note) {
 		this.note = note;
-	}
-
-	@Valid
-	@ManyToOne(optional = false)
-	@NotNull
-	public Explorer getExplorer() {
-		return explorer;
-	}
-
-	public void setExplorer(Explorer explorer) {
-		this.explorer = explorer;
 	}
 
 	@Valid
@@ -275,6 +264,7 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@OneToOne(optional=false)
 	public Application getApplication() {
 		return application;
 	}

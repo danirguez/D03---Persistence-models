@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
 @Entity
@@ -53,6 +54,7 @@ public class Finder extends DomainEntity{
 	private Explorer explorer;
 	
 	@Valid
+	@OneToOne(mappedBy="Explorer",optional=false)
 	public Explorer getExplorer(){
 		return explorer;
 	}
