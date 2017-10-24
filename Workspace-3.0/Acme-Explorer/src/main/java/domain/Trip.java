@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -140,7 +141,18 @@ public class Trip extends DomainEntity{
 	private Collection<Stage> stage;
 	private Collection<Category> category;
 	private Application application;
+	private LegalText legalText;
 	
+	@Valid
+	@OneToOne(cascade = CascadeType.ALL, optional = false)
+	public LegalText getLegalText() {
+		return legalText;
+	}
+
+	public void setLegalText(LegalText legalText) {
+		this.legalText = legalText;
+	}
+
 	@Valid
 	@ManyToOne(optional = false)
 	@NotNull
