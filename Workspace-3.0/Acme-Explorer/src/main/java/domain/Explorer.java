@@ -24,7 +24,7 @@ public class Explorer extends Actor{
 	private Finder finder;
 	private Collection<Emergency> emergency;
 	private Collection<Story> stories;
-	private Application application;
+	private Collection<Application> application;
 	
 	@Valid
 	@OneToOne(optional=false)
@@ -37,16 +37,18 @@ public class Explorer extends Actor{
 	}
 	
 	@Valid
-	
+	@OneToMany
 	public Collection<Emergency> getEmergency(){
 		return emergency;
 	}
 	
+	@OneToMany
 	public void setEmergency(Collection<Emergency> emergency){
 		this.emergency = emergency;
 	}
 	
 	@Valid
+	@OneToMany(mappedBy="story")
 	public Collection<Story> getStories(){
 		return stories;
 	}
@@ -57,11 +59,11 @@ public class Explorer extends Actor{
 	
 	@Valid
 	@OneToMany
-	public Application getApplication() {
+	public Collection<Application> getApplication() {
 		return application;
 	}
 
-	public void setApplication(Application application) {
+	public void setApplication(Collection<Application> application) {
 		this.application = application;
 	}
 }

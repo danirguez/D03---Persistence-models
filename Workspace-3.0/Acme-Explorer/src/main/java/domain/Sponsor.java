@@ -22,7 +22,7 @@ public class Sponsor extends Actor{
 	private Sponsorship sponsorship;
 	
 	@Valid
-	@OneToOne(mappedBy="Sponsorship",optional=false)
+	@OneToOne(mappedBy="sponsorship",optional=false)
 	public Sponsorship getSponsorship() {
 		return sponsorship;
 	}

@@ -54,7 +54,7 @@ public class Finder extends DomainEntity{
 	private Explorer explorer;
 	
 	@Valid
-	@OneToOne(mappedBy="Explorer",optional=false)
+	@OneToOne(mappedBy="explorer",optional=false)
 	public Explorer getExplorer(){
 		return explorer;
 	}

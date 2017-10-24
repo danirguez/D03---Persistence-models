@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -61,6 +62,7 @@ public class Story extends DomainEntity {
 	private Explorer writer;
 
 	@Valid
+	@ManyToOne(optional=false)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -70,6 +72,7 @@ public class Story extends DomainEntity {
 	}
 
 	@Valid
+	@ManyToOne(optional=false)
 	public Explorer getExplorer() {
 		return explorer;
 	}
@@ -79,6 +82,7 @@ public class Story extends DomainEntity {
 	}
 
 	@Valid
+	@ManyToOne(optional=false)
 	public Explorer getWriter() {
 		return writer;
 	}
