@@ -406,7 +406,6 @@
 	<property name="tripEnd" value="20/12/17" />
 	<property name="ranger" ref="ranger1" />
 	<property name="manager" ref="manager1" />
-	<property name="application" ref="application1" />
 	<property name="legalText" ref="legalText1" />
 	<property name="requirement">
 		<list>
@@ -436,6 +435,12 @@
 		<list>
 			<ref bean="sponsorship1"/>
 			<ref bean="sponsorship2"/>
+		</list>
+	</property>
+	<property name="application">
+		<list>
+			<ref bean="application1"/>
+			<ref bean="application2"/>
 		</list>
 	</property>
 	<property name="story">
@@ -491,6 +496,12 @@
 		<list>
 			<ref bean="sponsorship1"/>
 			<ref bean="sponsorship2"/>
+		</list>
+	</property>
+	<property name="application">
+		<list>
+			<ref bean="application1"/>
+			<ref bean="application2"/>
 		</list>
 	</property>
 	<property name="story">
