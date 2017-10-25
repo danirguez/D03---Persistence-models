@@ -494,10 +494,7 @@
 		</list>
 	</property>
 	<property name="story">
-		<list>
-			<ref bean="story1"/>
-			<ref bean="story2"/>
-		</list>
+		<null />
 	</property>
 	<property name="tag">
 		<null />
