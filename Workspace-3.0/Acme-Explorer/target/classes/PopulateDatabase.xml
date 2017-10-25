@@ -212,6 +212,7 @@
 							<!-- MISCELLANEOUSRECORD -->
 	
 	<!-- MISCELLANEOUSRECORD1 -->
+	
 	<bean id="miscellaneousRecord1" class="domain.MiscellaneousRecord">
 	<property name="title" value="Título1" />
 	<property name="link" value="www.example.com" />
@@ -219,18 +220,17 @@
 	</bean>
 	
 	<!-- MISCELLANEOUSRECORD2 -->
+	
 	<bean id="miscellaneousRecord2" class="domain.MiscellaneousRecord">
 	<property name="title" value="Título2" />
 	<property name="link" value="www.example.com" />
 	<property name="comment" value="Comentario..." />
 	</bean>
 	
-	
-	
-	
 							<!-- PROFESIONALRECORD -->
 	
 	<!-- PROFESIONALRECORD1 -->
+	
 	<bean id="profesionalRecord1" class="domain.ProfesionalRecord">
 	<property name="companyName" value="Nombre empresa1" />
 	<property name="period"> <null/> </property>
@@ -242,6 +242,7 @@
 	</bean>
 	
 	<!-- PROFESIONALRECORD2 -->
+	
 	<bean id="profesionalRecord1" class="domain.ProfesionalRecord">
 	<property name="companyName" value="Nombre empresa2" />
 	<property name="period"> <null/> </property>
@@ -252,10 +253,10 @@
 	<property name="comment" value="Comentario..." />
 	</bean>
 	
-	
 							<!-- EDUCATIONRECORD -->
 	
 	<!-- EDUCATIONRECORD1 -->
+	
 	<bean id="educationRecord1" class="domain.EducationRecord">
 	<property name="title" value="Título" />
 	<property name="period"> <null/> </property>
@@ -263,15 +264,14 @@
 	<property name="end" value="2017/08/18" />
 	</bean>
 	
-	
 	<!-- EDUCATIONRECORD2 -->
+	
 	<bean id="educationRecord2" class="domain.EducationRecord">
 	<property name="title" value="Título2" />
 	<property name="period"> <null/> </property>
 	<property name="start" value="2017/08/04" />
 	<property name="end" value="2017/08/19" />
 	</bean>
-	
 	
 							<!-- PERSONALRECORD -->	
 	
@@ -284,7 +284,8 @@
 	
 							<!-- CATEGORY -->	
 	
-	<!-- CATEGORY1 -->				
+	<!-- CATEGORY1 -->	
+				
 	<bean id="category1" class="domain.Category">
 	<property name="name" value="Safari" />
 	<property name="categoryParent" ref="Adventures" />
@@ -292,6 +293,7 @@
 	</bean>
 	
 	<!-- CATEGORY2 -->	
+	
 	<bean id="category2" class="domain.Category">
 	<property name="name" value="Zoo" />
 	<property name="categoryParent" ref="category1" />
@@ -300,6 +302,8 @@
 	
 							<!-- LEGALTEXT -->	
 							
+	<!-- LEGALTEXT1 -->
+							
 	<bean id="legalText1" class="domain.LegalText">
 	<property name="title" value="Second" />
 	<property name="body" value="A comment of something" />
@@ -307,6 +311,8 @@
 	<property name="moment" value="23/10/2017" />
 	<property name="trip" ref="trip1" />
 	</bean>
+	
+	<!-- LEGALTEXT2 -->
 	
 	<bean id="legalText2" class="domain.LegalText">
 	<property name="title" value="Second" />
@@ -319,6 +325,7 @@
 							<!-- STAGE -->	
 							
 	<!-- STAGE1 -->
+	
 	<bean id="stage1" class="domain.Stage">
 	<property name="title" value="First" />
 	<property name="description" value="Something" />
@@ -327,6 +334,7 @@
 	</bean>
 	
 	<!-- STAGE2 -->
+	
 	<bean id="stage2" class="domain.Stage">
 	<property name="title" value="Second" />
 	<property name="description" value="Something" />
@@ -336,21 +344,21 @@
 	
 							<!-- TAG -->
 	
-	<!-- TAG1 -->		
+	<!-- TAG1 -->	
+		
 	<bean id="tag1" class="domain.Tag">
 	<property name="name" value="Adventure" />
 	<property name="trip" ref="trip1" />
 	</bean>
 	
 	<!-- TAG2 -->
+	
 	<bean id="tag2" class="domain.Tag">
 	<property name="name" value="Another" />
 	<property name="trip" ref="trip1" />
 	</bean>
 	
 									<!-- ADMINISTRATOR -->
-	
-	<!-- ADMINISTRATOR1 -->
 	
 	<bean id="administrator1" class="domain.Administrator">
 	<property name="name" value="Dani" />
@@ -393,19 +401,29 @@
 	<property name="ticker" value="171020-JUHE" />
 	<property name="title" value="Beach" />
 	<property name="description" value="Something" />
-	<property name="requirement" value="Other" />
 	<property name="publication" value="24/10/17" />
 	<property name="tripStart" value="12/12/17" />
 	<property name="tripEnd" value="20/12/17" />
 	<property name="ranger" ref="ranger1" />
 	<property name="manager" ref="manager1" />
-	<property name="audit" ref="audit1" />
 	<property name="application" ref="application1" />
 	<property name="legalText" ref="legalText1" />
+	<property name="requirement">
+		<list>
+			<value>Requirement 1</value>
+			<value>Requirement 2</value>
+		</list>
+	</property>
 	<property name="survival">
 		<list>
 			<ref bean="survival1"/>
 			<ref bean="survival2"/>
+		</list>
+	</property>
+	<property name="audit">
+		<list>
+			<ref bean="audit1"/>
+			<ref bean="audit2"/>
 		</list>
 	</property>
 	<property name="note">
@@ -446,7 +464,7 @@
 	</property>
 	</bean>
 	
-		<!-- TRIP2 -->
+	<!-- TRIP2 -->
 	
 	<bean id="trip2" class="domain.Trip">
 	<property name="ticker" value="171021-KSFE" />
@@ -458,20 +476,16 @@
 	<property name="tripEnd" value="28/12/17" />
 	<property name="ranger" ref="ranger2" />
 	<property name="manager" ref="manager1" />
-	<property name="audit" ref="audit1" />
 	<property name="application" ref="application1" />
 	<property name="legalText" ref="legalText1" />
 	<property name="survival">
-		<list>
-			<ref bean="survival1"/>
-			<ref bean="survival2"/>
-		</list>
+		<null />
+	</property>
+	<property name="audit">
+		<null />
 	</property>
 	<property name="note">
-		<list>
-			<ref bean="note1"/>
-			<ref bean="note2"/>
-		</list>
+		<null />
 	</property>
 	<property name="sponsorship">
 		<list>
@@ -486,10 +500,7 @@
 		</list>
 	</property>
 	<property name="tag">
-		<list>
-			<ref bean="tag1"/>
-			<ref bean="tag2"/>
-		</list>
+		<null />
 	</property>
 	<property name="stage">
 		<list>
@@ -506,7 +517,9 @@
 	</bean>
 	
 								<!-- SPONSOR -->
-								
+	
+	<!-- SPONSOR1 -->
+						
 	<bean id="sponsor1" class="domain.Sponsor">
 	<property name="name" value="Alfonso" />
 	<property name="surname" value="Soldado" />
@@ -539,6 +552,7 @@
 	</property>
 	</bean>
 	
+	<!-- SPONSOR2 -->
 	
 	<bean id="sponsor2" class="domain.Sponsor">
 	<property name="name" value="Julio" />
@@ -575,6 +589,8 @@
 	
 									<!-- SPONSORSHIP -->
 									
+	<!-- SPONSORSHIP1 -->
+							
 	<bean id="sponsorship1" class="domain.Sponsorship">
 	<property name="banner" value="http://www.example.com" />
 	<property name="infoPage" value="http://www.example.es" />
@@ -587,6 +603,8 @@
 		</list>
 	</property>
 	</bean>
+	
+	<!-- SPONSORSHIP2 -->
 	
 	<bean id="sponsorship2" class="domain.Sponsorship">
 	<property name="banner" value="http://www.example2.com" />
@@ -602,7 +620,9 @@
 	</bean>
 	
 									<!-- EXPLORER -->
-									
+	
+	<!-- EXPLORER1 -->
+					
 	<bean id="explorer1" class="domain.Explorer">
 	<property name="name" value="Manuel" />
 	<property name="surname" value="Caro" />
@@ -653,6 +673,7 @@
 	</property>
 	</bean>							
 	
+	<!-- EXPLORER2 -->
 	
 	<bean id="explorer2" class="domain.Explorer">
 	<property name="name" value="Jose" />
@@ -705,12 +726,16 @@
 	
 								<!-- FINDER -->
 	
+	<!-- FINDER1 -->
+	
 	<bean id="finder1" class="domain.Finder">
 	<property name="singleKey" value="Punta Cana" />
 	<property name="priceRange" value="50" />
 	<property name="tripDate" value="10/10/2018" />
 	<property name="explorer" ref="explorer1" />
 	</bean>
+	
+	<!-- FINDER2 -->
 	
 	<bean id="finder2" class="domain.Finder">
 	<property name="singleKey" value="New York" />
@@ -722,11 +747,15 @@
 								
 								<!-- EMERGENCY -->
 	
+	<!-- EMERGENCY1 -->
+	
 	<bean id="emergency1" class="domain.Emergency">
 	<property name="name" value="Emergency 1" />
 	<property name="email" value="emer@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 2333221" />
 	</bean>
+	
+	<!-- EMERGENCY2 -->
 	
 	<bean id="emergency2" class="domain.Emergency">
 	<property name="name" value="Emergency 2" />
@@ -736,7 +765,9 @@
 	
 	
 								<!-- STORY -->
-								
+	
+	<!-- STORY1 -->
+							
 	<bean id="story1" class="domain.Explorer">
 	<property name="title" value="Travel arround Tanzania" />
 	<property name="pieceText" value="An example of my trip" />
@@ -751,6 +782,7 @@
 	<property name="writer" ref="explorer1" />
 	</bean>
 	
+	<!-- STORY2 -->
 	
 	<bean id="story2" class="domain.Explorer">
 	<property name="title" value="Travel arround Italy" />

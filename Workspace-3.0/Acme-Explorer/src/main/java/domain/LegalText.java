@@ -1,6 +1,5 @@
 package domain;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -30,7 +29,7 @@ public class LegalText extends DomainEntity {
 
 	private String title;
 	private String body;
-	private Collection<Integer> numberLaw;
+	private Integer numberLaw;
 	private Date moment;
 
 	@NotBlank
@@ -52,11 +51,11 @@ public class LegalText extends DomainEntity {
 	}
 
 	@NotEmpty
-	public Collection<Integer> getNumberLaw() {
+	public Integer getNumberLaw() {
 		return numberLaw;
 	}
 
-	public void setNumberLaw(Collection<Integer> numberLaw) {
+	public void setNumberLaw(Integer numberLaw) {
 		this.numberLaw = numberLaw;
 	}
 
