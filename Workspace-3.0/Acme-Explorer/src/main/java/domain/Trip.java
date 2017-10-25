@@ -264,7 +264,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
-	@OneToOne(optional=false)
+	@OneToMany(mappedBy = "trip")
+	@NotNull
 	public Application getApplication() {
 		return application;
 	}
@@ -272,6 +273,5 @@ public class Trip extends DomainEntity{
 	public void setApplication(Application application) {
 		this.application = application;
 	}
-	
 
 }
