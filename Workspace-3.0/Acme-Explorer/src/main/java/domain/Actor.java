@@ -2,15 +2,24 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 import security.UserAccount;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public abstract class Actor extends DomainEntity {
 	
 	
@@ -78,7 +87,7 @@ public abstract class Actor extends DomainEntity {
 		this.address = address;
 	}
 	
-	@NotBlank
+	@NotEmpty
 	public Integer getSocialID() {
 		return socialID;
 	}
@@ -110,13 +119,20 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@NotBlank
+	@URL
 	public String getSocialNetwork() {
 		return socialNetwork;
 	}
 	public void setSocialNetwork(String socialNetwork) {
 		this.socialNetwork = socialNetwork;
 	}
+	
+	
+	
+	/* UserAcount */
+	
 	@Valid
+	//TODO: ¿cómo lo pongo?
 	public UserAccount getUserAccount(){
 		return userAccount;
 	}
@@ -124,7 +140,12 @@ public abstract class Actor extends DomainEntity {
 		this.userAccount = userAccount;
 	}
 	
+	
+	/* Folder */
+	//TODO: Hay que poner @... en cada una de las carpetas?
+	
 	@Valid
+	@OneToOne
 	public Folder getInBox() {
 		return inBox;
 	}
@@ -133,6 +154,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@OneToOne
 	public Folder getOutBox() {
 		return outBox;
 	}
@@ -141,6 +163,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@OneToOne
 	public Folder getNotificationBox() {
 		return notificationBox;
 	}
@@ -149,6 +172,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@OneToOne
 	public Folder getTrashBox() {
 		return trashBox;
 	}
@@ -157,6 +181,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@OneToOne
 	public Folder getSpamBox() {
 		return spamBox;
 	}
@@ -165,6 +190,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@OneToMany
 	public Collection<Folder> getCustomFolders() {
 		return customFolders;
 	}
@@ -172,7 +198,11 @@ public abstract class Actor extends DomainEntity {
 		this.customFolders = customFolders;
 	}
 	
+	
+	/* Message */
+	
 	@Valid
+	@ManyToOne(optional = false) //TODO: no sé si está bien
 	public Message getReceived() {
 		return received;
 	}
@@ -181,6 +211,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@OneToMany
 	public Collection<Message> getSent() {
 		return sent;
 	}

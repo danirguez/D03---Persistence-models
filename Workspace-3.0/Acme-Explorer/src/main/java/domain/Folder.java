@@ -2,10 +2,17 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Folder extends DomainEntity{
 	
 	
@@ -24,8 +31,12 @@ public class Folder extends DomainEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	
+	/* Message */
+	
 	@Valid
+	@ManyToMany
 	public Collection<Message> getMessages() {
 		return messages;
 	}
@@ -35,7 +46,10 @@ public class Folder extends DomainEntity{
 	}
 
 	
+	/* Actor */
+	
 	@Valid
+	@ManyToOne(optional = false)
 	public Actor getActor() {
 		return actor;
 	}
@@ -44,7 +58,11 @@ public class Folder extends DomainEntity{
 		this.actor = actor;
 	}
 	
+	
+	/* Folder */
+	
 	@Valid
+	//TODO: relación hacia ella misma, hace falta poner algo?
 	public Folder getCustomFolder() {
 		return customFolder;
 	}
