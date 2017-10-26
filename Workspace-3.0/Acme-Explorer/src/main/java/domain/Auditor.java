@@ -7,20 +7,26 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class Auditor extends Actor {
 
+	//Constructors
+	
 	public Auditor() {
 		super();
 	}
 
+	// Relationships
+	
 	private Collection<Note> note;
 	private Collection<Audit> audit;
 
 	@OneToMany(mappedBy="auditor")
 	@Valid
+	@NotNull
 	public Collection<Note> getNote() {
 		return note;
 	}
@@ -31,6 +37,7 @@ public class Auditor extends Actor {
 
 	@OneToMany(mappedBy="auditor")
 	@Valid
+	@NotNull
 	public Collection<Audit> getAudit() {
 		return audit;
 	}

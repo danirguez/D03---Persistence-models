@@ -281,7 +281,11 @@
 	
 	<bean id="personalRecord1" class="domain.PersonalRecord">
 	<property name="name" value="Mario" />
+<<<<<<< HEAD
 	<property name="photo" value="http://www.google.es" />
+=======
+	<property name="photo" value="url de la foto" />
+>>>>>>> 64ec4daaf9289ea0f85c175f35a6a6942e6d87b9
 	<property name="phoneNumber" value="+34 (253) 443632" />
 	<property name="likedln" value="www.likedlin.com" />
 	</bean>

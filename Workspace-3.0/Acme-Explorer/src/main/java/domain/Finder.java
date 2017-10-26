@@ -6,6 +6,8 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
@@ -43,6 +45,7 @@ public class Finder extends DomainEntity{
 		this.priceRange = priceRange;
 	}
 	
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getTripDate(){
 		return tripDate;
 	}

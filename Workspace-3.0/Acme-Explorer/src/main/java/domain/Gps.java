@@ -10,6 +10,8 @@ import org.hibernate.validator.constraints.Range;
 @Access(AccessType.PROPERTY)
 public class Gps {
 
+	// Attributes
+	
 	private Double latitude;
 	private Double longitude;
 
