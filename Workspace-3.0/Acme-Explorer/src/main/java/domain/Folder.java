@@ -7,21 +7,26 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Folder extends DomainEntity{
-	
-	
+public class Folder extends DomainEntity {
+
+	// Constructors
+
+	public Folder() {
+		super();
+	}
+
+	// Attributes
+
 	private String name;
-	
-	private Collection<Message> messages;
-	private Actor actor;
-	private Folder customFolder;
-	
 
 	@NotBlank
 	public String getName() {
@@ -31,12 +36,16 @@ public class Folder extends DomainEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-	/* Message */
-	
+
+	// Relationships
+
+	private Collection<Message> messages;
+	private Actor actor;
+	private Folder customFolder;
+
 	@Valid
-	@ManyToMany
+	@ManyToMany(mappedBy = "Folder")
+	@NotEmpty
 	public Collection<Message> getMessages() {
 		return messages;
 	}
@@ -45,11 +54,9 @@ public class Folder extends DomainEntity{
 		this.messages = messages;
 	}
 
-	
-	/* Actor */
-	
 	@Valid
 	@ManyToOne(optional = false)
+	@NotNull
 	public Actor getActor() {
 		return actor;
 	}
@@ -57,12 +64,9 @@ public class Folder extends DomainEntity{
 	public void setActor(Actor actor) {
 		this.actor = actor;
 	}
-	
-	
-	/* Folder */
-	
+
 	@Valid
-	//TODO: relación hacia ella misma, hace falta poner algo?
+	@OneToOne(mappedBy = "customFolder", optional = true)
 	public Folder getCustomFolder() {
 		return customFolder;
 	}
@@ -70,5 +74,5 @@ public class Folder extends DomainEntity{
 	public void setCustomFolder(Folder customFolder) {
 		this.customFolder = customFolder;
 	}
-	
+
 }

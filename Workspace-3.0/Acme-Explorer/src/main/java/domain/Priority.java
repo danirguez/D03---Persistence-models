@@ -9,6 +9,7 @@ import javax.persistence.Embeddable;
 @Access(AccessType.PROPERTY)
 public class Priority {
 
+	// Attributes
 	
 	private static final String HIGH = "HIGH";
 	private static final String NEUTRAL = "NEUTRAL";

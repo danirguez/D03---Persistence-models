@@ -6,10 +6,13 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -22,8 +25,16 @@ import security.UserAccount;
 
 @Entity
 @Access(AccessType.PROPERTY)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Actor extends DomainEntity {
 	
+	//Constructors
+	
+	public Actor(){
+		super();
+	}
+	
+	// Attributes
 	
 	private String name;
 	private String surname;
@@ -35,24 +46,6 @@ public abstract class Actor extends DomainEntity {
 	private String nick;
 	private String nameSocialNetwork;
 	private String socialNetwork;
-
-	
-	private UserAccount userAccount;
-	private Folder inBox;
-	private Folder outBox;
-	private Folder notificationBox;
-	private Folder trashBox;
-	private Folder spamBox;
-	private Collection<Folder> customFolders;
-	
-	
-	private Message received;
-	private Collection<Message> sent;
-	
-	public Actor(){
-		super();
-	}
-	
 	
 	@NotBlank
 	public String getName() {
@@ -78,6 +71,7 @@ public abstract class Actor extends DomainEntity {
 		this.email = email;
 	}
 	
+	@NotBlank
 	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -93,13 +87,14 @@ public abstract class Actor extends DomainEntity {
 		this.address = address;
 	}
 	
-	@NotEmpty
+	@Min(0)
 	public Integer getSocialID() {
 		return socialID;
 	}
 	public void setSocialID(Integer socialID) {
 		this.socialID = socialID;
 	}
+	
 	@URL
 	public String getPhoto() {
 		return photo;
@@ -124,7 +119,6 @@ public abstract class Actor extends DomainEntity {
 		this.nameSocialNetwork = nameSocialNetwork;
 	}
 	
-	@NotBlank
 	@URL
 	public String getSocialNetwork() {
 		return socialNetwork;
@@ -133,12 +127,20 @@ public abstract class Actor extends DomainEntity {
 		this.socialNetwork = socialNetwork;
 	}
 	
+	// Relationships
+	
+	private UserAccount userAccount;
+	private Folder inBox;
+	private Folder outBox;
+	private Folder notificationBox;
+	private Folder trashBox;
+	private Folder spamBox;
+	private Collection<Folder> customFolders;
 	
 	
-	/* UserAcount */
+	private Message received;
+	private Collection<Message> sent;
 	
-	
-	//TODO: ¿cómo lo pongo?
 	@NotNull
 	@Valid
 	@OneToOne(cascade = CascadeType.ALL, optional = false)
@@ -149,11 +151,8 @@ public abstract class Actor extends DomainEntity {
 		this.userAccount = userAccount;
 	}
 	
-	
-	/* Folder */
-	//TODO: Hay que poner @... en cada una de las carpetas?
-	
 	@Valid
+	@NotNull
 	@OneToOne(mappedBy="actor")
 	public Folder getInBox() {
 		return inBox;
@@ -163,6 +162,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@NotNull
 	@OneToOne(mappedBy="actor")
 	public Folder getOutBox() {
 		return outBox;
@@ -172,6 +172,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@NotNull
 	@OneToOne(mappedBy="actor")
 	public Folder getNotificationBox() {
 		return notificationBox;
@@ -181,6 +182,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@NotNull
 	@OneToOne(mappedBy="actor")
 	public Folder getTrashBox() {
 		return trashBox;
@@ -190,6 +192,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@NotNull
 	@OneToOne(mappedBy="actor")
 	public Folder getSpamBox() {
 		return spamBox;
@@ -199,6 +202,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@NotEmpty
 	@OneToMany(mappedBy="actor")
 	public Collection<Folder> getCustomFolders() {
 		return customFolders;
@@ -207,11 +211,9 @@ public abstract class Actor extends DomainEntity {
 		this.customFolders = customFolders;
 	}
 	
-	
-	/* Message */
-	
 	@Valid
-	@ManyToOne(optional = false) //TODO: no sé si está bien
+	@NotNull
+	@ManyToOne(optional = false)
 	public Message getReceived() {
 		return received;
 	}
@@ -220,6 +222,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
+	@NotEmpty
 	@OneToMany(mappedBy="actor")
 	public Collection<Message> getSent() {
 		return sent;
@@ -227,7 +230,4 @@ public abstract class Actor extends DomainEntity {
 	public void setSent(Collection<Message> sent) {
 		this.sent = sent;
 	}
-	
-	
-	
 }
