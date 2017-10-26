@@ -288,7 +288,9 @@
 				
 	<bean id="category1" class="domain.Category">
 	<property name="name" value="Safari" />
-	<property name="categoryParent" ref="Adventures" />
+	<property name="categoryParent">
+		<null />
+	</property>
 	<property name="trip" ref="trip1" />
 	</bean>
 	
