@@ -7,6 +7,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -21,7 +22,7 @@ public class Finder extends DomainEntity{
 	// Attributes
 	
 	private String singleKey;
-	private Integer priceRange;
+	private Double priceRange;
 	private Date tripDate;
 	
 	
@@ -33,11 +34,12 @@ public class Finder extends DomainEntity{
 		this.singleKey = singleKey;
 	}
 	
-	public int getPriceRange() {
+	@Min(0)
+	public Double getPriceRange() {
 		return priceRange;
 	}
 	
-	public void setPriceRange(Integer priceRange){
+	public void setPriceRange(Double priceRange){
 		this.priceRange = priceRange;
 	}
 	
