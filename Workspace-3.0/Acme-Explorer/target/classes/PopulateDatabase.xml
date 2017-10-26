@@ -69,10 +69,10 @@
 	<property name="name" value="Mario" />
 	<property name="surname" value="Sánchez" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 443632" />
+	<property name="phoneNumber" value="+34123456789" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialID" value="123456789" />
-	<property name="photo" value="http://www.google.es" />
+	<property name="photo" value="url de la foto" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
@@ -107,10 +107,10 @@
 	<property name="name" value="Alfonso" />
 	<property name="surname" value="Sánchez" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 443632" />
+	<property name="phoneNumber" value="+34123456789" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialID" value="123456789" />
-	<property name="photo" value="http://www.google.es" />
+	<property name="photo" value="url de la foto" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
@@ -149,10 +149,6 @@
 	<property name="ticker" value="221017-ABCD" />
 	<property name="ranger" ref="ranger1" />
 	<property name="personalRecord" ref="personalRecord1" />
-	<property name="endorserRecord"> <null/> </property>
-	<property name="miscellaneousRecord"> <null/> </property>
-	<property name="profesionalRecord"> <null/> </property>
-	<property name="educationRecord"> <null/> </property>
 	</bean>
 	
 	<!-- CV2 -->
@@ -196,7 +192,7 @@
 	<bean id="endorserRecord1" class="domain.EndorserRecord">
 	<property name="endorserName" value="Mario" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 443632" />
+	<property name="phoneNumber" value="+34123456789" />
 	<property name="likedln" value="www.likedlin.com" />
 	<property name="comment" value="Comentario..." />
 	</bean>
@@ -206,7 +202,7 @@
 	<bean id="endorserRecord2" class="domain.EndorserRecord">
 	<property name="endorserName" value="Daniel" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="++34 (253) 443632" />
+	<property name="phoneNumber" value="+34123456789" />
 	<property name="likedln" value="www.likedlin.com" />
 	<property name="comment" value="Comentario..." />
 	</bean>
@@ -281,8 +277,8 @@
 	
 	<bean id="personalRecord1" class="domain.PersonalRecord">
 	<property name="name" value="Mario" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="phoneNumber" value="+34 (253) 443632" />
+	<property name="photo" value="url de la foto" />
+	<property name="phoneNumber" value="+34123456789" />
 	<property name="likedln" value="www.likedlin.com" />
 	</bean>
 	
@@ -373,7 +369,7 @@
 	<property name="phoneNumber" value="+34 (253) 4655" />
 	<property name="address" value="C/ Lugo" />
 	<property name="socialID" value="123456789" />
-	<property name="photo" value="http://www.google.es" />
+	<property name="photo" value="url de la foto" />
 	<property name="nick" value="danirl" />
 	<property name="nameSocialNetwork" value="LucasFilm" />
 	<property name="socialNetwork" value="www.micasa.com" />
@@ -818,16 +814,41 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="actor1" />
 		<property name="customFolder" value="???" />
 	</bean>
+	
+	<bean id="inBoxManager1" class="domain.Folder">
+		<property name="name" value="In Box" />
+		<property name="messages">
+			<list>
+				<ref bean = "message1"></ref>
+			</list>
+		</property>
+		<property name="actor" ref="manager1" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
+	<bean id="inBoxManager2" class="domain.Folder">
+		<property name="name" value="In Box" />
+		<property name="messages">
+			<list>
+				<ref bean = "message1"></ref>
+			</list>
+		</property>
+		<property name="actor" ref="manager2" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
 	
 	<bean id="outBoxActor1" class="domain.Folder">
 		<property name="name" value="Out Box" />
 		<property name="messages">
-			<list></list>
+			<list>
+				<ref bean = "message1"></ref>
+			</list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="actor1" />
 		<property name="customFolder" value="???" />
 	</bean>
 	
@@ -836,7 +857,7 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="actor1" />
 		<property name="customFolder" value="???" />
 	</bean>
 	
@@ -845,7 +866,7 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="actor1" />
 		<property name="customFolder" value="???" />
 	</bean>
 	
@@ -854,7 +875,7 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="actor1" />
 		<property name="customFolder" value="???" />
 	</bean>
 	
@@ -863,7 +884,7 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="actor1" />
 		<property name="customFolder" value="???" />
 	</bean>
 	
@@ -873,343 +894,24 @@
 		<property name="moment" value="01/01/2017 12:30" />
 		<property name="subject" value="Hola" />
 		<property name="body" value="Hola, buenas tardes" />
-		<property name="priority" value="LOW" />
-		<property name="sender" value="actor1" />
+		<property name="priority" ref="priority1" />
+		<property name="sender" ref="actor1" />
 		<property name="receipient">
-			<list></list> 
+			<list>
+				<ref bean = "manager1"></ref>
+				<ref bean = "manager2"></ref>
+			</list> 
 		</property>
 		<property name="folder">
-			<list></list> 
+			<list>
+				<ref bean = "outBoxActor1"></ref>
+				<ref bean = "inBoxManager1"></ref>
+				<ref bean = "inBoxManager2"></ref>
+			</list> 
 		</property>
 	</bean>
 		
 		
-	
-	
-	<!-- Actor -->
-	
-	<bean id="actor1" class="domain.Actor">
-		<property name="name" value="Antonio" />
-		<property name="surname" value="Suarez" />
-		<property name="email" value="antoniosua@hotmail.com" />
-		<property name="phoneNumber" value="+34 666789809" />
-		<property name="address" value="Avenida la Paz" />
-		<property name="socialID" value="4567" />
-		<property name="photo" value="http://www.google.es" />
-		<property name="nick" value="AntonioS" />
-		<property name="nameSocialNetwork" value="Suarez" />
-		<property name="socialNetwork" value="http://www.antsua.com" />
-		<property name="userAccount" value="userAcount1" />
-		<property name="inBox" value="inBoxActor1" />
-		<property name="outBox" value="outBoxActor1" />
-		<property name="notificationBox" value="notificationBoxActor1" />
-		<property name="trashBox" value="trashBoxActor1" />
-		<property name="spamBox" value="spamBoxActor1" />
-		<property name="customFolders">
-			<list></list>
-		</property>
-		<property name="received" value="message1" />
-		<property name="sent">
-			<list></list>
-		</property>
-	</bean>
-	
-	<!-- MANAGER1 -->
-	
-	<bean id="manager1" class="domain.Manager">
-	<property name="name" value="Juan Carlos" />
-	<property name="surname" value="Cansino" />
-	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543457" />
-	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
-	<property name="survival" <null /></property>
-	<property name="trip" <null /></property>
-	<property name="folders">
-		<list>
-			<ref bean="folder1"/>
-			<ref bean="folder2"/>
-			<ref bean="folder3"/>
-			<ref bean="folder4"/>
-			<ref bean="folder5"/>
-		</list>
-	</property>
-	<property name="sent">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
-	</bean>
-	
-	
-
-<!-- MANAGER2 -->
-	
-	<bean id="manager2" class="domain.Manager">
-	<property name="name" value="Juan" />
-	<property name="surname" value="Cansino" />
-	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543478" />
-	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
-	<property name="survival">
-		<list>
-			<ref bean="survival1"/>
-			<ref bean="survival2"/>
-		</list>
-	</property>
-	<property name="trip">
-		<list>
-			<ref bean="trip1"/>
-			<ref bean="trip2"/>
-		</list>
-	</property>
-	<property name="folders">
-		<list>
-			<ref bean="folder1"/>
-			<ref bean="folder2"/>
-			<ref bean="folder3"/>
-			<ref bean="folder4"/>
-			<ref bean="folder5"/>
-		</list>
-	</property>
-	<property name="sent">
-		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
-		</list>
-	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
-		</list>
-	</property>
-	</bean>
-	
-	
-	
-
-<!-- AUDITOR -->
-	
-	<bean id="auditor1" class="domain.Auditor">
-	<property name="name" value="Juan Carlos" />
-	<property name="surname" value="Cansino" />
-	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543496" />
-	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
-	<property name="audit" <null /></property>
-	<property name="note" <null /></property>
-	<property name="folders">
-		<list>
-			<ref bean="folder1"/>
-			<ref bean="folder2"/>
-			<ref bean="folder3"/>
-			<ref bean="folder4"/>
-			<ref bean="folder5"/>
-		</list>
-	</property>
-	<property name="sent">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
-	</bean>
-	
-	<!-- AUDITOR2 -->
-	
-	<bean id="auditor2" class="domain.Auditor">
-	<property name="name" value="Juan Carlos" />
-	<property name="surname" value="Cansino" />
-	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543425" />
-	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
-	<property name="note">
-		<list>
-			<ref bean="note1"/>
-			<ref bean="note2"/>
-		</list>
-	</property>
-	<property name="audit">
-		<list>
-			<ref bean="audit1"/>
-			<ref bean="audit2"/>
-		</list>
-	</property>
-	<property name="folders">
-		<list>
-			<ref bean="folder1"/>
-			<ref bean="folder2"/>
-			<ref bean="folder3"/>
-			<ref bean="folder4"/>
-			<ref bean="folder5"/>
-		</list>
-	</property>
-	<property name="sent">
-		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
-		</list>
-	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
-		</list>
-	</property>
-	</bean>
-	
-	<!--SURVIVAL1-->
-	
-	
-	<bean id="survival1" class="domain.Survival">
-	<property name="title" value="SECOND" />
-	<property name="description" value="third" />
-	<property name="moment" value="01/10/2017" />
-	<property name="location" ref="gps1" />
-	<property name="trip" ref="trip1" />
-	<property name="manager" ref="manager1" />
-	
-	</bean>
-	
-	<!--SURVIVAL2-->
-	
-	
-	<bean id="survival2" class="domain.Survival">
-	<property name="title" value="First" />
-	<property name="description" value="Something" />
-	<property name="moment" value="23/10/2017" />
-	<property name="location" ref="gps2" />
-	<property name="trip" ref="trip2" />
-	<property name="manager" ref="manager2" />
-	
-	</bean>
-	
-	<!--AUDIT 1-->
-	
-	
-	<bean id="audit1" class="domain.Audit">
-	<property name="moment" value="23/10/2017" />
-	<property name="title" value="First" />
-	<property name="description" value="Something" />
-	<property name="link" value="http://www.pepe.es" />
-	<property name="trip" ref="trip1" />
-	<property name="auditor" ref="auditor1" />
-	
-	</bean>
-	
-	<!--AUDIT 2-->
-	
-	
-	<bean id="audit2" class="domain.Audit">
-	<property name="moment" value="02/10/2017" />
-	<property name="title" value="Second" />
-	<property name="description" value="thing" />
-	<property name="link" value="http://www.pepeTravel.es" />
-	<property name="trip" ref="trip2" />
-	<property name="auditor" ref="auditor2" />
-	
-	</bean>
-	
-	<!--NOTE 1-->
-	
-	
-	<bean id="note1" class="domain.Note">
-	<property name="moment" value="23/10/2017" />
-	<property name="remark" value="First" />
-	<property name="reply" value="Something" />
-	<property name="momentReply" value="05/10/2017"/>
-	<property name="trip" ref="trip1" />
-	<property name="auditor" ref="auditor1" />
-	
-	</bean>
-	
-	<!--NOTE 2-->
-	
-	
-	<bean id="note2" class="domain.Note">
-	<property name="moment" value="25/10/2017" />
-	<property name="remark" value="Second" />
-	<property name="reply" value="Some" />
-	<property name="momentReply" ref="08/10/2017"/>
-	<property name="trip" ref="trip2" />
-	<property name="auditor" ref="auditor2" />
-	
-	</bean>
-	
-	<!--APPLICATION 1-->
-	
-	
-	<bean id="application1" class="domain.Application">
-	<property name="moment" value="25/10/2017" />
-	<property name="comment" value="Somes" />
-	<property name="explorer" ref="explorer1" />
-	<property name="trip" ref="trip1" />
-	<property name="status" ref="status1" />
-	
-	</bean>
-	
-	<!--APPLICATION 2-->
-	
-	
-	<bean id="application2" class="domain.Application">
-	<property name="moment" value="10/10/2017" />
-	<property name="comment" value="hey" />
-	<property name="explorer" ref="explorer2" />
-	<property name="trip" ref="trip2" />
-	<property name="status" ref="status2" />
-	
-	</bean>
-	
-	<!--GPS 1-->
-	
-	
-	<bean id="gps1" class="domain.Gps">
-	<property name="latitude" value="90.0" />
-	<property name="longitude" value="180.0" />
-	
-	</bean>
-	
-	<!--GPS 2-->
-	
-	
-	<bean id="gps2" class="domain.Gps">
-	<property name="latitude" value="60".0 />
-	<property name="longitude" value="100.0" />
-	
-	</bean>
 	
 	
 </beans>
