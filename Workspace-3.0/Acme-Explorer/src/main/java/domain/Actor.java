@@ -4,11 +4,13 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
@@ -46,6 +48,10 @@ public abstract class Actor extends DomainEntity {
 	
 	private Message received;
 	private Collection<Message> sent;
+	
+	public Actor(){
+		super();
+	}
 	
 	
 	@NotBlank
@@ -131,8 +137,11 @@ public abstract class Actor extends DomainEntity {
 	
 	/* UserAcount */
 	
-	@Valid
+	
 	//TODO: ¿cómo lo pongo?
+	@NotNull
+	@Valid
+	@OneToOne(cascade = CascadeType.ALL, optional = false)
 	public UserAccount getUserAccount(){
 		return userAccount;
 	}
@@ -145,7 +154,7 @@ public abstract class Actor extends DomainEntity {
 	//TODO: Hay que poner @... en cada una de las carpetas?
 	
 	@Valid
-	@OneToOne
+	@OneToOne(mappedBy="actor")
 	public Folder getInBox() {
 		return inBox;
 	}
@@ -154,7 +163,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
-	@OneToOne
+	@OneToOne(mappedBy="actor")
 	public Folder getOutBox() {
 		return outBox;
 	}
@@ -163,7 +172,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
-	@OneToOne
+	@OneToOne(mappedBy="actor")
 	public Folder getNotificationBox() {
 		return notificationBox;
 	}
@@ -172,7 +181,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
-	@OneToOne
+	@OneToOne(mappedBy="actor")
 	public Folder getTrashBox() {
 		return trashBox;
 	}
@@ -181,7 +190,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
-	@OneToOne
+	@OneToOne(mappedBy="actor")
 	public Folder getSpamBox() {
 		return spamBox;
 	}
@@ -190,7 +199,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
-	@OneToMany
+	@OneToMany(mappedBy="actor")
 	public Collection<Folder> getCustomFolders() {
 		return customFolders;
 	}
@@ -211,7 +220,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
-	@OneToMany
+	@OneToMany(mappedBy="actor")
 	public Collection<Message> getSent() {
 		return sent;
 	}
