@@ -806,4 +806,108 @@
 	<property name="writer" ref="explorer2" />
 	</bean>
 	
+	
+	<!-- Folder -->
+	
+	<bean id="inBoxActor1" class="domain.Folder">
+		<property name="name" value="In Box" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" value="actor1" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
+	<bean id="outBoxActor1" class="domain.Folder">
+		<property name="name" value="Out Box" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" value="actor1" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
+	<bean id="notificationBoxActor1" class="domain.Folder">
+		<property name="name" value="Notification" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" value="actor1" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
+	<bean id="trashBoxActor1" class="domain.Folder">
+		<property name="name" value="Trash" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" value="actor1" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
+	<bean id="spamBoxActor1" class="domain.Folder">
+		<property name="name" value="Spam" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" value="actor1" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
+	<bean id="customBoxActor1" class="domain.Folder">
+		<property name="name" value="Custom Box" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" value="actor1" />
+		<property name="customFolder" value="???" />
+	</bean>
+	
+	
+	<!-- Message -->
+	<bean id="message1" class="domain.Message">
+		<property name="moment" value="01/01/2017 12:30" />
+		<property name="subject" value="Hola" />
+		<property name="body" value="Hola, buenas tardes" />
+		<property name="priority" value="LOW" />
+		<property name="sender" value="actor1" />
+		<property name="receipient">
+			<list></list> 
+		</property>
+		<property name="folder">
+			<list></list> 
+		</property>
+	</bean>
+		
+		
+	
+	
+	<!-- Actor -->
+	
+	<bean id="actor1" class="domain.Actor">
+		<property name="name" value="Antonio" />
+		<property name="surname" value="Suarez" />
+		<property name="email" value="antoniosua@hotmail.com" />
+		<property name="phoneNumber" value="+34 666789809" />
+		<property name="address" value="Avenida la Paz" />
+		<property name="socialID" value="4567" />
+		<property name="photo" value="" />
+		<property name="nick" value="AntonioS" />
+		<property name="nameSocialNetwork" value="Suarez" />
+		<property name="socialNetwork" value="http://www.antsua.com" />
+		<property name="userAccount" value="userAcount1" />
+		<property name="inBox" value="inBoxActor1" />
+		<property name="outBox" value="outBoxActor1" />
+		<property name="notificationBox" value="notificationBoxActor1" />
+		<property name="trashBox" value="trashBoxActor1" />
+		<property name="spamBox" value="spamBoxActor1" />
+		<property name="customFolders">
+			<list></list>
+		</property>
+		<property name="received" value="message1" />
+		<property name="sent">
+			<list></list>
+		</property>
+	</bean>
+	
 </beans>
