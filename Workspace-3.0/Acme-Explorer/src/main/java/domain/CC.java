@@ -1,14 +1,20 @@
 package domain;
 
-import javax.validation.constraints.NotNull;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
+@Embeddable
+@Access(AccessType.PROPERTY)
 public class CC {
-
+	
+	// Attributes
+	
 	private String holderName;
 	private String brandName;
 	private Integer number;
@@ -34,7 +40,6 @@ public class CC {
 		this.brandName = brandName;
 	}
 
-	@NotNull
 	@CreditCardNumber
 	public Integer getNumber() {
 		return number;
@@ -53,7 +58,7 @@ public class CC {
 		this.expirationMonth = expirationMonth;
 	}
 
-	@NotEmpty
+	@Min(0)
 	public Integer getExpirationYear() {
 		return expirationYear;
 	}

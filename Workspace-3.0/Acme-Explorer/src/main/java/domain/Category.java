@@ -39,7 +39,8 @@ public class Category extends DomainEntity {
 	private Trip trip;
 	
 	@Valid
-	@OneToOne(mappedBy="categoryParent")
+	@OneToOne(mappedBy="categoryParent", optional=true)
+	@NotNull
 	public Category getCategoryParent() {
 		return categoryParent;
 	}

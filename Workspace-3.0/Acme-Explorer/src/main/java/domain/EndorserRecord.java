@@ -16,15 +16,19 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class EndorserRecord extends DomainEntity {
 
+	//Constructors
+	
+	public EndorserRecord() {
+		super();
+	}
+	
+	// Attributes
+	
 	private String endorserName;
 	private String email;
 	private String phoneNumber;
 	private String likedln;
 	private Collection<String> comment;
-
-	public EndorserRecord() {
-		super();
-	}
 
 	@NotBlank
 	public String getEndorserName() {
@@ -35,7 +39,6 @@ public class EndorserRecord extends DomainEntity {
 		this.endorserName = endorserName;
 	}
 
-	@NotBlank
 	@Email
 	public String getEmail() {
 		return email;

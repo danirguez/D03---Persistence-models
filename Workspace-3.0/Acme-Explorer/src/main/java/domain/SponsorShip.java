@@ -8,9 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
@@ -50,7 +50,8 @@ public class Sponsorship extends DomainEntity{
 		this.infoPage = infoPage;
 	}
 	
-	@NotEmpty
+	@Valid
+	@NotNull
 	public CC getCreditCard(){
 		return creditCard;
 	}
@@ -65,6 +66,7 @@ public class Sponsorship extends DomainEntity{
 	private Collection<Trip> trips;
 	
 	@Valid
+	@NotNull
 	@OneToOne(optional=false)
 	public Sponsor getSponsor() {
 		return sponsor;
@@ -75,6 +77,7 @@ public class Sponsorship extends DomainEntity{
 	}
 
 	@Valid
+	@NotNull
 	@ManyToMany
 	public Collection<Trip> getTrips() {
 		return trips;

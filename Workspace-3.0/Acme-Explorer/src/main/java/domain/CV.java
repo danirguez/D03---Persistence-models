@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -19,24 +20,19 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class CV extends DomainEntity {
 
-	private String ticker;
-
-	private Ranger ranger;
-	private PersonalRecord personalRecord;
-	private Collection<EndorserRecord> endorserRecord;
-	private Collection<MiscellaneousRecord> miscellaneousRecord;
-	private Collection<ProfesionalRecord> profesionalRecord;
-	private Collection<EducationRecord> educationRecord;
-
+	//Constructors
+	
 	public CV() {
 		super();
 	}
 	
+	// Attributes
 	
+	private String ticker;
+		
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[0-9]{6}-[A-Z]{4}")
-	@Valid
 	public String getTicker() {
 		return ticker;
 	}
@@ -44,6 +40,15 @@ public class CV extends DomainEntity {
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
 	}
+	
+	// Relationships
+	
+	private Ranger ranger;
+	private PersonalRecord personalRecord;
+	private Collection<EndorserRecord> endorserRecord;
+	private Collection<MiscellaneousRecord> miscellaneousRecord;
+	private Collection<ProfesionalRecord> profesionalRecord;
+	private Collection<EducationRecord> educationRecord;
 
 	@Valid
 	@OneToOne(optional=false)
@@ -65,6 +70,8 @@ public class CV extends DomainEntity {
 		this.personalRecord = personalRecord;
 	}
 
+	@Valid
+	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<EndorserRecord> getEndorserRecord() {
 		return endorserRecord;
@@ -74,6 +81,8 @@ public class CV extends DomainEntity {
 		this.endorserRecord = endorserRecord;
 	}
 
+	@Valid
+	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<MiscellaneousRecord> getMiscellaneousRecord() {
 		return miscellaneousRecord;
@@ -83,6 +92,8 @@ public class CV extends DomainEntity {
 		this.miscellaneousRecord = miscellaneousRecord;
 	}
 
+	@Valid
+	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<ProfesionalRecord> getProfesionalRecord() {
 		return profesionalRecord;
@@ -92,6 +103,8 @@ public class CV extends DomainEntity {
 		this.profesionalRecord = profesionalRecord;
 	}
 
+	@Valid
+	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
 	public Collection<EducationRecord> getEducationRecord() {
 		return educationRecord;

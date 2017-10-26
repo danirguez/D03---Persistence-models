@@ -40,6 +40,7 @@ public class Emergency extends DomainEntity{
 		this.email = email;
 	}
 	
+	@NotBlank
 	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
 	public String getPhoneNumber(){
 		return phoneNumber;

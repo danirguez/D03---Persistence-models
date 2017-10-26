@@ -7,9 +7,10 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -45,8 +46,7 @@ public class Story extends DomainEntity {
 		this.pieceText = pieceText;
 	}
 
-	@URL
-	@NotBlank
+	@NotEmpty
 	public Collection<String> getLink() {
 		return link;
 	}
@@ -61,6 +61,7 @@ public class Story extends DomainEntity {
 	private Explorer writer;
 
 	@Valid
+	@NotNull
 	@ManyToOne(optional=false)
 	public Trip getTrip() {
 		return trip;
@@ -71,6 +72,7 @@ public class Story extends DomainEntity {
 	}
 
 	@Valid
+	@NotNull
 	@ManyToOne(optional=false)
 	public Explorer getWriter() {
 		return writer;

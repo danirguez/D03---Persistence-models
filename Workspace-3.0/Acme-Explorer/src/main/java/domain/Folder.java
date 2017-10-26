@@ -12,7 +12,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -44,8 +43,8 @@ public class Folder extends DomainEntity {
 	private Folder customFolder;
 
 	@Valid
-	@ManyToMany(mappedBy = "Folder")
-	@NotEmpty
+	@ManyToMany(mappedBy = "folder")
+	@NotNull
 	public Collection<Message> getMessages() {
 		return messages;
 	}

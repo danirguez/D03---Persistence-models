@@ -15,13 +15,20 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class ProfesionalRecord extends DomainEntity {
 
+	//Constructors
+	
+	public ProfesionalRecord() {
+		super();
+	}
+	
+	// Attributes
+	
 	private String companyName;
 	private Date start;
 	private Date endOrActual;
@@ -29,9 +36,7 @@ public class ProfesionalRecord extends DomainEntity {
 	private String link;
 	private Collection<String> comment;
 
-	public ProfesionalRecord() {
-		super();
-	}
+
 	
 	@NotBlank
 	public String getCompanyName() {
@@ -42,7 +47,6 @@ public class ProfesionalRecord extends DomainEntity {
 		this.companyName = companyName;
 	}
 
-	@NotNull
 	@Size(min = 2, max = 2)
 	public Collection<Date> getPeriod() {
 		Collection<Date> res = new ArrayList<Date>();
@@ -51,7 +55,7 @@ public class ProfesionalRecord extends DomainEntity {
 		return res;
 	}
 
-	@NotEmpty
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	@Past
 	public Date getStart() {

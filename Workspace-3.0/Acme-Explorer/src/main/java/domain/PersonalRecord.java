@@ -13,14 +13,19 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class PersonalRecord extends DomainEntity {
 
+	// Constructors
+	
+	public PersonalRecord() {
+		super();
+	}
+	
+	// Attributes
+	
 	private String name;
 	private String photo;
 	private String phoneNumber;
 	private String likedln;
-
-	public PersonalRecord() {
-		super();
-	}
+	
 
 	@NotBlank
 	public String getName() {
@@ -41,6 +46,7 @@ public class PersonalRecord extends DomainEntity {
 		this.photo = photo;
 	}
 
+	@NotBlank
 	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
 	public String getPhoneNumber() {
 		return phoneNumber;

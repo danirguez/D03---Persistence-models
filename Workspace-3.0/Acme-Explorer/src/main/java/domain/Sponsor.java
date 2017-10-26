@@ -8,21 +8,20 @@ import javax.validation.Valid;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Sponsor extends Actor{
+public class Sponsor extends Actor {
 
+	// Constructors
 
-	//Constructors
-	
-	public Sponsor(){
+	public Sponsor() {
 		super();
 	}
-	
+
 	// Relationships
-	
+
 	private Sponsorship sponsorship;
-	
+
 	@Valid
-	@OneToOne(mappedBy="sponsorship",optional=false)
+	@OneToOne(mappedBy = "sponsor", optional = false)
 	public Sponsorship getSponsorship() {
 		return sponsorship;
 	}

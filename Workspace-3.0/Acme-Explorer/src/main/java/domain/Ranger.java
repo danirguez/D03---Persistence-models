@@ -9,19 +9,27 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class Ranger extends Actor {
 
-	private CV	cv;
-	private Collection<Trip> trips;
-
+	//Constructors
+	
 	public Ranger() {
 		super();
 	}
+	
+	// Relationships
+	
+	private CV	cv;
+	private Collection<Trip> trips;
 
 	@Valid
+	@NotNull
 	@OneToOne(mappedBy="ranger", optional=false)
 	public CV getCV() {
 		return cv;
@@ -32,7 +40,8 @@ public class Ranger extends Actor {
 	}
 
 	@Valid
-	@OneToMany
+	@NotEmpty
+	@OneToMany(mappedBy="ranger")
 	public Collection<Trip> getTrip() {
 		return trips;
 	}

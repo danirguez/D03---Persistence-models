@@ -12,7 +12,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Survival extends DomainEntity {
@@ -60,7 +59,8 @@ public class Survival extends DomainEntity {
 		this.moment = moment;
 	}
 
-	@NotEmpty
+	@Valid
+	@NotNull
 	public Gps getLocation() {
 		return location;
 	}
@@ -74,9 +74,9 @@ public class Survival extends DomainEntity {
 	private Manager manager;
 	private Trip trip;
 
-	@ManyToOne(optional=false)
 	@Valid
 	@NotNull
+	@ManyToOne(optional=false)
 	public Manager getManager() {
 		return manager;
 	}
@@ -85,9 +85,9 @@ public class Survival extends DomainEntity {
 		this.manager = manager;
 	}
 
-	@ManyToOne(optional=false)
 	@Valid
 	@NotNull
+	@ManyToOne(optional=false)
 	public Trip getTrip() {
 		return trip;
 	}

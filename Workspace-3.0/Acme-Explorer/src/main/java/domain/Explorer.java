@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -27,6 +30,7 @@ public class Explorer extends Actor{
 	private Collection<Application> application;
 	
 	@Valid
+	@NotNull
 	@OneToOne(optional=false)
 	public Finder getFinder(){
 		return finder;
@@ -37,18 +41,19 @@ public class Explorer extends Actor{
 	}
 	
 	@Valid
+	@NotEmpty
 	@OneToMany
 	public Collection<Emergency> getEmergency(){
 		return emergency;
 	}
 	
-	@OneToMany
 	public void setEmergency(Collection<Emergency> emergency){
 		this.emergency = emergency;
 	}
 	
 	@Valid
-	@OneToMany(mappedBy="story")
+	@NotNull
+	@OneToMany(mappedBy="explorer")
 	public Collection<Story> getStories(){
 		return stories;
 	}
@@ -58,6 +63,7 @@ public class Explorer extends Actor{
 	}
 	
 	@Valid
+	@NotNull
 	@OneToMany
 	public Collection<Application> getApplication() {
 		return application;

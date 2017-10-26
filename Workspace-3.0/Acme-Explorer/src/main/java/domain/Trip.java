@@ -7,8 +7,8 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -74,7 +74,6 @@ public class Trip extends DomainEntity{
 	}
 	
 	@NotEmpty
-	@ElementCollection
 	public Collection<String> getRequirement() {
 		return requirement;
 	}
@@ -129,17 +128,18 @@ public class Trip extends DomainEntity{
 	private Ranger ranger;
 	private Collection<Survival> survival;
 	private Manager manager;
-	private Audit audit;
+	private Collection<Audit> audit;
 	private Collection<Note> note;
 	private Collection<Sponsorship> sponsorship;
 	private Collection<Story> story;
 	private Collection<Tag> tag;
 	private Collection<Stage> stage;
 	private Collection<Category> category;
-	private Application application;
+	private Collection<Application> application;
 	private LegalText legalText;
 	
 	@Valid
+	@NotNull
 	@OneToOne(cascade = CascadeType.ALL, optional = false)
 	public LegalText getLegalText() {
 		return legalText;
@@ -150,8 +150,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
-	@ManyToOne(optional = false)
 	@NotNull
+	@ManyToOne(optional = false)
 	public Ranger getRanger() {
 		return ranger;
 	}
@@ -161,8 +161,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
-	@OneToMany(mappedBy = "trip")
 	@NotNull
+	@OneToMany(mappedBy = "trip")
 	public Collection<Survival> getSurvival() {
 		return survival;
 	}
@@ -172,8 +172,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
-	@ManyToOne(optional = false)
 	@NotNull
+	@ManyToOne(optional = false)
 	public Manager getManager() {
 		return manager;
 	}
@@ -183,19 +183,19 @@ public class Trip extends DomainEntity{
 	}
 	
 	@Valid
-	@ManyToOne(optional = false)
 	@NotNull
-	public Audit getAudit() {
+	@OneToMany(mappedBy="trip")
+	public Collection<Audit> getAudit() {
 		return audit;
 	}
 
-	public void setAudit(Audit audit) {
+	public void setAudit(Collection<Audit> audit) {
 		this.audit = audit;
 	}
 
 	@Valid
-	@OneToMany(mappedBy = "trip")
-	@NotNull
+	@NotEmpty
+	@ManyToMany(mappedBy = "trip")
 	public Collection<Sponsorship> getSponsorship() {
 		return sponsorship;
 	}
@@ -205,8 +205,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
-	@OneToMany(mappedBy = "trip")
 	@NotNull
+	@OneToMany(mappedBy = "trip")
 	public Collection<Note> getNote() {
 		return note;
 	}
@@ -216,8 +216,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
-	@OneToMany(mappedBy = "trip")
 	@NotNull
+	@OneToMany(mappedBy = "trip")
 	public Collection<Story> getStory() {
 		return story;
 	}
@@ -227,8 +227,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
-	@OneToMany(mappedBy = "trip")
 	@NotNull
+	@OneToMany(mappedBy = "trip")
 	public Collection<Tag> getTag() {
 		return tag;
 	}
@@ -238,8 +238,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@NotEmpty
 	@OneToMany(mappedBy = "trip")
-	@NotNull
 	public Collection<Stage> getStage() {
 		return stage;
 	}
@@ -249,8 +249,8 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@NotEmpty
 	@OneToMany(mappedBy = "trip")
-	@NotNull
 	public Collection<Category> getCategory() {
 		return category;
 	}
@@ -260,13 +260,13 @@ public class Trip extends DomainEntity{
 	}
 
 	@Valid
+	@NotEmpty
 	@OneToMany(mappedBy = "trip")
-	@NotNull
-	public Application getApplication() {
+	public Collection<Application> getApplication() {
 		return application;
 	}
 
-	public void setApplication(Application application) {
+	public void setApplication(Collection<Application> application) {
 		this.application = application;
 	}
 
