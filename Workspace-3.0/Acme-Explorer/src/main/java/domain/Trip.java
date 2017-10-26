@@ -97,7 +97,6 @@ public class Trip extends DomainEntity{
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getPublication() {
 		return publication;
 	}
@@ -108,7 +107,6 @@ public class Trip extends DomainEntity{
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getTripStart() {
 		return tripStart;
 	}
@@ -119,7 +117,6 @@ public class Trip extends DomainEntity{
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public Date getTripEnd() {
 		return tripEnd;
 	}
