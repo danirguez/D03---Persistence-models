@@ -1,32 +1,39 @@
 package domain;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class Note extends DomainEntity {
 
+	//Constructors
+	
+	public Note(){
+		super();
+	}
+	
+	// Attributes
+	
 	private Date moment;
 	private String remark;
 	private String reply;
 	private Date momentReply;
 
-	private Auditor auditor;
-	private Collection<Trip> trip;
-
-	@NotEmpty
+	@NotNull
 	@Past
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getMoment() {
 		return moment;
 	}
@@ -34,7 +41,10 @@ public class Note extends DomainEntity {
 	public void setMoment(Date moment) {
 		this.moment = moment;
 	}
-
+	
+	@NotNull
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getMomentReply() {
 		return momentReply;
 	}
@@ -59,24 +69,31 @@ public class Note extends DomainEntity {
 	public void setReply(String reply) {
 		this.reply = reply;
 	}
+	
+	// Relationships
+	
+	private Auditor auditor;
+	private Trip trip;
 
-	@OneToMany(mappedBy="note")
+	@ManyToOne(optional=false)
 	@Valid
-	public Collection<Trip> getTrip() {
-		return trip;//
+	@NotNull
+	public Trip getTrip() {
+		return trip;
 	}
 
-	public void setCVs(final Collection<Trip> trip) {//
+	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
 
-	@OneToMany(mappedBy="note")
+	@ManyToOne(optional=false)
 	@Valid
+	@NotNull
 	public Auditor getAuditor() {
-		return auditor;//
+		return auditor;
 	}
 
-	public void setAuditor(final Auditor auditor) {//
+	public void setAuditor(final Auditor auditor) {
 		this.auditor = auditor;
 	}
 

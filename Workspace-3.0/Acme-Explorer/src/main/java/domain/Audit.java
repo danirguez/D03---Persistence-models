@@ -7,8 +7,10 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -19,16 +21,22 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class Audit extends DomainEntity {
 
+	//Constructors
+	
+	public Audit(){
+		super();
+	}
+	
+	// Attributes
+	
 	private Date moment;
 	private String title;
 	private String description;
 	private Collection<String> link;
 
-	private Collection<Trip> trip;
-	private Auditor auditor;
-
 	@Past
-	@NotEmpty
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	public Date getMoment() {
 		return moment;
 	}
@@ -63,19 +71,26 @@ public class Audit extends DomainEntity {
 	public void setLink(Collection<String> link) {
 		this.link=link;
 	}
+	
+	// Relationships
+	
+	private Trip trip;
+	private Auditor auditor;
 
-	@OneToMany(mappedBy="audit")
+	@ManyToOne(optional=false)
 	@Valid
-	public Collection<Trip> getTrip() {
+	@NotNull
+	public Trip getTrip() {
 		return trip;
 	}
 
-	public void setCVs(final Collection<Trip> trip) {
+	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
 	
 	@ManyToOne(optional=false)
 	@Valid
+	@NotNull
 	public Auditor getAuditor() {
 		return auditor;
 	}
