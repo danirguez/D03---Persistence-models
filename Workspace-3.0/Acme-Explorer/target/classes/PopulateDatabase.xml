@@ -72,7 +72,7 @@
 	<property name="phoneNumber" value="+34 (253) 443632" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialID" value="123456789" />
-	<property name="photo" value="url de la foto" />
+	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
@@ -110,7 +110,7 @@
 	<property name="phoneNumber" value="+34 (253) 443632" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialID" value="123456789" />
-	<property name="photo" value="url de la foto" />
+	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
@@ -281,7 +281,7 @@
 	
 	<bean id="personalRecord1" class="domain.PersonalRecord">
 	<property name="name" value="Mario" />
-	<property name="photo" value="url de la foto" />
+	<property name="photo" value="http://www.google.es" />
 	<property name="phoneNumber" value="+34 (253) 443632" />
 	<property name="likedln" value="www.likedlin.com" />
 	</bean>
@@ -373,7 +373,7 @@
 	<property name="phoneNumber" value="+34 (253) 4655" />
 	<property name="address" value="C/ Lugo" />
 	<property name="socialID" value="123456789" />
-	<property name="photo" value="url de la foto" />
+	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="danirl" />
 	<property name="nameSocialNetwork" value="LucasFilm" />
 	<property name="socialNetwork" value="www.micasa.com" />
@@ -895,7 +895,7 @@
 		<property name="phoneNumber" value="+34 666789809" />
 		<property name="address" value="Avenida la Paz" />
 		<property name="socialID" value="4567" />
-		<property name="photo" value="" />
+		<property name="photo" value="http://www.google.es" />
 		<property name="nick" value="AntonioS" />
 		<property name="nameSocialNetwork" value="Suarez" />
 		<property name="socialNetwork" value="http://www.antsua.com" />
