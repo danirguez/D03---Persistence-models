@@ -3,12 +3,18 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Note extends DomainEntity {
 
 	private Date moment;
@@ -54,6 +60,7 @@ public class Note extends DomainEntity {
 		this.reply = reply;
 	}
 
+	@OneToMany(mappedBy="note")
 	@Valid
 	public Collection<Trip> getTrip() {
 		return trip;//
@@ -63,6 +70,7 @@ public class Note extends DomainEntity {
 		this.trip = trip;
 	}
 
+	@OneToMany(mappedBy="note")
 	@Valid
 	public Auditor getAuditor() {
 		return auditor;//

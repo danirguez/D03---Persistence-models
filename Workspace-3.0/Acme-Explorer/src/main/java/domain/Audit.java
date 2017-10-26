@@ -3,6 +3,11 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.Past;
 
@@ -10,6 +15,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Audit extends DomainEntity {
 
 	private Date moment;
@@ -57,6 +64,7 @@ public class Audit extends DomainEntity {
 		this.link=link;
 	}
 
+	@OneToMany(mappedBy="audit")
 	@Valid
 	public Collection<Trip> getTrip() {
 		return trip;
@@ -66,6 +74,7 @@ public class Audit extends DomainEntity {
 		this.trip = trip;
 	}
 	
+	@ManyToOne(optional=false)
 	@Valid
 	public Auditor getAuditor() {
 		return auditor;

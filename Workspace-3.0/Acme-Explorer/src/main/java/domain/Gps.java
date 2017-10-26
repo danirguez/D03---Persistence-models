@@ -1,7 +1,13 @@
 package domain;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Embeddable;
+
 import org.hibernate.validator.constraints.Range;
 
+@Embeddable
+@Access(AccessType.PROPERTY)
 public class Gps {
 
 	private Double latitude;
