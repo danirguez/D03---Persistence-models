@@ -22,6 +22,9 @@ public class EndorserRecord extends DomainEntity {
 	private String likedln;
 	private Collection<String> comment;
 
+	public EndorserRecord() {
+		super();
+	}
 
 	@NotBlank
 	public String getEndorserName() {

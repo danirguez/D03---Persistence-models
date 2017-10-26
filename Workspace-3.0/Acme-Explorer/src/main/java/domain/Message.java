@@ -84,7 +84,7 @@ public class Message extends DomainEntity {
 	}
 
 	@NotBlank
-	@OneToMany //TODO: mappedBy??
+	@OneToMany(mappedBy="message")
 	public Collection<Actor> getRecipient() {
 		return recipient;
 	}

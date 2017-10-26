@@ -18,6 +18,10 @@ public class MiscellaneousRecord extends DomainEntity {
 	private String title;
 	private String link;
 	private Collection<String> comment;
+	
+	public MiscellaneousRecord() {
+		super();
+	}
 
 	@NotBlank
 	public String getTitle() {
