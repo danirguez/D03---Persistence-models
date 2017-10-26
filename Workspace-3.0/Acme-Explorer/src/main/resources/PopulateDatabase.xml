@@ -928,8 +928,8 @@
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="userAccount" ref="userAccount1" />
-	<property name="survival" <null /></property>
-	<property name="trip" <null /></property>
+	<property name="survival" ><null /></property>
+	<property name="trip"> <null /></property>
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -1019,8 +1019,8 @@
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="userAccount" ref="userAccount1" />
-	<property name="audit" <null /></property>
-	<property name="note" <null /></property>
+	<property name="audit"> <null /></property>
+	<property name="note" ><null /></property>
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -1206,7 +1206,7 @@
 	
 	
 	<bean id="gps2" class="domain.Gps">
-	<property name="latitude" value="60".0 />
+	<property name="latitude" value="60.0" />
 	<property name="longitude" value="100.0" />
 	
 	</bean>
