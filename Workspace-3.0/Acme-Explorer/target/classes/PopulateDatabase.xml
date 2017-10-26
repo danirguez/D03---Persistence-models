@@ -788,7 +788,6 @@
 		</list>
 	</property>
 	<property name="trip" ref="trip1" />
-	<property name="explorer" ref="explorer1" />
 	<property name="writer" ref="explorer1" />
 	</bean>
 	
@@ -804,7 +803,6 @@
 		</list>
 	</property>
 	<property name="trip" ref="trip2" />
-	<property name="explorer" ref="explorer2" />
 	<property name="writer" ref="explorer2" />
 	</bean>
 	

@@ -58,7 +58,6 @@ public class Story extends DomainEntity {
 	// Relationships
 
 	private Trip trip;
-	private Explorer explorer;
 	private Explorer writer;
 
 	@Valid
@@ -69,16 +68,6 @@ public class Story extends DomainEntity {
 
 	public void setTrip(Trip trip) {
 		this.trip = trip;
-	}
-
-	@Valid
-	@ManyToOne(optional=false)
-	public Explorer getExplorer() {
-		return explorer;
-	}
-
-	public void setExplorer(Explorer explorer) {
-		this.explorer = explorer;
 	}
 
 	@Valid
