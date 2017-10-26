@@ -1,9 +1,12 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
@@ -12,7 +15,7 @@ import javax.validation.Valid;
 public class Ranger extends Actor {
 
 	private CV	cv;
-	private Trip trip;
+	private Collection<Trip> trips;
 
 	public Ranger() {
 		super();
@@ -29,13 +32,13 @@ public class Ranger extends Actor {
 	}
 
 	@Valid
-	@OneToOne(mappedBy="ranger", optional=false)
-	public Trip getTrip() {
-		return trip;
+	@OneToMany
+	public Collection<Trip> getTrip() {
+		return trips;
 	}
 
-	public void setTrip(Trip trip) {
-		this.trip = trip;
+	public void setTrip(Collection<Trip> trip) {
+		this.trips = trip;
 	}
 
 }

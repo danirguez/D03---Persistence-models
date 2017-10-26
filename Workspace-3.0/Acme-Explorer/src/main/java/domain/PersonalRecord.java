@@ -18,6 +18,9 @@ public class PersonalRecord extends DomainEntity {
 	private String phoneNumber;
 	private String likedln;
 
+	public PersonalRecord() {
+		super();
+	}
 
 	@NotBlank
 	public String getName() {
