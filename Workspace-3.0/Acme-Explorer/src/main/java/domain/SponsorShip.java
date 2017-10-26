@@ -9,7 +9,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 
-import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
@@ -51,7 +50,6 @@ public class Sponsorship extends DomainEntity{
 		this.infoPage = infoPage;
 	}
 	
-	@CreditCardNumber
 	@NotEmpty
 	public CC getCreditCard(){
 		return creditCard;
