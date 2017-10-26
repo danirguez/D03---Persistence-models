@@ -1,8 +1,15 @@
 package domain;
 
 import java.util.Collection;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Auditor extends Actor {
 
 	public Auditor() {
@@ -12,6 +19,7 @@ public class Auditor extends Actor {
 	private Collection<Note> note;
 	private Collection<Audit> audit;
 
+	@OneToMany(mappedBy="auditor")
 	@Valid
 	public Collection<Note> getNote() {
 		return note;
@@ -21,6 +29,7 @@ public class Auditor extends Actor {
 		this.note = note;
 	}
 
+	@OneToMany(mappedBy="auditor")
 	@Valid
 	public Collection<Audit> getAudit() {
 		return audit;

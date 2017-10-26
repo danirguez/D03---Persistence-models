@@ -2,11 +2,16 @@ package domain;
 
 import java.util.Date;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
-
+@Entity
+@Access(AccessType.PROPERTY)
 public class Survival extends DomainEntity {
 
 	private String title;
@@ -55,6 +60,7 @@ public class Survival extends DomainEntity {
 		this.location = location;
 	}
 
+	@ManyToOne(optional=false)
 	@Valid
 	public Manager getManager() {
 		return manager;
@@ -64,6 +70,7 @@ public class Survival extends DomainEntity {
 		this.manager = manager;
 	}
 
+	@ManyToOne(optional=false)
 	@Valid
 	public Trip getTrip() {
 		return trip;
