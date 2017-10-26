@@ -28,6 +28,11 @@ public class CV extends DomainEntity {
 	private Collection<ProfesionalRecord> profesionalRecord;
 	private Collection<EducationRecord> educationRecord;
 
+	public CV() {
+		super();
+	}
+	
+	
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[0-9]{6}-[A-Z]{4}")

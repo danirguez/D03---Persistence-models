@@ -21,6 +21,9 @@ public class EducationRecord {
 	private Date start;
 	private Date end;
 
+	public EducationRecord() {
+		super();
+	}
 
 	@NotBlank
 	public String getTitle() {

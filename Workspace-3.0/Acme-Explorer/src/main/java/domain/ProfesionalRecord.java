@@ -29,6 +29,10 @@ public class ProfesionalRecord extends DomainEntity {
 	private String link;
 	private Collection<String> comment;
 
+	public ProfesionalRecord() {
+		super();
+	}
+	
 	@NotBlank
 	public String getCompanyName() {
 		return companyName;
