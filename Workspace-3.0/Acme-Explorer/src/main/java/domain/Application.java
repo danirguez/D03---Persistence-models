@@ -14,8 +14,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 @Entity
 @Access(AccessType.PROPERTY)
 public class Application extends DomainEntity {
@@ -43,7 +41,8 @@ public class Application extends DomainEntity {
 		this.moment = moment;
 	}
 
-	@NotEmpty
+	@Valid
+	@NotNull
 	public Status getStatus() {
 		return status;
 	}

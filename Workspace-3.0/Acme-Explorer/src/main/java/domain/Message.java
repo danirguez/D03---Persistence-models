@@ -6,34 +6,35 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Message extends DomainEntity {
 
+	//Constructors
+	
+	public Message(){
+		super();
+	}
+	
+	// Attributes
+	
 	private Date moment;
 	private String subject;
 	private String body;
 	private Priority priority;
 
-	private Actor sender;
-	private Collection<Actor> recipient;
-	private Collection<Folder> folder;
-
-
-	@NotEmpty
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date getMoment() {
 		return moment;
@@ -62,6 +63,7 @@ public class Message extends DomainEntity {
 	}
 
 	@Valid
+	@NotNull
 	public Priority getPriority() {
 		return priority;
 	}
@@ -70,10 +72,14 @@ public class Message extends DomainEntity {
 		this.priority = priority;
 	}
 	
+	// Relationships
 	
-	/* Actor */
+	private Actor sender;
+	private Collection<Actor> recipient;
+	private Collection<Folder> folder;
 	
-	@NotBlank
+	@Valid
+	@NotNull
 	@ManyToOne(optional = false)
 	public Actor getSender() {
 		return sender;
@@ -83,7 +89,8 @@ public class Message extends DomainEntity {
 		this.sender = sender;
 	}
 
-	@NotBlank
+	@Valid
+	@NotEmpty
 	@OneToMany(mappedBy="message")
 	public Collection<Actor> getRecipient() {
 		return recipient;
@@ -92,13 +99,10 @@ public class Message extends DomainEntity {
 	public void setRecipient(Collection<Actor> recipient) {
 		this.recipient = recipient;
 	}
-
-	
-	
-	/* Folder */
 	
 	@Valid
 	@ManyToMany
+	@NotEmpty
 	public Collection<Folder> getFolder() {
 		return folder;
 	}
