@@ -928,8 +928,8 @@
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="userAccount" ref="userAccount1" />
-	<property name="survival" ref="survival1" />
-	<property name="trip" ref="trip1" />
+	<property name="survival" ><null /></property>
+	<property name="trip"> <null /></property>
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -967,8 +967,18 @@
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="userAccount" ref="userAccount1" />
-	<property name="survival" ref="survival1" />
-	<property name="trip" ref="trip1" />
+	<property name="survival">
+		<list>
+			<ref bean="survival1"/>
+			<ref bean="survival2"/>
+		</list>
+	</property>
+	<property name="trip">
+		<list>
+			<ref bean="trip1"/>
+			<ref bean="trip2"/>
+		</list>
+	</property>
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -1009,8 +1019,8 @@
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="userAccount" ref="userAccount1" />
-	<property name="audit" ref="audit1" />
-	<property name="note" ref="note11" />
+	<property name="audit"> <null /></property>
+	<property name="note" ><null /></property>
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -1046,8 +1056,18 @@
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="userAccount" ref="userAccount1" />
-	<property name="audit" ref="audit1" />
-	<property name="note" ref="note11" />
+	<property name="note">
+		<list>
+			<ref bean="note1"/>
+			<ref bean="note2"/>
+		</list>
+	</property>
+	<property name="audit">
+		<list>
+			<ref bean="audit1"/>
+			<ref bean="audit2"/>
+		</list>
+	</property>
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -1177,8 +1197,8 @@
 	
 	
 	<bean id="gps1" class="domain.Gps">
-	<property name="latitude" value="90" />
-	<property name="longitude" value="180" />
+	<property name="latitude" value="90.0" />
+	<property name="longitude" value="180.0" />
 	
 	</bean>
 	
@@ -1186,8 +1206,8 @@
 	
 	
 	<bean id="gps2" class="domain.Gps">
-	<property name="latitude" value="60" />
-	<property name="longitude" value="100" />
+	<property name="latitude" value="60.0" />
+	<property name="longitude" value="100.0" />
 	
 	</bean>
 	
