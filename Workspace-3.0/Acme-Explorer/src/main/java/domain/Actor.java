@@ -223,7 +223,7 @@ public abstract class Actor extends DomainEntity {
 	
 	@Valid
 	@NotEmpty
-	@OneToMany(mappedBy="actor")
+	@OneToMany(mappedBy="sender")
 	public Collection<Message> getSent() {
 		return sent;
 	}
