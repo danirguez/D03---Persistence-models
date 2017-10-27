@@ -621,7 +621,6 @@
 	<property name="tripEnd" value="28/12/17" />
 	<property name="ranger" ref="ranger2" />
 	<property name="manager" ref="manager1" />
-	<property name="application" ref="application1" />
 	<property name="legalText" ref="legalText1" />
 	<property name="survival">
 		<null />
@@ -1056,63 +1055,6 @@
 		<property name="actor" ref="explorer1" />
 		<property name="customFolder"> <null/></property>
 	</bean>
-	
-		<!-- GLOBAL FOLDERS -->
-	
-	<bean id="inBoxExplorer1" class="domain.Folder">
-		<property name="name" value="In Box" />
-		<property name="messages">
-			<list></list>
-		</property>
-		<property name="actor" ref="explorer1" />
-		<property name="customFolder" ref="customBox" />
-	</bean>
-	
-	<bean id="outBoxExplorer1" class="domain.Folder">
-		<property name="name" value="Out Box" />
-		<property name="messages">
-			<list></list>
-		</property>
-		<property name="actor" ref="explorer1" />
-		<property name="customFolder" ref="customBox" />
-	</bean>
-	
-	<bean id="notificationBoxExplorer1" class="domain.Folder">
-		<property name="name" value="Notification" />
-		<property name="messages">
-			<list></list>
-		</property>
-		<property name="actor" ref="explorer1" />
-		<property name="customFolder" ref="customBox" />
-	</bean>
-	
-	<bean id="trashBoxExplorer1" class="domain.Folder">
-		<property name="name" value="Trash" />
-		<property name="messages">
-			<list></list>
-		</property>
-		<property name="actor" ref="explorer1" />
-		<property name="customFolder" ref="customBox" />
-	</bean>
-	
-	<bean id="spamBoxExplorer1" class="domain.Folder">
-		<property name="name" value="Spam" />
-		<property name="messages">
-			<list></list>
-		</property>
-		<property name="actor" ref="explorer1" />
-		<property name="customFolder" ref="customBox" />
-	</bean>
-	
-	<bean id="customBoxExplorer1" class="domain.Folder">
-		<property name="name" value="customBox" />
-		<property name="messages">
-			<list></list>
-		</property>
-		<property name="actor" ref="explorer1" />
-		<property name="customFolder"> <null/></property>
-	</bean>
-	
 	
 	<!-- Message -->
 	<bean id="message1" class="domain.Message">
