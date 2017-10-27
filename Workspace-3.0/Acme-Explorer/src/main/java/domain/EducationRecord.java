@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class EducationRecord {
+public class EducationRecord extends DomainEntity{
 
 	//Constructors
 	
