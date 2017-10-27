@@ -221,7 +221,7 @@
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="cv" ref="cv1" />
 	<property name="trip" ref="trip1" />
-	<property name="userAccount" ref="userAccount2" />
+	<property name="userAccount" ref="userAccount3" />
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -482,7 +482,40 @@
 	<property name="nick" value="danirl" />
 	<property name="nameSocialNetwork" value="LucasFilm" />
 	<property name="socialNetwork" value="www.micasa.com" />
-	<property name="userAccount" ref="userAccount3" />
+	<property name="userAccount" ref="userAccount1" />
+	<property name="folders">
+		<list>
+			<ref bean="folder1"/>
+			<ref bean="folder2"/>
+			<ref bean="folder3"/>
+			<ref bean="folder4"/>
+			<ref bean="folder5"/>
+		</list>
+	</property>
+	<property name="sent">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	<property name="received">
+		<list>
+			<ref bean="message1"/>
+		</list>
+	</property>
+	</bean>
+	
+	<bean id="administrator2" class="domain.Administrator">
+	<property name="name" value="Alfonso" />
+	<property name="surname" value="Saldado" />
+	<property name="email" value="saldado@hotmail.com" />
+	<property name="phoneNumber" value="+34 (253) 5655" />
+	<property name="address" value="C/ Lugo" />
+	<property name="socialID" value="123456789" />
+	<property name="photo" value="http://www.google.es" />
+	<property name="nick" value="danirl" />
+	<property name="nameSocialNetwork" value="LucasFilm" />
+	<property name="socialNetwork" value="www.micasa.com" />
+	<property name="userAccount" ref="userAccount12" />
 	<property name="folders">
 		<list>
 			<ref bean="folder1"/>
@@ -650,7 +683,7 @@
 	<property name="nick" value="alfonso23cb" />
 	<property name="nameSocialNetwork" value="SolCa" />
 	<property name="socialNetwork" value="www.solcainformatica.es" />
-	<property name="userAccount" ref="userAccount2" />
+	<property name="userAccount" ref="userAccount4" />
 	<property name="sponsorship" ref="sponsorship1" />
 	<property name="folders">
 		<list>
@@ -684,7 +717,7 @@
 	<property name="nick" value="julioSponsor" />
 	<property name="nameSocialNetwork" value="Example" />
 	<property name="socialNetwork" value="www.example.es" />
-	<property name="userAccount" ref="userAccount2" />
+	<property name="userAccount" ref="userAccount5" />
 	<property name="sponsorship" ref="sponsorship2" />
 	<property name="folders">
 		<list>
@@ -753,7 +786,7 @@
 	<property name="nick" value="manuelC" />
 	<property name="nameSocialNetwork" value="Example" />
 	<property name="socialNetwork" value="www.example.es" />
-	<property name="userAccount" ref="userAccount2" />
+	<property name="userAccount" ref="userAccount10" />
 	<property name="finder" ref="finder1" />
 	<property name="emergency">
 		<list>
@@ -805,7 +838,7 @@
 	<property name="nick" value="joseC" />
 	<property name="nameSocialNetwork" value="Example" />
 	<property name="socialNetwork" value="www.example.es" />
-	<property name="userAccount" ref="userAccount2" />
+	<property name="userAccount" ref="userAccount11" />
 	<property name="finder" ref="finder2" />
 	<property name="emergency">
 		<list>
@@ -924,7 +957,7 @@
 			<list></list>
 		</property>
 		<property name="actor" value="actor1" />
-		<property name="customFolder" value="???" />
+		<property name="customFolder" ref="customBox" />
 	</bean>
 	
 	<bean id="outBoxActor1" class="domain.Folder">
@@ -933,7 +966,7 @@
 			<list></list>
 		</property>
 		<property name="actor" value="actor1" />
-		<property name="customFolder" value="???" />
+		<property name="customFolder" ref="customBox" />
 	</bean>
 	
 	<bean id="notificationBoxActor1" class="domain.Folder">
@@ -942,7 +975,7 @@
 			<list></list>
 		</property>
 		<property name="actor" value="actor1" />
-		<property name="customFolder" value="???" />
+		<property name="customFolder" ref="customBox" />
 	</bean>
 	
 	<bean id="trashBoxActor1" class="domain.Folder">
@@ -951,7 +984,7 @@
 			<list></list>
 		</property>
 		<property name="actor" value="actor1" />
-		<property name="customFolder" value="???" />
+		<property name="customFolder" ref="customBox" />
 	</bean>
 	
 	<bean id="spamBoxActor1" class="domain.Folder">
@@ -960,16 +993,16 @@
 			<list></list>
 		</property>
 		<property name="actor" value="actor1" />
-		<property name="customFolder" value="???" />
+		<property name="customFolder" ref="customBox" />
 	</bean>
 	
-	<bean id="customBoxActor1" class="domain.Folder">
-		<property name="name" value="Custom Box" />
+	<bean id="customBox" class="domain.Folder">
+		<property name="name" ref="customBox" />
 		<property name="messages">
 			<list></list>
 		</property>
 		<property name="actor" value="actor1" />
-		<property name="customFolder" value="???" />
+		<property name="customFolder"> <null/></property>
 	</bean>
 	
 	
@@ -1032,7 +1065,7 @@
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount6" />
 	<property name="survival" ><null /></property>
 	<property name="trip"> <null /></property>
 	<property name="folders">
@@ -1071,7 +1104,7 @@
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount7" />
 	<property name="survival">
 		<list>
 			<ref bean="survival1"/>
@@ -1123,7 +1156,7 @@
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount8" />
 	<property name="audit"> <null /></property>
 	<property name="note" ><null /></property>
 	<property name="folders">
@@ -1160,7 +1193,7 @@
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
-	<property name="userAccount" ref="userAccount1" />
+	<property name="userAccount" ref="userAccount9" />
 	<property name="note">
 		<list>
 			<ref bean="note1"/>
