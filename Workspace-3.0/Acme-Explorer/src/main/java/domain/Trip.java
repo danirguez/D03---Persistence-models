@@ -195,7 +195,7 @@ public class Trip extends DomainEntity{
 
 	@Valid
 	@NotEmpty
-	@ManyToMany(mappedBy = "trip")
+	@ManyToMany(mappedBy = "trips")
 	public Collection<Sponsorship> getSponsorship() {
 		return sponsorship;
 	}

@@ -91,7 +91,7 @@ public class Message extends DomainEntity {
 
 	@Valid
 	@NotEmpty
-	@OneToMany(mappedBy="message")
+	@OneToMany(mappedBy="received")
 	public Collection<Actor> getRecipient() {
 		return recipient;
 	}

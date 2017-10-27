@@ -65,7 +65,7 @@ public class Folder extends DomainEntity {
 	}
 
 	@Valid
-	@OneToOne(mappedBy = "customFolder", optional = true)
+	@OneToOne(optional = true)
 	public Folder getCustomFolder() {
 		return customFolder;
 	}

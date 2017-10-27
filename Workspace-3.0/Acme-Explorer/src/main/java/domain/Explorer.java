@@ -53,7 +53,7 @@ public class Explorer extends Actor{
 	
 	@Valid
 	@NotNull
-	@OneToMany(mappedBy="explorer")
+	@OneToMany(mappedBy="writer")
 	public Collection<Story> getStories(){
 		return stories;
 	}

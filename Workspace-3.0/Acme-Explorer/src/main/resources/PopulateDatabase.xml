@@ -1367,7 +1367,12 @@
 	<property name="moment" value="23/10/2017" />
 	<property name="title" value="First" />
 	<property name="description" value="Something" />
-	<property name="link" value="http://www.pepe.es" />
+	<property name="link">
+		<list>
+			<value>www.pepe.es</value>
+			<value>www.dani.es</value>
+		</list>
+	</property>
 	<property name="trip" ref="trip1" />
 	<property name="auditor" ref="auditor1" />
 	
@@ -1380,7 +1385,12 @@
 	<property name="moment" value="02/10/2017" />
 	<property name="title" value="Second" />
 	<property name="description" value="thing" />
-	<property name="link" value="http://www.pepeTravel.es" />
+	<property name="link">
+		<list>
+			<value>www.pepe.es</value>
+			<value>www.dani.es</value>
+		</list>
+	</property>
 	<property name="trip" ref="trip2" />
 	<property name="auditor" ref="auditor2" />
 	
