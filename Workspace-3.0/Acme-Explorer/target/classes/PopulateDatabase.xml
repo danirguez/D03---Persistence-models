@@ -951,57 +951,113 @@
 	
 	<!-- Folder -->
 	
-	<bean id="inBoxActor1" class="domain.Folder">
+	<bean id="inBoxRanger1" class="domain.Folder">
 		<property name="name" value="In Box" />
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBox" />
 	</bean>
 	
-	<bean id="outBoxActor1" class="domain.Folder">
+	<bean id="outBoxRanger1" class="domain.Folder">
 		<property name="name" value="Out Box" />
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBox" />
 	</bean>
 	
-	<bean id="notificationBoxActor1" class="domain.Folder">
+	<bean id="notificationBoxRanger1" class="domain.Folder">
 		<property name="name" value="Notification" />
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBox" />
 	</bean>
 	
-	<bean id="trashBoxActor1" class="domain.Folder">
+	<bean id="trashBoxRanger1" class="domain.Folder">
 		<property name="name" value="Trash" />
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBox" />
 	</bean>
 	
-	<bean id="spamBoxActor1" class="domain.Folder">
+	<bean id="spamBoxRanger1" class="domain.Folder">
 		<property name="name" value="Spam" />
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBox" />
 	</bean>
 	
-	<bean id="customBox" class="domain.Folder">
-		<property name="name" ref="customBox" />
+	<bean id="customBoxRanger1" class="domain.Folder">
+		<property name="name" value="customBox" />
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" value="actor1" />
+		<property name="actor" ref="ranger1" />
+		<property name="customFolder"> <null/></property>
+	</bean>
+	
+	<!-- FOLDERS EXPLORER -->
+	
+	<bean id="inBoxExplorer1" class="domain.Folder">
+		<property name="name" value="In Box" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" ref="explorer1" />
+		<property name="customFolder" ref="customBox" />
+	</bean>
+	
+	<bean id="outBoxExplorer1" class="domain.Folder">
+		<property name="name" value="Out Box" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" ref="explorer1" />
+		<property name="customFolder" ref="customBox" />
+	</bean>
+	
+	<bean id="notificationBoxExplorer1" class="domain.Folder">
+		<property name="name" value="Notification" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" ref="explorer1" />
+		<property name="customFolder" ref="customBox" />
+	</bean>
+	
+	<bean id="trashBoxExplorer1" class="domain.Folder">
+		<property name="name" value="Trash" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" ref="explorer1" />
+		<property name="customFolder" ref="customBox" />
+	</bean>
+	
+	<bean id="spamBoxExplorer1" class="domain.Folder">
+		<property name="name" value="Spam" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" ref="explorer1" />
+		<property name="customFolder" ref="customBox" />
+	</bean>
+	
+	<bean id="customBoxExplorer1" class="domain.Folder">
+		<property name="name" value="customBox" />
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="actor" ref="explorer1" />
 		<property name="customFolder"> <null/></property>
 	</bean>
 	
@@ -1012,45 +1068,38 @@
 		<property name="subject" value="Hola" />
 		<property name="body" value="Hola, buenas tardes" />
 		<property name="priority" value="LOW" />
-		<property name="sender" value="actor1" />
+		<property name="sender" ref="ranger1" />
 		<property name="receipient">
-			<list></list> 
+			<list>
+				<ref bean="explorer1"/>
+			</list> 
 		</property>
 		<property name="folder">
-			<list></list> 
+			<list>
+				<ref bean="inBoxExplorer1"/>
+				<ref bean="outBoxRanger1"/>
+			</list> 
 		</property>
 	</bean>
 		
-		
-	
-	
-	<!-- Actor -->
-	
-	<bean id="actor1" class="domain.Actor">
-		<property name="name" value="Antonio" />
-		<property name="surname" value="Suarez" />
-		<property name="email" value="antoniosua@hotmail.com" />
-		<property name="phoneNumber" value="+34 666789809" />
-		<property name="address" value="Avenida la Paz" />
-		<property name="socialID" value="4567" />
-		<property name="photo" value="http://www.google.es" />
-		<property name="nick" value="AntonioS" />
-		<property name="nameSocialNetwork" value="Suarez" />
-		<property name="socialNetwork" value="http://www.antsua.com" />
-		<property name="userAccount" value="userAcount1" />
-		<property name="inBox" value="inBoxActor1" />
-		<property name="outBox" value="outBoxActor1" />
-		<property name="notificationBox" value="notificationBoxActor1" />
-		<property name="trashBox" value="trashBoxActor1" />
-		<property name="spamBox" value="spamBoxActor1" />
-		<property name="customFolders">
-			<list></list>
+	<bean id="message2" class="domain.Message">
+		<property name="moment" value="01/01/2017 12:30" />
+		<property name="subject" value="Hola" />
+		<property name="body" value="Hola, buenas tardes" />
+		<property name="priority" value="LOW" />
+		<property name="sender" ref="explorer1" />
+		<property name="receipient">
+			<list>
+				<ref bean="ranger1"/>
+			</list> 
 		</property>
-		<property name="received" value="message1" />
-		<property name="sent">
-			<list></list>
+		<property name="folder">
+			<list>
+				<ref bean="outBoxExplorer1"/>
+				<ref bean="inBoxRanger1"/>
+			</list> 
 		</property>
-	</bean>
+	</bean>	
 	
 	<!-- MANAGER1 -->
 	
