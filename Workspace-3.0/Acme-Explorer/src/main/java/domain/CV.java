@@ -6,6 +6,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -73,6 +74,7 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
+	@ElementCollection
 	public Collection<EndorserRecord> getEndorserRecord() {
 		return endorserRecord;
 	}
@@ -84,6 +86,7 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
+	@ElementCollection
 	public Collection<MiscellaneousRecord> getMiscellaneousRecord() {
 		return miscellaneousRecord;
 	}
@@ -95,6 +98,7 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
+	@ElementCollection
 	public Collection<ProfesionalRecord> getProfesionalRecord() {
 		return profesionalRecord;
 	}
@@ -106,6 +110,7 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
+	@ElementCollection
 	public Collection<EducationRecord> getEducationRecord() {
 		return educationRecord;
 	}

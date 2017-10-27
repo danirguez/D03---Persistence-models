@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -27,6 +28,7 @@ public class Manager extends Actor {
 	@OneToMany(mappedBy="manager")
 	@Valid
 	@NotNull
+	@ElementCollection
 	public Collection<Survival> getSurvival() {
 		return this.survival;
 	}
@@ -38,6 +40,7 @@ public class Manager extends Actor {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy="manager")
+	@ElementCollection
 	public Collection<Trip> getTrip() {
 		return this.trip;
 	}

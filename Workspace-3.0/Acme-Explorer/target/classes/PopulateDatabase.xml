@@ -208,7 +208,7 @@
 	
 	<!-- RANGER2 -->
 	
-	<bean id="ranger1" class="domain.Ranger">
+	<bean id="ranger2" class="domain.Ranger">
 	<property name="name" value="Alfonso" />
 	<property name="surname" value="Sánchez" />
 	<property name="email" value="codec993@gmail.com" />
@@ -342,7 +342,6 @@
 	
 	<bean id="profesionalRecord1" class="domain.ProfesionalRecord">
 	<property name="companyName" value="Nombre empresa1" />
-	<property name="period"> <null/> </property>
 	<property name="start" value="2017/08/03" />
 	<property name="endOrActual" value="2017/08/18" />
 	<property name="rol" value="rol1" />
@@ -352,9 +351,8 @@
 	
 	<!-- PROFESIONALRECORD2 -->
 	
-	<bean id="profesionalRecord1" class="domain.ProfesionalRecord">
+	<bean id="profesionalRecord2" class="domain.ProfesionalRecord">
 	<property name="companyName" value="Nombre empresa2" />
-	<property name="period"> <null/> </property>
 	<property name="start" value="2017/08/04" />
 	<property name="endOrActual" value="2017/08/19" />
 	<property name="rol" value="rol1" />
@@ -368,7 +366,6 @@
 	
 	<bean id="educationRecord1" class="domain.EducationRecord">
 	<property name="title" value="Título" />
-	<property name="period"> <null/> </property>
 	<property name="start" value="2017/08/03" />
 	<property name="end" value="2017/08/18" />
 	</bean>
@@ -377,7 +374,6 @@
 	
 	<bean id="educationRecord2" class="domain.EducationRecord">
 	<property name="title" value="Título2" />
-	<property name="period"> <null/> </property>
 	<property name="start" value="2017/08/04" />
 	<property name="end" value="2017/08/19" />
 	</bean>
@@ -1362,38 +1358,34 @@
 	
 	<!--AUDIT 1-->
 	
-	
 	<bean id="audit1" class="domain.Audit">
 	<property name="moment" value="23/10/2017" />
 	<property name="title" value="First" />
 	<property name="description" value="Something" />
-	<property name="link">
-		<list>
-			<value>www.pepe.es</value>
-			<value>www.dani.es</value>
-		</list>
-	</property>
 	<property name="trip" ref="trip1" />
 	<property name="auditor" ref="auditor1" />
-	
+	<property name="link">
+		<list>
+			<value>adios.es</value>
+			<value>hola.com</value>
+		</list>
+	</property>
 	</bean>
 	
 	<!--AUDIT 2-->
-	
 	
 	<bean id="audit2" class="domain.Audit">
 	<property name="moment" value="02/10/2017" />
 	<property name="title" value="Second" />
 	<property name="description" value="thing" />
+	<property name="trip" ref="trip2" />
+	<property name="auditor" ref="auditor2" />
 	<property name="link">
 		<list>
 			<value>www.pepe.es</value>
-			<value>www.dani.es</value>
+			<value>www.link.com</value>
 		</list>
 	</property>
-	<property name="trip" ref="trip2" />
-	<property name="auditor" ref="auditor2" />
-	
 	</bean>
 	
 	<!--NOTE 1-->
@@ -1430,7 +1422,7 @@
 	<property name="comment" value="Somes" />
 	<property name="explorer" ref="explorer1" />
 	<property name="trip" ref="trip1" />
-	<property name="status" ref="status1" />
+	<property name="status" value="DUE" />
 	
 	</bean>
 	
@@ -1442,7 +1434,7 @@
 	<property name="comment" value="hey" />
 	<property name="explorer" ref="explorer2" />
 	<property name="trip" ref="trip2" />
-	<property name="status" ref="status2" />
+	<property name="status" value="ACCEPTED" />
 	
 	</bean>
 	

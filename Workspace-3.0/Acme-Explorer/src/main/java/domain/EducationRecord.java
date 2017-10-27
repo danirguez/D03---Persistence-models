@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -11,7 +9,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -38,15 +35,6 @@ public class EducationRecord extends DomainEntity{
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	//En caso de salir Null en End, significará que no ha acabado el período
-	@Size(min = 2, max = 2)
-	public Collection<Date> getPeriod() {
-		Collection<Date> res = new ArrayList<Date>();
-		res.add(start);
-		res.add(end);
-		return res;
 	}
 
 	@NotNull

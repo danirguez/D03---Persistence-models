@@ -1,18 +1,17 @@
 
 package domain;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -35,8 +34,6 @@ public class ProfesionalRecord extends DomainEntity {
 	private String rol;
 	private String link;
 	private Collection<String> comment;
-
-
 	
 	@NotBlank
 	public String getCompanyName() {
@@ -45,14 +42,6 @@ public class ProfesionalRecord extends DomainEntity {
 
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
-	}
-
-	@Size(min = 2, max = 2)
-	public Collection<Date> getPeriod() {
-		Collection<Date> res = new ArrayList<Date>();
-		res.add(start);
-		res.add(endOrActual);
-		return res;
 	}
 
 	@NotNull
@@ -93,6 +82,7 @@ public class ProfesionalRecord extends DomainEntity {
 		this.link = link;
 	}
 
+	@ElementCollection
 	public Collection<String> getComment() {
 		return comment;
 	}

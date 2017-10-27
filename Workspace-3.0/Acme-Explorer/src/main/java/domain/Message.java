@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -92,6 +93,7 @@ public class Message extends DomainEntity {
 	@Valid
 	@NotEmpty
 	@OneToMany(mappedBy="received")
+	@ElementCollection
 	public Collection<Actor> getRecipient() {
 		return recipient;
 	}
@@ -103,6 +105,7 @@ public class Message extends DomainEntity {
 	@Valid
 	@ManyToMany
 	@NotEmpty
+	@ElementCollection
 	public Collection<Folder> getFolder() {
 		return folder;
 	}

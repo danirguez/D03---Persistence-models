@@ -7,6 +7,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -37,12 +38,11 @@ public class Trip extends DomainEntity{
 	private String ticker;
 	private String title;
 	private String description;
+	private Double price;
 	private Collection<String> requirement;
 	private Date publication;
 	private Date tripStart;
 	private Date tripEnd;
-
-	private final Integer VAT_TAX = 21;
 
 	@NotBlank
 	@Column(unique = true)
@@ -74,6 +74,7 @@ public class Trip extends DomainEntity{
 	}
 	
 	@NotEmpty
+	@ElementCollection
 	public Collection<String> getRequirement() {
 		return requirement;
 	}
@@ -84,13 +85,11 @@ public class Trip extends DomainEntity{
 
 	@Min(0)
 	public Double getPrice() {
-		Double price = 0.;
-		
-		for(Stage g: stage) {
-			price = g.getPrice() + price;
-		}
-		price = price + (price*VAT_TAX)/100;
 		return price;
+	}
+	
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 
 	@NotNull
@@ -163,6 +162,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
+	@ElementCollection
 	public Collection<Survival> getSurvival() {
 		return survival;
 	}
@@ -185,6 +185,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy="trip")
+	@ElementCollection
 	public Collection<Audit> getAudit() {
 		return audit;
 	}
@@ -196,6 +197,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotEmpty
 	@ManyToMany(mappedBy = "trips")
+	@ElementCollection
 	public Collection<Sponsorship> getSponsorship() {
 		return sponsorship;
 	}
@@ -207,6 +209,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
+	@ElementCollection
 	public Collection<Note> getNote() {
 		return note;
 	}
@@ -218,6 +221,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
+	@ElementCollection
 	public Collection<Story> getStory() {
 		return story;
 	}
@@ -229,6 +233,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
+	@ElementCollection
 	public Collection<Tag> getTag() {
 		return tag;
 	}
@@ -240,6 +245,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotEmpty
 	@OneToMany(mappedBy = "trip")
+	@ElementCollection
 	public Collection<Stage> getStage() {
 		return stage;
 	}
@@ -251,6 +257,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotEmpty
 	@OneToMany(mappedBy = "trip")
+	@ElementCollection
 	public Collection<Category> getCategory() {
 		return category;
 	}
@@ -262,6 +269,7 @@ public class Trip extends DomainEntity{
 	@Valid
 	@NotEmpty
 	@OneToMany(mappedBy = "trip")
+	@ElementCollection
 	public Collection<Application> getApplication() {
 		return application;
 	}

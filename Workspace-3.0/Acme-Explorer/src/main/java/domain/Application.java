@@ -5,11 +5,11 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.transaction.Status;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -27,7 +27,7 @@ public class Application extends DomainEntity {
 	// Attributes
 	
 	private Date moment;
-	private Status status;
+	private String status;
 	private Collection<String> comment;
 
 	@Past
@@ -43,14 +43,15 @@ public class Application extends DomainEntity {
 
 	@Valid
 	@NotNull
-	public Status getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
+	@ElementCollection
 	public Collection<String> getComment() {
 		return comment;
 	}

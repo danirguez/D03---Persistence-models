@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -43,6 +44,7 @@ public class Explorer extends Actor{
 	@Valid
 	@NotEmpty
 	@OneToMany
+	@ElementCollection
 	public Collection<Emergency> getEmergency(){
 		return emergency;
 	}
@@ -54,6 +56,7 @@ public class Explorer extends Actor{
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy="writer")
+	@ElementCollection
 	public Collection<Story> getStories(){
 		return stories;
 	}
@@ -65,6 +68,7 @@ public class Explorer extends Actor{
 	@Valid
 	@NotNull
 	@OneToMany
+	@ElementCollection
 	public Collection<Application> getApplication() {
 		return application;
 	}

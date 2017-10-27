@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
@@ -79,6 +80,7 @@ public class Sponsorship extends DomainEntity{
 	@Valid
 	@NotNull
 	@ManyToMany
+	@ElementCollection
 	public Collection<Trip> getTrips() {
 		return trips;
 	}

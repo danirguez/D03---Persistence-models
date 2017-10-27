@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
@@ -62,13 +64,15 @@ public class Audit extends DomainEntity {
 		this.description = description;
 	}
 
+	@NotEmpty
 	@URL
+	@ElementCollection
 	public Collection<String> getLink() {
 		return link;
 	}
 
 	public void setLink(Collection<String> link) {
-		this.link=link;
+		this.link = link;
 	}
 	
 	// Relationships
