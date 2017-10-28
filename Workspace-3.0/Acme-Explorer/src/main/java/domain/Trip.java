@@ -43,6 +43,7 @@ public class Trip extends DomainEntity{
 	private Date publication;
 	private Date tripStart;
 	private Date tripEnd;
+	private String reason;
 
 	@NotBlank
 	@Column(unique = true)
@@ -120,6 +121,14 @@ public class Trip extends DomainEntity{
 
 	public void setTripEnd(Date tripEnd) {
 		this.tripEnd = tripEnd;
+	}
+	
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
 	}
 	
 	// Relationships
