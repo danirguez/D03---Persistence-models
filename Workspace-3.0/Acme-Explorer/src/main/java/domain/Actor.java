@@ -121,6 +121,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@URL
+	@NotBlank
 	public String getSocialNetwork() {
 		return socialNetwork;
 	}
