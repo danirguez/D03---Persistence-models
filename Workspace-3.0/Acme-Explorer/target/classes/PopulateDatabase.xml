@@ -723,6 +723,26 @@
 	</property>
 	</bean>
 	
+	<!-- CREDITCARD -->
+	
+	<bean id="creditCard1" class="domain.CC">
+	<property name="holderName" value="BBVA" />
+	<property name="brandName" value="MasterCard" />
+	<property name="number" value="1232353" />
+	<property name="expirationMonth" value="02" />
+	<property name="expirationYear" value="2019" />
+	<property name="CVV" value="123" />
+	</bean>
+	
+	<bean id="creditCard2" class="domain.CC">
+	<property name="holderName" value="Caixa" />
+	<property name="brandName" value="VISA" />
+	<property name="number" value="1232413" />
+	<property name="expirationMonth" value="05" />
+	<property name="expirationYear" value="2020" />
+	<property name="CVV" value="223" />
+	</bean>
+	
 									<!-- EXPLORER -->
 	
 	<!-- EXPLORER1 -->
