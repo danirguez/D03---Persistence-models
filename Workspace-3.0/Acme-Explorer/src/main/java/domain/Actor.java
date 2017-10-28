@@ -204,7 +204,8 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Valid
-	@NotEmpty
+	@NotNull
+	@ElementCollection
 	@OneToMany(mappedBy="actor")
 	public Collection<Folder> getCustomFolders() {
 		return customFolders;
