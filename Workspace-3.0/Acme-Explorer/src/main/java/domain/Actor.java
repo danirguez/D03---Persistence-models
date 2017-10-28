@@ -73,7 +73,6 @@ public abstract class Actor extends DomainEntity {
 		this.email = email;
 	}
 	
-	@NotBlank
 	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -122,6 +121,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@URL
+	@NotBlank
 	public String getSocialNetwork() {
 		return socialNetwork;
 	}

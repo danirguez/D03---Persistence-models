@@ -6,6 +6,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
@@ -23,6 +24,7 @@ public class PersonalRecord extends DomainEntity {
 	
 	private String name;
 	private String photo;
+	private String email;
 	private String phoneNumber;
 	private String likedln;
 	
@@ -63,6 +65,16 @@ public class PersonalRecord extends DomainEntity {
 	}
 	public void setLikedln(String likedln) {
 		this.likedln = likedln;
+	}
+
+	@NotBlank
+	@Email
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
