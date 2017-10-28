@@ -182,27 +182,19 @@
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
 	<property name="userAccount" ref="userAccount2" />
-	<property name="cv" ref="cv1" />
+	<property name="CV" ref="cv1" />
 	<property name="trip" ref="trip1" />
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxRanger1"/>
-			<ref bean="outBoxRanger1"/>
-			<ref bean="notificationBoxRanger1"/>
-			<ref bean="trashBoxRanger1"/>
-			<ref bean="spamBoxRanger1"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxRanger1"/>
+	<property name="outBox" ref="outBoxRanger1"/>
+	<property name="notificationBox" ref="notificationBoxRanger1"/>
+	<property name="trashBox" ref="trashBoxRanger1"/>
+	<property name="spamBox" ref="spamBoxRanger1"/>
 	<property name="sent">
 		<list>
 			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
+	<property name="received" ref="message1"/>
 	</bean>
 	
 	
@@ -219,30 +211,19 @@
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
 	<property name="socialNetwork" value="www.example.com" />
-	<property name="cv" ref="cv1" />
+	<property name="CV" ref="cv2" />
 	<property name="trip" ref="trip1" />
 	<property name="userAccount" ref="userAccount3" />
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxRanger2"/>
-			<ref bean="outBoxRanger2"/>
-			<ref bean="notificationBoxRanger2"/>
-			<ref bean="trashBoxRanger2"/>
-			<ref bean="spamBoxRanger2"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxRanger2"/>
+	<property name="outBox" ref="outBoxRanger2"/>
+	<property name="notificationBox" ref="notificationBoxRanger2"/>
+	<property name="trashBox" ref="trashBoxRanger2"/>
+	<property name="spamBox" ref="spamBoxRanger2"/>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 
@@ -264,9 +245,9 @@
 	
 	<bean id="cv2" class="domain.CV">
 	<property name="ticker" value="221017-ABCE" />
-	<property name="ranger" ref="ranger1" />
+	<property name="ranger" ref="ranger2" />
 	<property name="personalRecord" ref="personalRecord1" />
-	<property name="esdorserRecord">
+	<property name="endorserRecord">
 		<list>
 			<ref bean="endorserRecord1"/>
 			<ref bean="endorserRecord2"/>
@@ -479,25 +460,16 @@
 	<property name="nameSocialNetwork" value="LucasFilm" />
 	<property name="socialNetwork" value="www.micasa.com" />
 	<property name="userAccount" ref="userAccount1" />
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxAdministrator1"/>
-			<ref bean="outBoxAdministrator1"/>
-			<ref bean="notificationBoxAdministrator1"/>
-			<ref bean="trashBoxAdministrator1"/>
-			<ref bean="spamBoxAdministrator1"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxAdministrator1"/>
+	<property name="outBox" ref="outBoxAdministrator1"/>
+	<property name="notificationBox" ref="notificationBoxAdministrator1"/>
+	<property name="trashBox" ref="trashBoxAdministrator1"/>
+	<property name="spamBox" ref="spamBoxAdministrator1"/>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 	<bean id="administrator2" class="domain.Administrator">
@@ -512,9 +484,14 @@
 	<property name="nameSocialNetwork" value="LucasFilm" />
 	<property name="socialNetwork" value="www.micasa.com" />
 	<property name="userAccount" ref="userAccount12" />
+	<property name="inBox" ref="inBoxAdministrator2"/>
+	<property name="outBox" ref="outBoxAdministrator2"/>
+	<property name="notificationBox" ref="notificationBoxAdministrator2"/>
+	<property name="trashBox" ref="trashBoxAdministrator2"/>
+	<property name="spamBox" ref="spamBoxAdministrator2"/>
 	<property name="folders">
 		<list>
-			<ref bean="indexBoxAdministrator2"/>
+			<ref bean="inBoxAdministrator2"/>
 			<ref bean="outBoxAdministrator2"/>
 			<ref bean="notificationBoxAdministrator2"/>
 			<ref bean="trashBoxAdministrator2"/>
@@ -523,14 +500,9 @@
 	</property>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 										<!-- TRIP -->
@@ -680,25 +652,16 @@
 	<property name="socialNetwork" value="www.solcainformatica.es" />
 	<property name="userAccount" ref="userAccount4" />
 	<property name="sponsorship" ref="sponsorship1" />
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxSponsor1"/>
-			<ref bean="outBoxSponsor1"/>
-			<ref bean="notificationBoxSponsor1"/>
-			<ref bean="trashBoxSponsor1"/>
-			<ref bean="spamBoxSponsor1"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxSponsor1"/>
+	<property name="outBox" ref="outBoxSponsor1"/>
+	<property name="notificationBox" ref="notificationBoxSponsor1"/>
+	<property name="trashBox" ref="trashBoxSponsor1"/>
+	<property name="spamBox" ref="spamBoxSponsor1"/>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message2"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 	<!-- SPONSOR2 -->
@@ -716,25 +679,16 @@
 	<property name="socialNetwork" value="www.example.es" />
 	<property name="userAccount" ref="userAccount5" />
 	<property name="sponsorship" ref="sponsorship2" />
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxSponsor2"/>
-			<ref bean="outBoxSponsor2"/>
-			<ref bean="notificationBoxSponsor2"/>
-			<ref bean="trashBoxSponsor2"/>
-			<ref bean="spamBoxSponsor2"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxSponsor2"/>
+	<property name="outBox" ref="outBoxSponsor2"/>
+	<property name="notificationBox" ref="notificationBoxSponsor2"/>
+	<property name="trashBox" ref="trashBoxSponsor2"/>
+	<property name="spamBox" ref="spamBoxSponsor2"/>
 	<property name="sent">
 		<list>
-			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 									<!-- SPONSORSHIP -->
@@ -804,25 +758,17 @@
 			<ref bean="application2"/>
 		</list>
 	</property>
-	<property name="folders">
-		<list>
-			<ref bean="inBoxExplorer1"/>
-			<ref bean="outBoxExplorer1"/>
-			<ref bean="notificationBoxExplorer1"/>
-			<ref bean="trashBoxExplorer1"/>
-			<ref bean="spamBoxExplorer1"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxExplorer1"/>
+	<property name="outBox" ref="outBoxExplorer1"/>
+	<property name="notificationBox" ref="notificationBoxExplorer1"/>
+	<property name="trashBox" ref="trashBoxExplorer1"/>
+	<property name="spamBox" ref="spamBoxExplorer1"/>
 	<property name="sent">
 		<list>
 			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
+	<property name="received" ref="message1"/>
 	</bean>							
 	
 	<!-- EXPLORER2 -->
@@ -857,25 +803,17 @@
 			<ref bean="application2"/>
 		</list>
 	</property>
-	<property name="folders">
-		<list>
-			<ref bean="inBoxExplorer2"/>
-			<ref bean="outBoxExplorer2"/>
-			<ref bean="notificationBoxExplorer2"/>
-			<ref bean="trashBoxExplorer2"/>
-			<ref bean="spamBoxExplorer2"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxExplorer2"/>
+	<property name="outBox" ref="outBoxExplorer2"/>
+	<property name="notificationBox" ref="notificationBoxExplorer2"/>
+	<property name="trashBox" ref="trashBoxExplorer2"/>
+	<property name="spamBox" ref="spamBoxExplorer2"/>
 	<property name="sent">
 		<list>
 			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message2"/>
-		</list>
-	</property>
+	<property name="received" ref="message2"/>
 	</bean>
 	
 	
@@ -923,7 +861,7 @@
 	
 	<!-- STORY1 -->
 							
-	<bean id="story1" class="domain.Explorer">
+	<bean id="story1" class="domain.Story">
 	<property name="title" value="Travel arround Tanzania" />
 	<property name="pieceText" value="An example of my trip" />
 	<property name="link">
@@ -938,7 +876,7 @@
 	
 	<!-- STORY2 -->
 	
-	<bean id="story2" class="domain.Explorer">
+	<bean id="story2" class="domain.Story">
 	<property name="title" value="Travel arround Italy" />
 	<property name="pieceText" value="Another example" />
 	<property name="link">
@@ -1629,7 +1567,7 @@
 		<property name="body" value="Hola, buenas tardes" />
 		<property name="priority" value="LOW" />
 		<property name="sender" ref="ranger1" />
-		<property name="receipient">
+		<property name="recipient">
 			<list>
 				<ref bean="explorer1"/>
 			</list> 
@@ -1648,7 +1586,7 @@
 		<property name="body" value="Hola, buenas tardes" />
 		<property name="priority" value="LOW" />
 		<property name="sender" ref="explorer1" />
-		<property name="receipient">
+		<property name="recipient">
 			<list>
 				<ref bean="ranger1"/>
 			</list> 
@@ -1677,25 +1615,16 @@
 	<property name="userAccount" ref="userAccount6" />
 	<property name="survival" ><null /></property>
 	<property name="trip"> <null /></property>
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxManager1"/>
-			<ref bean="outBoxManager1"/>
-			<ref bean="notificationBoxManager1"/>
-			<ref bean="trashBoxManager1"/>
-			<ref bean="spamBoxManager1"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxManager1"/>
+	<property name="outBox" ref="outBoxManager1"/>
+	<property name="notificationBox" ref="notificationBoxManager1"/>
+	<property name="trashBox" ref="trashBoxManager1"/>
+	<property name="spamBox" ref="spamBoxManager1"/>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 	
@@ -1726,27 +1655,16 @@
 			<ref bean="trip2"/>
 		</list>
 	</property>
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxManager2"/>
-			<ref bean="outBoxManager2"/>
-			<ref bean="notificationBoxManager2"/>
-			<ref bean="trashBoxManager2"/>
-			<ref bean="spamBoxManager2"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxManager2"/>
+	<property name="outBox" ref="outBoxManager2"/>
+	<property name="notificationBox" ref="notificationBoxManager2"/>
+	<property name="trashBox" ref="trashBoxManager2"/>
+	<property name="spamBox" ref="spamBoxManager2"/>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 	
@@ -1768,25 +1686,16 @@
 	<property name="userAccount" ref="userAccount8" />
 	<property name="audit"> <null /></property>
 	<property name="note" ><null /></property>
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxAuditor1"/>
-			<ref bean="outBoxAuditor1"/>
-			<ref bean="notificationBoxAuditor1"/>
-			<ref bean="trashBoxAuditor1"/>
-			<ref bean="spamBoxAuditor1"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxAuditor1"/>
+	<property name="outBox" ref="outBoxAuditor1"/>
+	<property name="notificationBox" ref="notificationBoxAuditor1"/>
+	<property name="trashBox" ref="trashBoxAuditor1"/>
+	<property name="spamBox" ref="spamBoxAuditor1"/>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 	<!-- AUDITOR2 -->
@@ -1815,27 +1724,16 @@
 			<ref bean="audit2"/>
 		</list>
 	</property>
-	<property name="folders">
-		<list>
-			<ref bean="indexBoxAuditor2"/>
-			<ref bean="outBoxAuditor2"/>
-			<ref bean="notificationBoxAuditor2"/>
-			<ref bean="trashBoxAuditor2"/>
-			<ref bean="spamBoxAuditor2"/>
-		</list>
-	</property>
+	<property name="inBox" ref="inBoxAuditor2"/>
+	<property name="outBox" ref="outBoxAuditor2"/>
+	<property name="notificationBox" ref="notificationBoxAuditor2"/>
+	<property name="trashBox" ref="trashBoxAuditor2"/>
+	<property name="spamBox" ref="spamBoxAuditor2"/>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received">
-		<list>
-			<ref bean="message1"/>
-			<ref bean="message2"/>
-		</list>
-	</property>
+	<property name="received"><null/></property>
 	</bean>
 	
 	<!--SURVIVAL1-->
