@@ -39,6 +39,7 @@ public class MiscellaneousRecord extends DomainEntity {
 	}
 
 	@URL
+	@NotBlank
 	public String getLink() {
 		return link;
 	}

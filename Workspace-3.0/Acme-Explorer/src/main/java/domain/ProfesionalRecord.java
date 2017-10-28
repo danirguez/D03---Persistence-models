@@ -74,6 +74,7 @@ public class ProfesionalRecord extends DomainEntity {
 	}
 
 	@URL
+	@NotBlank
 	public String getLink() {
 		return link;
 	}

@@ -65,6 +65,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@Email
+	@NotBlank
 	public String getEmail() {
 		return email;
 	}
@@ -97,6 +98,7 @@ public abstract class Actor extends DomainEntity {
 	}
 	
 	@URL
+	@NotBlank
 	public String getPhoto() {
 		return photo;
 	}
