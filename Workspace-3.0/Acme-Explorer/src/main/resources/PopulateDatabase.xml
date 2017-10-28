@@ -1770,7 +1770,7 @@
 	<property name="description" value="Something" />
 	<property name="trip" ref="trip1" />
 	<property name="auditor" ref="auditor1" />
-	<property name="link">
+	<property name="attachment">
 		<list>
 			<value>adios.es</value>
 			<value>hola.com</value>
@@ -1786,7 +1786,7 @@
 	<property name="description" value="thing" />
 	<property name="trip" ref="trip2" />
 	<property name="auditor" ref="auditor2" />
-	<property name="link">
+	<property name="attachment">
 		<list>
 			<value>www.pepe.es</value>
 			<value>www.link.com</value>

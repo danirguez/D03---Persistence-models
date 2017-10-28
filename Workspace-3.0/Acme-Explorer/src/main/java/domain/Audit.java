@@ -15,8 +15,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.URL;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -33,7 +31,7 @@ public class Audit extends DomainEntity {
 	private Date moment;
 	private String title;
 	private String description;
-	private Collection<String> link;
+	private Collection<String> attachment;
 
 	@Past
 	@NotNull
@@ -64,14 +62,13 @@ public class Audit extends DomainEntity {
 		this.description = description;
 	}
 
-	@URL
 	@ElementCollection
-	public Collection<String> getLink() {
-		return link;
+	public Collection<String> getAttachment() {
+		return attachment;
 	}
 
-	public void setLink(Collection<String> link) {
-		this.link = link;
+	public void setAttachment(Collection<String> attachment) {
+		this.attachment = attachment;
 	}
 	
 	// Relationships
