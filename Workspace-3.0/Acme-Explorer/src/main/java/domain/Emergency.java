@@ -5,6 +5,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
@@ -32,6 +33,7 @@ public class Emergency extends DomainEntity{
 		this.name = name;
 	}
 	
+	@Email
 	public String getEmail(){
 		return email;
 	}

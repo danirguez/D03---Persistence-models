@@ -41,6 +41,7 @@ public class EndorserRecord extends DomainEntity {
 	}
 
 	@Email
+	@NotBlank
 	public String getEmail() {
 		return email;
 	}

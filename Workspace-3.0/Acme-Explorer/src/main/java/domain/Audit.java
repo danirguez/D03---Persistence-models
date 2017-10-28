@@ -64,7 +64,6 @@ public class Audit extends DomainEntity {
 		this.description = description;
 	}
 
-	@NotBlank
 	@URL
 	@ElementCollection
 	public Collection<String> getLink() {
