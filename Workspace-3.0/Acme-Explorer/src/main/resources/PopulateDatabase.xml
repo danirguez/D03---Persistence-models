@@ -489,15 +489,6 @@
 	<property name="notificationBox" ref="notificationBoxAdministrator2"/>
 	<property name="trashBox" ref="trashBoxAdministrator2"/>
 	<property name="spamBox" ref="spamBoxAdministrator2"/>
-	<property name="folders">
-		<list>
-			<ref bean="inBoxAdministrator2"/>
-			<ref bean="outBoxAdministrator2"/>
-			<ref bean="notificationBoxAdministrator2"/>
-			<ref bean="trashBoxAdministrator2"/>
-			<ref bean="spamBoxAdministrator2"/>
-		</list>
-	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -672,7 +663,7 @@
 	<property name="email" value="juliocsponsor@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 63610" />
 	<property name="address" value="C/ Barcelona" />
-	<property name="socialID" value="3111256480" />
+	<property name="socialID" value="6480" />
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="julioSponsor" />
 	<property name="nameSocialNetwork" value="Example" />
@@ -753,11 +744,11 @@
 	<property name="email" value="alfonsocaro@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 543421" />
 	<property name="address" value="C/ Sevilla" />
-	<property name="socialID" value="1122287489" />
+	<property name="socialID" value="87489" />
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="manuelC" />
 	<property name="nameSocialNetwork" value="Example" />
-	<property name="socialNetwork" value="www.example.es" />
+	<property name="socialNetwork" value="http://www.example.es" />
 	<property name="userAccount" ref="userAccount10" />
 	<property name="finder" ref="finder1" />
 	<property name="emergency">
@@ -799,7 +790,7 @@
 	<property name="email" value="josecaro@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 213221" />
 	<property name="address" value="C/ Granada" />
-	<property name="socialID" value="2212287489" />
+	<property name="socialID" value="87489" />
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="joseC" />
 	<property name="nameSocialNetwork" value="Example" />
@@ -908,6 +899,45 @@
 	<property name="trip" ref="trip2" />
 	<property name="writer" ref="explorer2" />
 	</bean>
+	
+	<!-- Message -->
+	<bean id="message1" class="domain.Message">
+		<property name="moment" value="01/01/2017 12:30" />
+		<property name="subject" value="Hola" />
+		<property name="body" value="Hola, buenas tardes" />
+		<property name="priority" value="LOW" />
+		<property name="sender" ref="ranger1" />
+		<property name="recipient">
+			<list>
+				<ref bean="explorer1"/>
+			</list> 
+		</property>
+		<property name="folder">
+			<list>
+				<ref bean="inBoxExplorer1"/>
+				<ref bean="outBoxRanger1"/>
+			</list> 
+		</property>
+	</bean>
+		
+	<bean id="message2" class="domain.Message">
+		<property name="moment" value="01/01/2017 12:30" />
+		<property name="subject" value="Hola" />
+		<property name="body" value="Hola, buenas tardes" />
+		<property name="priority" value="LOW" />
+		<property name="sender" ref="explorer1" />
+		<property name="recipient">
+			<list>
+				<ref bean="ranger1"/>
+			</list> 
+		</property>
+		<property name="folder">
+			<list>
+				<ref bean="outBoxExplorer1"/>
+				<ref bean="inBoxRanger1"/>
+			</list> 
+		</property>
+	</bean>	
 	
 	
 	<!-- Folder -->
@@ -1580,44 +1610,7 @@
 		<property name="customFolder"> <null/></property>
 	</bean>
 	
-	<!-- Message -->
-	<bean id="message1" class="domain.Message">
-		<property name="moment" value="01/01/2017 12:30" />
-		<property name="subject" value="Hola" />
-		<property name="body" value="Hola, buenas tardes" />
-		<property name="priority" value="LOW" />
-		<property name="sender" ref="ranger1" />
-		<property name="recipient">
-			<list>
-				<ref bean="explorer1"/>
-			</list> 
-		</property>
-		<property name="folder">
-			<list>
-				<ref bean="inBoxExplorer1"/>
-				<ref bean="outBoxRanger1"/>
-			</list> 
-		</property>
-	</bean>
-		
-	<bean id="message2" class="domain.Message">
-		<property name="moment" value="01/01/2017 12:30" />
-		<property name="subject" value="Hola" />
-		<property name="body" value="Hola, buenas tardes" />
-		<property name="priority" value="LOW" />
-		<property name="sender" ref="explorer1" />
-		<property name="recipient">
-			<list>
-				<ref bean="ranger1"/>
-			</list> 
-		</property>
-		<property name="folder">
-			<list>
-				<ref bean="outBoxExplorer1"/>
-				<ref bean="inBoxRanger1"/>
-			</list> 
-		</property>
-	</bean>	
+	
 	
 	<!-- MANAGER1 -->
 	
@@ -1834,7 +1827,7 @@
 	<property name="moment" value="25/10/2017" />
 	<property name="remark" value="Second" />
 	<property name="reply" value="Some" />
-	<property name="momentReply" ref="08/10/2017"/>
+	<property name="momentReply" value="08/10/2017"/>
 	<property name="trip" ref="trip2" />
 	<property name="auditor" ref="auditor2" />
 	
