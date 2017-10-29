@@ -1,10 +1,15 @@
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -18,15 +23,17 @@ public class Sponsor extends Actor {
 
 	// Relationships
 
-	private Sponsorship sponsorship;
+	private Collection<Sponsorship> sponsorship;
 
 	@Valid
-	@OneToOne(mappedBy = "sponsor", optional = false)
-	public Sponsorship getSponsorship() {
+	@NotNull
+	@OneToMany(mappedBy = "sponsor")
+	@ElementCollection
+	public Collection<Sponsorship> getSponsorship() {
 		return sponsorship;
 	}
 
-	public void setSponsorship(Sponsorship sponsorship) {
+	public void setSponsorship(Collection<Sponsorship> sponsorship) {
 		this.sponsorship = sponsorship;
 	}
 }

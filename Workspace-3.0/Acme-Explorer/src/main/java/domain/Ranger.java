@@ -31,7 +31,7 @@ public class Ranger extends Actor {
 
 	@Valid
 	@NotNull
-	@OneToOne(mappedBy="ranger", optional=false)
+	@OneToOne(mappedBy="ranger", optional=true)
 	public CV getCV() {
 		return cv;
 	}
