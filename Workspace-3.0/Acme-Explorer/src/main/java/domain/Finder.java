@@ -5,69 +5,71 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Finder extends DomainEntity{
+public class Finder extends DomainEntity {
 
-	//Constructors
-	
-	public Finder(){
+	// Constructors
+
+	public Finder() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String singleKey;
-	private Double priceRange;
-	private Date tripDate;
-	
-	
-	public String getSingleKey(){
+	private Double minPrice;
+	private Double maxPrice;
+	private Date start;
+	private Date end;
+
+	public String getSingleKey() {
 		return singleKey;
 	}
-	
-	public void setSingleKey(String singleKey){
+
+	public void setSingleKey(String singleKey) {
 		this.singleKey = singleKey;
 	}
-	
-	@Min(0)
-	public Double getPriceRange() {
-		return priceRange;
+
+	@Range(min = 0)
+	public Double getMinPrice() {
+		return minPrice;
 	}
-	
-	public void setPriceRange(Double priceRange){
-		this.priceRange = priceRange;
+
+	public void setMinPrice(Double minPrice) {
+		this.minPrice = minPrice;
 	}
-	
-	@Temporal(TemporalType.DATE)
-	public Date getTripDate(){
-		return tripDate;
+
+	@Range(min = 0)
+	public Double getMaxPrice() {
+		return maxPrice;
 	}
-	
-	public void setTripDate(Date tripDate){
-		this.tripDate = tripDate;
+
+	public void setMaxPrice(Double maxPrice) {
+		this.maxPrice = maxPrice;
 	}
-	
-	// Relationships
-	
-	private Explorer explorer;
-	
-	@Valid
-	@NotNull
-	@OneToOne(mappedBy="finder",optional=false)
-	public Explorer getExplorer(){
-		return explorer;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getStart() {
+		return start;
 	}
-	
-	public void setExplorer(Explorer explorer){
-		this.explorer = explorer;
+
+	public void setStart(Date start) {
+		this.start = start;
 	}
+
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getEnd() {
+		return end;
+	}
+
+	public void setEnd(Date end) {
+		this.end = end;
+	}
+
 }

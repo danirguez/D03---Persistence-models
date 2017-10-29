@@ -9,7 +9,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -25,14 +24,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Trip extends DomainEntity{
-	
+public class Trip extends DomainEntity {
+
 	// Constructors
-	
+
 	public Trip() {
 		super();
 	}
-	
+
 	// Attributes
 
 	private String ticker;
@@ -73,7 +72,7 @@ public class Trip extends DomainEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	@NotEmpty
 	@ElementCollection
 	public Collection<String> getRequirement() {
@@ -88,7 +87,7 @@ public class Trip extends DomainEntity{
 	public Double getPrice() {
 		return price;
 	}
-	
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
@@ -122,7 +121,7 @@ public class Trip extends DomainEntity{
 	public void setTripEnd(Date tripEnd) {
 		this.tripEnd = tripEnd;
 	}
-	
+
 	public String getReason() {
 		return reason;
 	}
@@ -130,22 +129,18 @@ public class Trip extends DomainEntity{
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
-	
+
 	// Relationships
 
 	private Ranger ranger;
 	private Collection<Survival> survival;
 	private Manager manager;
-	private Collection<Audit> audit;
-	private Collection<Note> note;
-	private Collection<Sponsorship> sponsorship;
 	private Collection<Story> story;
 	private Collection<Tag> tag;
 	private Collection<Stage> stage;
-	private Collection<Category> category;
-	private Collection<Application> application;
+	private Category category;
 	private LegalText legalText;
-	
+
 	@Valid
 	@NotNull
 	@OneToOne(cascade = CascadeType.ALL, optional = false)
@@ -190,42 +185,6 @@ public class Trip extends DomainEntity{
 	public void setManager(Manager manager) {
 		this.manager = manager;
 	}
-	
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy="trip")
-	@ElementCollection
-	public Collection<Audit> getAudit() {
-		return audit;
-	}
-
-	public void setAudit(Collection<Audit> audit) {
-		this.audit = audit;
-	}
-
-	@Valid
-	@NotEmpty
-	@ManyToMany(mappedBy = "trips")
-	@ElementCollection
-	public Collection<Sponsorship> getSponsorship() {
-		return sponsorship;
-	}
-
-	public void setSponsorship(Collection<Sponsorship> sponsorship) {
-		this.sponsorship = sponsorship;
-	}
-
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy = "trip")
-	@ElementCollection
-	public Collection<Note> getNote() {
-		return note;
-	}
-
-	public void setNote(Collection<Note> note) {
-		this.note = note;
-	}
 
 	@Valid
 	@NotNull
@@ -265,26 +224,14 @@ public class Trip extends DomainEntity{
 
 	@Valid
 	@NotEmpty
-	@OneToMany(mappedBy = "trip")
+	@ManyToOne(optional = false)
 	@ElementCollection
-	public Collection<Category> getCategory() {
+	public Category getCategory() {
 		return category;
 	}
 
-	public void setCategory(Collection<Category> category) {
+	public void setCategory(Category category) {
 		this.category = category;
-	}
-
-	@Valid
-	@NotEmpty
-	@OneToMany(mappedBy = "trip")
-	@ElementCollection
-	public Collection<Application> getApplication() {
-		return application;
-	}
-
-	public void setApplication(Collection<Application> application) {
-		this.application = application;
 	}
 
 }

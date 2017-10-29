@@ -18,14 +18,14 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Note extends DomainEntity {
 
-	//Constructors
-	
-	public Note(){
+	// Constructors
+
+	public Note() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private Date moment;
 	private String remark;
 	private String reply;
@@ -41,8 +41,7 @@ public class Note extends DomainEntity {
 	public void setMoment(Date moment) {
 		this.moment = moment;
 	}
-	
-	@NotNull
+
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date getMomentReply() {
@@ -69,13 +68,13 @@ public class Note extends DomainEntity {
 	public void setReply(String reply) {
 		this.reply = reply;
 	}
-	
+
 	// Relationships
-	
+
 	private Auditor auditor;
 	private Trip trip;
 
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	public Trip getTrip() {
@@ -86,7 +85,7 @@ public class Note extends DomainEntity {
 		this.trip = trip;
 	}
 
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	public Auditor getAuditor() {

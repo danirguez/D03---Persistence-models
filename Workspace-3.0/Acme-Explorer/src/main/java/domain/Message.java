@@ -22,14 +22,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Access(AccessType.PROPERTY)
 public class Message extends DomainEntity {
 
-	//Constructors
-	
-	public Message(){
+	// Constructors
+
+	public Message() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private Date moment;
 	private String subject;
 	private String body;
@@ -72,13 +72,13 @@ public class Message extends DomainEntity {
 	public void setPriority(Priority priority) {
 		this.priority = priority;
 	}
-	
+
 	// Relationships
-	
+
 	private Actor sender;
 	private Collection<Actor> recipient;
 	private Collection<Folder> folder;
-	
+
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
@@ -92,7 +92,7 @@ public class Message extends DomainEntity {
 
 	@Valid
 	@NotEmpty
-	@OneToMany(mappedBy="received")
+	@OneToMany(mappedBy = "received")
 	@ElementCollection
 	public Collection<Actor> getRecipient() {
 		return recipient;
@@ -101,7 +101,7 @@ public class Message extends DomainEntity {
 	public void setRecipient(Collection<Actor> recipient) {
 		this.recipient = recipient;
 	}
-	
+
 	@Valid
 	@ManyToMany
 	@NotEmpty

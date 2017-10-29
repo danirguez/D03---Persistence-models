@@ -1,9 +1,11 @@
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,22 +17,22 @@ import org.hibernate.validator.constraints.URL;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class EducationRecord extends DomainEntity{
+public class EducationRecord extends DomainEntity {
 
-	//Constructors
-	
+	// Constructors
+
 	public EducationRecord() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String title;
 	private Date start;
 	private Date end;
 	private String institution;
 	private String link;
-	private String comment;
+	private Collection<String> comment;
 
 	@NotBlank
 	public String getTitle() {
@@ -79,11 +81,12 @@ public class EducationRecord extends DomainEntity{
 		this.link = link;
 	}
 
-	public String getComment() {
+	@ElementCollection
+	public Collection<String> getComment() {
 		return comment;
 	}
 
-	public void setComment(String comment) {
+	public void setComment(Collection<String> comment) {
 		this.comment = comment;
 	}
 

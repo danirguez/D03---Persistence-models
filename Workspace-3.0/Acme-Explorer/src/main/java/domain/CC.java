@@ -12,9 +12,9 @@ import org.hibernate.validator.constraints.Range;
 @Embeddable
 @Access(AccessType.PROPERTY)
 public class CC {
-	
+
 	// Attributes
-	
+
 	private String holderName;
 	private String brandName;
 	private Integer number;

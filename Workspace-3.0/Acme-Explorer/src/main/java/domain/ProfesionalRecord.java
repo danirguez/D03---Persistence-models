@@ -1,4 +1,3 @@
-
 package domain;
 
 import java.util.Collection;
@@ -20,21 +19,21 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class ProfesionalRecord extends DomainEntity {
 
-	//Constructors
-	
+	// Constructors
+
 	public ProfesionalRecord() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String companyName;
 	private Date start;
 	private Date endOrActual;
 	private String rol;
 	private String link;
 	private Collection<String> comment;
-	
+
 	@NotBlank
 	public String getCompanyName() {
 		return companyName;

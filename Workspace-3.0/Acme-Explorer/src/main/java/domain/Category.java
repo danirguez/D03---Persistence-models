@@ -1,10 +1,12 @@
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -13,17 +15,17 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Category extends DomainEntity {
-	
+
 	// Constructors
-	
+
 	public Category() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String name;
-	
+
 	@NotBlank
 	public String getName() {
 		return name;
@@ -32,14 +34,15 @@ public class Category extends DomainEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	// Relationships
-	
+
 	private Category categoryParent;
+	private Collection<Category> categories;
 	private Trip trip;
-	
+
 	@Valid
-	@OneToOne(optional=true)
+	@ManyToOne(optional = true)
 	@NotNull
 	public Category getCategoryParent() {
 		return categoryParent;
@@ -49,9 +52,20 @@ public class Category extends DomainEntity {
 		this.categoryParent = categoryParent;
 	}
 	
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "categoryParent")
+	public Collection<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(Collection<Category> categories) {
+		this.categories = categories;
+	}
+
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@OneToMany(mappedBy = "category")
 	public Trip getTrip() {
 		return trip;
 	}
@@ -59,5 +73,5 @@ public class Category extends DomainEntity {
 	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
-	
+
 }

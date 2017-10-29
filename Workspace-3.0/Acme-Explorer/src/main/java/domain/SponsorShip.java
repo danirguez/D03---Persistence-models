@@ -1,13 +1,9 @@
 package domain;
 
-import java.util.Collection;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -16,59 +12,58 @@ import org.hibernate.validator.constraints.URL;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Sponsorship extends DomainEntity{
+public class Sponsorship extends DomainEntity {
 
-	//Constructors
-	
-	public Sponsorship(){
+	// Constructors
+
+	public Sponsorship() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String banner;
 	private String infoPage;
 	private CC creditCard;
-	
 
 	@URL
 	@NotBlank
-	public String getBanner(){
+	public String getBanner() {
 		return banner;
 	}
-	
-	public void setBanner(String banner){
+
+	public void setBanner(String banner) {
 		this.banner = banner;
 	}
-	
+
 	@URL
 	@NotBlank
-	public String getInfoPage(){
+	public String getInfoPage() {
 		return infoPage;
 	}
-	
-	public void setInfoPage(String infoPage){
+
+	public void setInfoPage(String infoPage) {
 		this.infoPage = infoPage;
 	}
-	
+
 	@Valid
 	@NotNull
-	public CC getCreditCard(){
+	public CC getCreditCard() {
 		return creditCard;
 	}
-	
+
 	public void setCreditCard(CC creditCard) {
 		this.creditCard = creditCard;
 	}
-	
+
 	// Relationships
-	
+
 	private Sponsor sponsor;
-	private Collection<Trip> trips;
-	
+	private Trip trip;
+
 	@Valid
 	@NotNull
-	@OneToOne(optional=false)
+	@ManyToOne(optional = false)
 	public Sponsor getSponsor() {
 		return sponsor;
 	}
@@ -79,13 +74,12 @@ public class Sponsorship extends DomainEntity{
 
 	@Valid
 	@NotNull
-	@ManyToMany
-	@ElementCollection
-	public Collection<Trip> getTrips() {
-		return trips;
+	@ManyToOne(optional = false)
+	public Trip getTrip() {
+		return trip;
 	}
 
-	public void setTrips(Collection<Trip> trips) {
-		this.trips = trips;
+	public void setTrip(Trip trip) {
+		this.trip = trip;
 	}
 }

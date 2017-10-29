@@ -14,18 +14,18 @@ import javax.validation.constraints.NotNull;
 @Access(AccessType.PROPERTY)
 public class Manager extends Actor {
 
-	//Constructors
-	
+	// Constructors
+
 	public Manager() {
 		super();
 	}
 
 	// Relationships
-	
+
 	private Collection<Survival> survival;
 	private Collection<Trip> trip;
 
-	@OneToMany(mappedBy="manager")
+	@OneToMany(mappedBy = "manager")
 	@Valid
 	@NotNull
 	@ElementCollection
@@ -39,7 +39,7 @@ public class Manager extends Actor {
 
 	@Valid
 	@NotNull
-	@OneToMany(mappedBy="manager")
+	@OneToMany(mappedBy = "manager")
 	@ElementCollection
 	public Collection<Trip> getTrip() {
 		return this.trip;

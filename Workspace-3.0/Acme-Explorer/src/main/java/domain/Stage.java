@@ -3,7 +3,7 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -13,13 +13,13 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Stage extends DomainEntity {
-	
+
 	// Constructors
-	
+
 	public Stage() {
 		super();
 	}
-	
+
 	// Attributes
 
 	private String title;
@@ -52,14 +52,14 @@ public class Stage extends DomainEntity {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
+
 	// Relationships
-	
+
 	private Trip trip;
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@OneToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -67,5 +67,5 @@ public class Stage extends DomainEntity {
 	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
-	
+
 }

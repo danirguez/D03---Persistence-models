@@ -1,15 +1,16 @@
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
@@ -18,18 +19,18 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Access(AccessType.PROPERTY)
 public class LegalText extends DomainEntity {
-	
+
 	// Constructors
-	
+
 	public LegalText() {
 		super();
 	}
-	
+
 	// Attributes
 
 	private String title;
 	private String body;
-	private Integer numberLaw;
+	private Collection<String> numberLaw;
 	private Date moment;
 
 	@NotBlank
@@ -50,12 +51,12 @@ public class LegalText extends DomainEntity {
 		this.body = body;
 	}
 
-	@Min(0)
-	public Integer getNumberLaw() {
+	@ElementCollection
+	public Collection<String> getNumberLaw() {
 		return numberLaw;
 	}
 
-	public void setNumberLaw(Integer numberLaw) {
+	public void setNumberLaw(Collection<String> numberLaw) {
 		this.numberLaw = numberLaw;
 	}
 
@@ -69,9 +70,9 @@ public class LegalText extends DomainEntity {
 	public void setMoment(Date moment) {
 		this.moment = moment;
 	}
-	
+
 	// Relationships
-	
+
 	private Trip trip;
 
 	@NotNull
@@ -84,5 +85,5 @@ public class LegalText extends DomainEntity {
 	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
-	
+
 }

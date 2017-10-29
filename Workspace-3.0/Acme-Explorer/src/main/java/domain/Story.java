@@ -17,14 +17,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Access(AccessType.PROPERTY)
 public class Story extends DomainEntity {
 
-	//Constructors
-	
-	public Story(){
+	// Constructors
+
+	public Story() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String title;
 	private String pieceText;
 	private Collection<String> link;
@@ -52,11 +52,11 @@ public class Story extends DomainEntity {
 	public Collection<String> getLink() {
 		return link;
 	}
-	
+
 	public void setLink(Collection<String> link) {
 		this.link = link;
 	}
-	
+
 	// Relationships
 
 	private Trip trip;
@@ -64,7 +64,7 @@ public class Story extends DomainEntity {
 
 	@Valid
 	@NotNull
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -75,7 +75,7 @@ public class Story extends DomainEntity {
 
 	@Valid
 	@NotNull
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	public Explorer getWriter() {
 		return writer;
 	}

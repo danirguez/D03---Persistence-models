@@ -1,4 +1,3 @@
-
 package domain;
 
 import javax.persistence.Access;
@@ -15,19 +14,18 @@ import org.hibernate.validator.constraints.URL;
 public class PersonalRecord extends DomainEntity {
 
 	// Constructors
-	
+
 	public PersonalRecord() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String name;
 	private String photo;
 	private String email;
 	private String phoneNumber;
 	private String likedln;
-	
 
 	@NotBlank
 	public String getName() {
@@ -57,7 +55,7 @@ public class PersonalRecord extends DomainEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@NotBlank
 	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
 	public String getPhoneNumber() {
@@ -73,10 +71,9 @@ public class PersonalRecord extends DomainEntity {
 	public String getLikedln() {
 		return likedln;
 	}
+
 	public void setLikedln(String likedln) {
 		this.likedln = likedln;
 	}
-
-	
 
 }

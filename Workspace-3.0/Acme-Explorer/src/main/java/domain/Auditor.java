@@ -14,30 +14,30 @@ import javax.validation.constraints.NotNull;
 @Access(AccessType.PROPERTY)
 public class Auditor extends Actor {
 
-	//Constructors
-	
+	// Constructors
+
 	public Auditor() {
 		super();
 	}
 
 	// Relationships
-	
+
 	private Collection<Note> note;
 	private Collection<Audit> audit;
 
-	@OneToMany(mappedBy="auditor")
+	@OneToMany(mappedBy = "auditor")
 	@Valid
 	@NotNull
 	@ElementCollection
 	public Collection<Note> getNote() {
 		return note;
 	}
-	
+
 	public void setNote(Collection<Note> note) {
 		this.note = note;
 	}
 
-	@OneToMany(mappedBy="auditor")
+	@OneToMany(mappedBy = "auditor")
 	@Valid
 	@NotNull
 	@ElementCollection

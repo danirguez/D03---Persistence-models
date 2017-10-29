@@ -1,4 +1,3 @@
-
 package domain;
 
 import java.util.Collection;
@@ -18,20 +17,20 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Access(AccessType.PROPERTY)
 public class Ranger extends Actor {
 
-	//Constructors
-	
+	// Constructors
+
 	public Ranger() {
 		super();
 	}
-	
+
 	// Relationships
-	
-	private CV	cv;
+
+	private CV cv;
 	private Collection<Trip> trips;
 
 	@Valid
 	@NotNull
-	@OneToOne(mappedBy="ranger", optional=true)
+	@OneToOne(mappedBy = "ranger", optional = true)
 	public CV getCV() {
 		return cv;
 	}
@@ -42,7 +41,7 @@ public class Ranger extends Actor {
 
 	@Valid
 	@NotEmpty
-	@OneToMany(mappedBy="ranger")
+	@OneToMany(mappedBy = "ranger")
 	@ElementCollection
 	public Collection<Trip> getTrip() {
 		return trips;

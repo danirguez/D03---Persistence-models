@@ -16,21 +16,20 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-
 @Entity
 @Access(AccessType.PROPERTY)
 public class CV extends DomainEntity {
 
-	//Constructors
-	
+	// Constructors
+
 	public CV() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String ticker;
-		
+
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[0-9]{6}-[A-Z]{4}")
@@ -41,9 +40,9 @@ public class CV extends DomainEntity {
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
 	}
-	
+
 	// Relationships
-	
+
 	private Ranger ranger;
 	private PersonalRecord personalRecord;
 	private Collection<EndorserRecord> endorserRecord;
@@ -52,7 +51,7 @@ public class CV extends DomainEntity {
 	private Collection<EducationRecord> educationRecord;
 
 	@Valid
-	@OneToOne(optional=false)
+	@OneToOne(optional = false)
 	public Ranger getRanger() {
 		return ranger;
 	}
@@ -62,7 +61,7 @@ public class CV extends DomainEntity {
 	}
 
 	@Valid
-	@OneToOne(cascade = CascadeType.ALL, optional=false)
+	@OneToOne(cascade = CascadeType.ALL, optional = false)
 	public PersonalRecord getPersonalRecord() {
 		return personalRecord;
 	}
@@ -91,7 +90,8 @@ public class CV extends DomainEntity {
 		return miscellaneousRecord;
 	}
 
-	public void setMiscellaneousRecord(Collection<MiscellaneousRecord> miscellaneousRecord) {
+	public void setMiscellaneousRecord(
+			Collection<MiscellaneousRecord> miscellaneousRecord) {
 		this.miscellaneousRecord = miscellaneousRecord;
 	}
 
@@ -103,7 +103,8 @@ public class CV extends DomainEntity {
 		return profesionalRecord;
 	}
 
-	public void setProfesionalRecord(Collection<ProfesionalRecord> profesionalRecord) {
+	public void setProfesionalRecord(
+			Collection<ProfesionalRecord> profesionalRecord) {
 		this.profesionalRecord = profesionalRecord;
 	}
 

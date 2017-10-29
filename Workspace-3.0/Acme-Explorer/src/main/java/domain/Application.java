@@ -18,14 +18,14 @@ import javax.validation.constraints.Past;
 @Access(AccessType.PROPERTY)
 public class Application extends DomainEntity {
 
-	//Constructors
-	
-	public Application(){
+	// Constructors
+
+	public Application() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private Date moment;
 	private String status;
 	private Collection<String> comment;
@@ -41,7 +41,6 @@ public class Application extends DomainEntity {
 		this.moment = moment;
 	}
 
-	@Valid
 	@NotNull
 	public String getStatus() {
 		return status;
@@ -61,11 +60,11 @@ public class Application extends DomainEntity {
 	}
 
 	// Relationships
-	
+
 	private Trip trip;
 	private Explorer explorer;
-	
-	@ManyToOne(optional=false)
+
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	public Trip getTrip() {
@@ -76,7 +75,7 @@ public class Application extends DomainEntity {
 		this.trip = trip;
 	}
 
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	public Explorer getExplorer() {

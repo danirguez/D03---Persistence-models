@@ -1,4 +1,3 @@
-
 package domain;
 
 import java.util.Collection;
@@ -17,14 +16,14 @@ import org.hibernate.validator.constraints.URL;
 @Access(AccessType.PROPERTY)
 public class EndorserRecord extends DomainEntity {
 
-	//Constructors
-	
+	// Constructors
+
 	public EndorserRecord() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String endorserName;
 	private String email;
 	private String phoneNumber;

@@ -1,6 +1,4 @@
-
 package domain;
-
 
 import java.util.Collection;
 
@@ -17,17 +15,16 @@ import org.hibernate.validator.constraints.URL;
 public class MiscellaneousRecord extends DomainEntity {
 
 	// Constructors
-	
+
 	public MiscellaneousRecord() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String title;
 	private String link;
 	private Collection<String> comment;
-	
 
 	@NotBlank
 	public String getTitle() {

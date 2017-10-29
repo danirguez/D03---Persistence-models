@@ -20,14 +20,14 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.PROPERTY)
 public class Audit extends DomainEntity {
 
-	//Constructors
-	
-	public Audit(){
+	// Constructors
+
+	public Audit() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private Date moment;
 	private String title;
 	private String description;
@@ -70,13 +70,13 @@ public class Audit extends DomainEntity {
 	public void setAttachment(Collection<String> attachment) {
 		this.attachment = attachment;
 	}
-	
+
 	// Relationships
-	
+
 	private Trip trip;
 	private Auditor auditor;
 
-	@ManyToOne(optional=false)
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	public Trip getTrip() {
@@ -86,8 +86,8 @@ public class Audit extends DomainEntity {
 	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
-	
-	@ManyToOne(optional=false)
+
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
 	public Auditor getAuditor() {
@@ -95,7 +95,7 @@ public class Audit extends DomainEntity {
 	}
 
 	public void setAuditor(final Auditor auditor) {
-		this.auditor=auditor;
+		this.auditor = auditor;
 	}
 
 }

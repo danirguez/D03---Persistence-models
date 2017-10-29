@@ -10,44 +10,44 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class Emergency extends DomainEntity{
+public class Emergency extends DomainEntity {
 
-	//Constructors
-	
-	public Emergency(){
+	// Constructors
+
+	public Emergency() {
 		super();
 	}
-	
+
 	// Attributes
-	
+
 	private String name;
 	private String email;
 	private String phoneNumber;
-	
+
 	@NotBlank
-	public String getName(){
+	public String getName() {
 		return name;
 	}
-	
-	public void setName(String name){
+
+	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Email
-	public String getEmail(){
+	public String getEmail() {
 		return email;
 	}
-	
-	public void setEmail(String email){
+
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
-	public String getPhoneNumber(){
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	
-	public void setPhoneNumber(String phoneNumber){
+
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 }
