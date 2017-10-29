@@ -57,8 +57,7 @@ public class Folder extends DomainEntity {
 	}
 
 	@Valid
-	@ManyToOne(optional = false)
-	@NotNull
+	@ManyToOne(optional = true)
 	public Actor getActor() {
 		return actor;
 	}
@@ -68,8 +67,7 @@ public class Folder extends DomainEntity {
 	}
 
 	@Valid
-	@ManyToOne(optional = false)
-	@NotNull
+	@ManyToOne(optional = true)
 	public Folder getCustomFolder() {
 		return customFolder;
 	}
@@ -80,7 +78,7 @@ public class Folder extends DomainEntity {
 
 	
 	@Valid
-	@NotNull
+	@ElementCollection
 	@OneToMany(mappedBy="customFolder")
 	public Collection<Folder> getFolders() {
 		return folders;

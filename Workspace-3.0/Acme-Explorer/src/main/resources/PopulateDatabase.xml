@@ -224,7 +224,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="ranger1" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<bean id="inBoxRanger2" class="domain.Folder">
@@ -278,7 +278,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="ranger2" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<!-- FOLDERS EXPLORER -->
@@ -338,7 +338,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="explorer1" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<bean id="inBoxExplorer2" class="domain.Folder">
@@ -392,7 +392,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="explorer2" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<!-- FOLDERS ADMIN -->
@@ -448,7 +448,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="administrator1" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<bean id="inBoxAdministrator2" class="domain.Folder">
@@ -502,7 +502,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="administrator2" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<!-- FOLDERS SPONSOR -->
@@ -558,7 +558,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="sponsor1" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<bean id="inBoxSponsor2" class="domain.Folder">
@@ -612,7 +612,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="sponsor2" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<!-- FOLDERS MANAGER -->
@@ -668,7 +668,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="manager1" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<bean id="inBoxManager2" class="domain.Folder">
@@ -722,7 +722,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="manager2" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<!-- FOLDERS AUDITOR -->
@@ -778,7 +778,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="auditor1" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 	<bean id="inBoxAuditor2" class="domain.Folder">
@@ -832,7 +832,7 @@
 			<list></list>
 		</property>
 		<property name="actor" ref="auditor2" />
-		<property name="customFolder"> <null/></property>
+		<property name="customFolder"><null/></property>
 	</bean>
 	
 								<!-- RANGER -->
@@ -849,7 +849,7 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
+	<property name="socialNetwork" value="http:/www.example.com" />
 	<property name="userAccount" ref="userAccount2" />
 	<property name="CV" ref="cv1" />
 	<property name="trip">
@@ -863,6 +863,11 @@
 	<property name="notificationBox" ref="notificationBoxRanger1"/>
 	<property name="trashBox" ref="trashBoxRanger1"/>
 	<property name="spamBox" ref="spamBoxRanger1"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxRanger1"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 			<ref bean="message1"/>
@@ -883,7 +888,7 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
+	<property name="socialNetwork" value="http://www.example.com" />
 	<property name="CV" ref="cv2" />
 	<property name="trip">
 		<list>
@@ -897,6 +902,11 @@
 	<property name="notificationBox" ref="notificationBoxRanger2"/>
 	<property name="trashBox" ref="trashBoxRanger2"/>
 	<property name="spamBox" ref="spamBoxRanger2"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxRanger2"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -912,10 +922,26 @@
 	<property name="ticker" value="221017-ABCD" />
 	<property name="ranger" ref="ranger1" />
 	<property name="personalRecord" ref="personalRecord1" />
-	<property name="endorserRecord"> <null/> </property>
-	<property name="miscellaneousRecord"> <null/> </property>
-	<property name="profesionalRecord"> <null/> </property>
-	<property name="educationRecord"> <null/> </property>
+	<property name="endorserRecord">
+		<list>
+			<ref bean="endorserRecord1"/>
+		</list>
+	</property>
+	<property name="miscellaneousRecord">
+		<list>
+			<ref bean="miscellaneousRecord1"/>
+		</list>
+	</property>
+	<property name="profesionalRecord">
+		<list>
+			<ref bean="profesionalRecord1"/>
+		</list>
+	</property>
+	<property name="educationRecord">
+		<list>
+			<ref bean="educationRecord1"/>
+		</list>
+	</property>
 	</bean>
 	
 	<!-- CV2 -->
@@ -926,25 +952,21 @@
 	<property name="personalRecord" ref="personalRecord2" />
 	<property name="endorserRecord">
 		<list>
-			<ref bean="endorserRecord1"/>
 			<ref bean="endorserRecord2"/>
 		</list>
 	</property>
 	<property name="miscellaneousRecord">
 		<list>
-			<ref bean="miscellaneousRecord1"/>
 			<ref bean="miscellaneousRecord2"/>
 		</list>
 	</property>
 	<property name="profesionalRecord">
 		<list>
-			<ref bean="profesionalRecord1"/>
 			<ref bean="profesionalRecord2"/>
 		</list>
 	</property>
 	<property name="educationRecord">
 		<list>
-			<ref bean="educationRecord1"/>
 			<ref bean="educationRecord2"/>
 		</list>
 	</property>
@@ -957,8 +979,8 @@
 	<bean id="endorserRecord1" class="domain.EndorserRecord">
 	<property name="endorserName" value="Mario" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 443632" />
-	<property name="likedln" value="www.likedlin.com" />
+	<property name="phoneNumber" value="+34 (25) 443632" />
+	<property name="likedln" value="http://www.likedlin.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -972,8 +994,8 @@
 	<bean id="endorserRecord2" class="domain.EndorserRecord">
 	<property name="endorserName" value="Daniel" />
 	<property name="email" value="codeada3@gmail.com" />
-	<property name="phoneNumber" value="++34 (253) 445232" />
-	<property name="likedln" value="www.likedlin.com" />
+	<property name="phoneNumber" value="+34 (256) 445232" />
+	<property name="likedln" value="http://www.likedlin.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -988,7 +1010,7 @@
 	
 	<bean id="miscellaneousRecord1" class="domain.MiscellaneousRecord">
 	<property name="title" value="Titulo1" />
-	<property name="link" value="www.example.com" />
+	<property name="link" value="http://www.example.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -1001,7 +1023,7 @@
 	
 	<bean id="miscellaneousRecord2" class="domain.MiscellaneousRecord">
 	<property name="title" value="Titulo2" />
-	<property name="link" value="www.example.com" />
+	<property name="link" value="http://www.example.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -1019,7 +1041,7 @@
 	<property name="start" value="2017/08/03" />
 	<property name="endOrActual" value="2017/08/18" />
 	<property name="rol" value="rol1" />
-	<property name="link" value="www.example.com" />
+	<property name="link" value="http://www.example.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -1035,7 +1057,7 @@
 	<property name="start" value="2017/08/04" />
 	<property name="endOrActual" value="2017/08/19" />
 	<property name="rol" value="rol1" />
-	<property name="link" value="www.example.com" />
+	<property name="link" value="http://www.example.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -1053,7 +1075,7 @@
 	<property name="start" value="2017/08/03" />
 	<property name="end" value="2017/08/18" />
 	<property name="institution" value="Blablabla" />
-	<property name="link" value="www.example.com" />
+	<property name="link" value="http://www.example.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -1069,7 +1091,7 @@
 	<property name="start" value="2017/08/04" />
 	<property name="end" value="2017/08/19" />
 	<property name="institution" value="Blebleble" />
-	<property name="link" value="www.example.com" />
+	<property name="link" value="http://www.example.com" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -1085,8 +1107,9 @@
 	<bean id="personalRecord1" class="domain.PersonalRecord">
 	<property name="name" value="Mario" />
 	<property name="photo" value="http://www.google.es" />
+	<property name="email" value="marigo@hotmail.com" />
 	<property name="phoneNumber" value="+34 (253) 443659" />
-	<property name="likedln" value="www.likedlin.com" />
+	<property name="likedln" value="http://www.likedlin.com" />
 	</bean>
 	
 	<!-- PERSONALRECORD2 -->
@@ -1094,8 +1117,9 @@
 	<bean id="personalRecord2" class="domain.PersonalRecord">
 	<property name="name" value="Dani" />
 	<property name="photo" value="http://www.google.com" />
+	<property name="email" value="danigo@hotmail.com" />
 	<property name="phoneNumber" value="+34 (283) 443659" />
-	<property name="likedln" value="www.likedlin.com" />
+	<property name="likedln" value="http://www.likedlin.com" />
 	</bean>
 	
 							<!-- CATEGORY -->	
@@ -1161,7 +1185,7 @@
 			<value>Law 2</value>
 		</list>
 	</property>
-	<property name="moment" value="23/10/2017" />
+	<property name="moment" value="23/10/2013" />
 	<property name="trip" ref="trip1" />
 	</bean>
 	
@@ -1176,7 +1200,7 @@
 			<value>Law 2</value>
 		</list>
 	</property>
-	<property name="moment" value="23/10/2017" />
+	<property name="moment" value="23/10/2015" />
 	<property name="trip" ref="trip2" />
 	</bean>
 	
@@ -1230,13 +1254,18 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="danirl" />
 	<property name="nameSocialNetwork" value="LucasFilm" />
-	<property name="socialNetwork" value="www.micasa.com" />
+	<property name="socialNetwork" value="http://www.micasa.com" />
 	<property name="userAccount" ref="userAccount1" />
 	<property name="inBox" ref="inBoxAdministrator1"/>
 	<property name="outBox" ref="outBoxAdministrator1"/>
 	<property name="notificationBox" ref="notificationBoxAdministrator1"/>
 	<property name="trashBox" ref="trashBoxAdministrator1"/>
 	<property name="spamBox" ref="spamBoxAdministrator1"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxAdministrator1"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1256,13 +1285,18 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="danirl" />
 	<property name="nameSocialNetwork" value="LucasFilm" />
-	<property name="socialNetwork" value="www.micasa.com" />
+	<property name="socialNetwork" value="http://www.micasa.com" />
 	<property name="userAccount" ref="userAccount12" />
 	<property name="inBox" ref="inBoxAdministrator2"/>
 	<property name="outBox" ref="outBoxAdministrator2"/>
 	<property name="notificationBox" ref="notificationBoxAdministrator2"/>
 	<property name="trashBox" ref="trashBoxAdministrator2"/>
 	<property name="spamBox" ref="spamBoxAdministrator2"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxAdministrator2"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1336,13 +1370,16 @@
 	<property name="legalText" ref="legalText1" />
 	<property name="category" ref="category2" />
 	<property name="survival">
-		<null />
+		<list>
+		</list>
 	</property>
 	<property name="story">
-		<null />
+		<list>
+		</list>
 	</property>
 	<property name="tag">
-		<null />
+		<list>
+		</list>
 	</property>
 	<property name="stage">
 		<list>
@@ -1366,7 +1403,7 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="alfonso23cb" />
 	<property name="nameSocialNetwork" value="SolCa" />
-	<property name="socialNetwork" value="www.solcainformatica.es" />
+	<property name="socialNetwork" value="http://www.solcainformatica.es" />
 	<property name="userAccount" ref="userAccount4" />
 	<property name="sponsorship">
 		<list>
@@ -1379,6 +1416,11 @@
 	<property name="notificationBox" ref="notificationBoxSponsor1"/>
 	<property name="trashBox" ref="trashBoxSponsor1"/>
 	<property name="spamBox" ref="spamBoxSponsor1"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxSponsor1"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1398,7 +1440,7 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="julioSponsor" />
 	<property name="nameSocialNetwork" value="Example" />
-	<property name="socialNetwork" value="www.example.es" />
+	<property name="socialNetwork" value="http://www.example.es" />
 	<property name="userAccount" ref="userAccount5" />
 	<property name="sponsorship">
 		<list>
@@ -1411,6 +1453,11 @@
 	<property name="notificationBox" ref="notificationBoxSponsor2"/>
 	<property name="trashBox" ref="trashBoxSponsor2"/>
 	<property name="spamBox" ref="spamBoxSponsor2"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxSponsor2"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1509,6 +1556,11 @@
 	<property name="notificationBox" ref="notificationBoxExplorer1"/>
 	<property name="trashBox" ref="trashBoxExplorer1"/>
 	<property name="spamBox" ref="spamBoxExplorer1"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxExplorer1"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 			<ref bean="message2"/>
@@ -1529,7 +1581,7 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="joseC" />
 	<property name="nameSocialNetwork" value="Example" />
-	<property name="socialNetwork" value="www.example.es" />
+	<property name="socialNetwork" value="http://www.example.es" />
 	<property name="userAccount" ref="userAccount11" />
 	<property name="finder">
 		<list>
@@ -1559,6 +1611,11 @@
 	<property name="notificationBox" ref="notificationBoxExplorer2"/>
 	<property name="trashBox" ref="trashBoxExplorer2"/>
 	<property name="spamBox" ref="spamBoxExplorer2"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxExplorer2"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 			<ref bean="message1"/>
@@ -1699,15 +1756,28 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
+	<property name="socialNetwork" value="http://www.example.com" />
 	<property name="userAccount" ref="userAccount6" />
-	<property name="survival" ><null /></property>
-	<property name="trip"> <null /></property>
+	<property name="survival">
+		<list>
+			<ref bean="survival1"/>
+		</list>
+	</property>
+	<property name="trip">
+		<list>
+			<ref bean="trip1"/>
+		</list>
+	</property>
 	<property name="inBox" ref="inBoxManager1"/>
 	<property name="outBox" ref="outBoxManager1"/>
 	<property name="notificationBox" ref="notificationBoxManager1"/>
 	<property name="trashBox" ref="trashBoxManager1"/>
 	<property name="spamBox" ref="spamBoxManager1"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxManager1"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1727,17 +1797,15 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
+	<property name="socialNetwork" value="http://www.example.com" />
 	<property name="userAccount" ref="userAccount7" />
 	<property name="survival">
 		<list>
-			<ref bean="survival1"/>
 			<ref bean="survival2"/>
 		</list>
 	</property>
 	<property name="trip">
 		<list>
-			<ref bean="trip1"/>
 			<ref bean="trip2"/>
 		</list>
 	</property>
@@ -1746,6 +1814,11 @@
 	<property name="notificationBox" ref="notificationBoxManager2"/>
 	<property name="trashBox" ref="trashBoxManager2"/>
 	<property name="spamBox" ref="spamBoxManager2"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxManager2"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1767,15 +1840,30 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
+	<property name="socialNetwork" value="http://www.example.com" />
 	<property name="userAccount" ref="userAccount8" />
-	<property name="audit"> <null /></property>
-	<property name="note" ><null /></property>
+	<property name="note">
+		<list>
+			<ref bean="note1"/>
+			<ref bean="note2"/>
+		</list>
+	</property>
+	<property name="audit">
+		<list>
+			<ref bean="audit1"/>
+			<ref bean="audit2"/>
+		</list>
+	</property>
 	<property name="inBox" ref="inBoxAuditor1"/>
 	<property name="outBox" ref="outBoxAuditor1"/>
 	<property name="notificationBox" ref="notificationBoxAuditor1"/>
 	<property name="trashBox" ref="trashBoxAuditor1"/>
 	<property name="spamBox" ref="spamBoxAuditor1"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxAuditor1"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1795,17 +1883,15 @@
 	<property name="photo" value="http://www.google.es" />
 	<property name="nick" value="codec" />
 	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="www.example.com" />
+	<property name="socialNetwork" value="http://www.example.com" />
 	<property name="userAccount" ref="userAccount9" />
 	<property name="note">
 		<list>
-			<ref bean="note1"/>
 			<ref bean="note2"/>
 		</list>
 	</property>
 	<property name="audit">
 		<list>
-			<ref bean="audit1"/>
 			<ref bean="audit2"/>
 		</list>
 	</property>
@@ -1814,6 +1900,11 @@
 	<property name="notificationBox" ref="notificationBoxAuditor2"/>
 	<property name="trashBox" ref="trashBoxAuditor2"/>
 	<property name="spamBox" ref="spamBoxAuditor2"/>
+	<property name="customFolders">
+		<list>
+			<ref bean="customBoxAuditor2"/>
+		</list>
+	</property>
 	<property name="sent">
 		<list>
 		</list>
@@ -1850,7 +1941,7 @@
 	<!-- AUDIT1 -->
 	
 	<bean id="audit1" class="domain.Audit">
-	<property name="moment" value="23/10/2017" />
+	<property name="moment" value="23/10/2015" />
 	<property name="title" value="First" />
 	<property name="description" value="Something" />
 	<property name="trip" ref="trip1" />
@@ -1866,7 +1957,7 @@
 	<!-- AUDIT2 -->
 	
 	<bean id="audit2" class="domain.Audit">
-	<property name="moment" value="02/10/2017" />
+	<property name="moment" value="02/10/2014" />
 	<property name="title" value="Second" />
 	<property name="description" value="thing" />
 	<property name="trip" ref="trip2" />
@@ -1908,7 +1999,7 @@
 	<!-- APPLICATION1 -->
 	
 	<bean id="application1" class="domain.Application">
-	<property name="moment" value="25/10/2017" />
+	<property name="moment" value="25/10/2013" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>
@@ -1923,7 +2014,7 @@
 	<!-- APPLICATION2 -->
 	
 	<bean id="application2" class="domain.Application">
-	<property name="moment" value="10/10/2017" />
+	<property name="moment" value="10/10/2014" />
 	<property name="comment">
 		<list>
 			<value>Comentario 1</value>

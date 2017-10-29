@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -57,9 +56,8 @@ public class Stage extends DomainEntity {
 
 	private Trip trip;
 
-	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public Trip getTrip() {
 		return trip;
 	}

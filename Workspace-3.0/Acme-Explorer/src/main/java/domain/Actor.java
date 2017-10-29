@@ -19,7 +19,6 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 import security.UserAccount;
@@ -230,8 +229,7 @@ public abstract class Actor extends DomainEntity {
 	}
 
 	@Valid
-	@NotNull
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	public Message getReceived() {
 		return received;
 	}
@@ -241,7 +239,7 @@ public abstract class Actor extends DomainEntity {
 	}
 
 	@Valid
-	@NotEmpty
+	@NotNull
 	@OneToMany(mappedBy = "sender")
 	@ElementCollection
 	public Collection<Message> getSent() {

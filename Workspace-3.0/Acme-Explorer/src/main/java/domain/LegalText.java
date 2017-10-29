@@ -75,9 +75,8 @@ public class LegalText extends DomainEntity {
 
 	private Trip trip;
 
-	@NotNull
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public Trip getTrip() {
 		return trip;
 	}
