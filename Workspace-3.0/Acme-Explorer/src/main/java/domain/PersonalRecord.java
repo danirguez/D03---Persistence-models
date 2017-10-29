@@ -49,6 +49,16 @@ public class PersonalRecord extends DomainEntity {
 	}
 
 	@NotBlank
+	@Email
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	@NotBlank
 	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -67,14 +77,6 @@ public class PersonalRecord extends DomainEntity {
 		this.likedln = likedln;
 	}
 
-	@NotBlank
-	@Email
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 
 }
