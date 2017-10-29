@@ -39,7 +39,7 @@ public class Category extends DomainEntity {
 
 	private Category categoryParent;
 	private Collection<Category> categories;
-	private Trip trip;
+	private Collection<Trip> trip;
 
 	@Valid
 	@ManyToOne(optional = false)
@@ -66,11 +66,11 @@ public class Category extends DomainEntity {
 	@NotNull
 	@Valid
 	@OneToMany(mappedBy = "category")
-	public Trip getTrip() {
+	public Collection<Trip> getTrip() {
 		return trip;
 	}
 
-	public void setTrip(Trip trip) {
+	public void setTrip(Collection<Trip> trip) {
 		this.trip = trip;
 	}
 
