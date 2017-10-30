@@ -174,7 +174,6 @@
 		<property name="systemFolder" value="true"/>
 		<property name="messages">
 			<list>
-				<ref bean="message3"/>
 			</list>
 		</property>
 		<property name="actor" ref="ranger1" />
@@ -300,7 +299,6 @@
 		<property name="systemFolder" value="true"/>
 		<property name="messages">
 			<list>
-				<ref bean="message4"/>
 			</list>
 		</property>
 		<property name="actor" ref="explorer1" />
@@ -946,7 +944,7 @@
 			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received" ref="message4"/>
+	<property name="received"><null/></property>
 	</bean>
 	
 	<!-- RANGER2 -->
@@ -1603,7 +1601,7 @@
 			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received" ref="message3"/>
+	<property name="received"><null/></property>
 	</bean>							
 	
 	<!-- EXPLORER2 -->
@@ -1779,6 +1777,8 @@
 	
 	<!-- Message3 -->
 	
+	<!--  
+	
 	<bean id="message3" class="domain.Message">
 		<property name="moment" value="01/01/2012 12:30" />
 		<property name="subject" value="Que tal" />
@@ -1798,7 +1798,11 @@
 		</property>
 	</bean>	
 	
+	-->
+	
 	<!-- Message4 -->
+	
+	<!--  
 	
 	<bean id="message4" class="domain.Message">
 		<property name="moment" value="01/01/2012 12:30" />
@@ -1818,6 +1822,8 @@
 			</list> 
 		</property>
 	</bean>	
+	
+	-->
 	
 										<!-- MANAGER -->
 	
