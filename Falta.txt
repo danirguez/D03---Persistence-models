@@ -1,8 +1,7 @@
 -------------------------------FALTA-----------------------
 
-Corregir folder, añadir atributo boolean systemFolder
-Añadir socialId al XML
-Cambiar los pattern de phone
-En personRecord no se añade curriculum? Porque en Stage he metido Trip...
 En configuration countryCode es un String?
+Corregir folder, añadir atributo boolean systemFolder
+Cambiar los pattern de phone
+Añadir socialId al XML
 Añadir Configuration al XML
