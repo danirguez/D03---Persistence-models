@@ -223,9 +223,7 @@ public class Trip extends DomainEntity {
 	}
 
 	@Valid
-	@NotEmpty
 	@ManyToOne(optional = false)
-	@ElementCollection
 	public Category getCategory() {
 		return category;
 	}

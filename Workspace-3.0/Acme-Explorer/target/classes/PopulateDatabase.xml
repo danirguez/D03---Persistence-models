@@ -873,7 +873,7 @@
 			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received" ref="message1"/>
+	<property name="received" ref="message2"/>
 	</bean>
 	
 	<!-- RANGER2 -->
@@ -1125,10 +1125,10 @@
 							<!-- CATEGORY -->	
 	
 	<!-- CATEGORY -->	
-				
+	
 	<bean id="CATEGORY" class="domain.Category">
 	<property name="name" value="CATEGORY" />
-	<property name="categoryParent" ref="CATEGORY" />
+	<property name="categoryParent" ref="category1"/>
 	<property name="categories">
 		<list></list>
 	</property>
@@ -1367,7 +1367,7 @@
 	<property name="reason" value="Because I want" />
 	<property name="ranger" ref="ranger2" />
 	<property name="manager" ref="manager1" />
-	<property name="legalText" ref="legalText1" />
+	<property name="legalText" ref="legalText2" />
 	<property name="category" ref="category2" />
 	<property name="survival">
 		<list>
@@ -1494,7 +1494,7 @@
 	<bean id="creditCard1" class="domain.CC">
 	<property name="holderName" value="BBVA" />
 	<property name="brandName" value="MasterCard" />
-	<property name="number" value="1232353" />
+	<property name="number" value="4099537775843795" />
 	<property name="expirationMonth" value="02" />
 	<property name="expirationYear" value="2019" />
 	<property name="CVV" value="123" />
@@ -1505,7 +1505,7 @@
 	<bean id="creditCard2" class="domain.CC">
 	<property name="holderName" value="Caixa" />
 	<property name="brandName" value="VISA" />
-	<property name="number" value="1232413" />
+	<property name="number" value="38642556792047" />
 	<property name="expirationMonth" value="05" />
 	<property name="expirationYear" value="2020" />
 	<property name="CVV" value="223" />
@@ -1618,10 +1618,9 @@
 	</property>
 	<property name="sent">
 		<list>
-			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received" ref="message2"/>
+	<property name="received"><null/></property>
 	</bean>
 	
 								<!-- FINDER -->
@@ -1701,7 +1700,7 @@
 	<!-- Message1 -->
 	
 	<bean id="message1" class="domain.Message">
-		<property name="moment" value="01/01/2017 12:30" />
+		<property name="moment" value="01/01/2013 12:30" />
 		<property name="subject" value="Hola" />
 		<property name="body" value="Hola, buenas tardes" />
 		<property name="priority" value="LOW" />
@@ -1709,7 +1708,7 @@
 		<property name="recipient">
 			<list>
 				<ref bean="explorer1"/>
-			</list> 
+			</list>
 		</property>
 		<property name="folder">
 			<list>
@@ -1722,9 +1721,9 @@
 	<!-- Message2 -->
 	
 	<bean id="message2" class="domain.Message">
-		<property name="moment" value="01/01/2017 12:30" />
-		<property name="subject" value="Hola" />
-		<property name="body" value="Hola, buenas tardes" />
+		<property name="moment" value="01/01/2014 12:30" />
+		<property name="subject" value="Buenas" />
+		<property name="body" value="Que pasa" />
 		<property name="priority" value="LOW" />
 		<property name="sender" ref="explorer1" />
 		<property name="recipient">
@@ -1975,10 +1974,10 @@
 	<!-- NOTE1 -->
 	
 	<bean id="note1" class="domain.Note">
-	<property name="moment" value="23/10/2017" />
+	<property name="moment" value="23/10/2013" />
 	<property name="remark" value="First" />
 	<property name="reply" value="Something" />
-	<property name="momentReply" value="05/10/2017"/>
+	<property name="momentReply" value="05/10/2014"/>
 	<property name="trip" ref="trip1" />
 	<property name="auditor" ref="auditor1" />
 	</bean>
@@ -1986,10 +1985,10 @@
 	<!-- NOTE2 -->
 	
 	<bean id="note2" class="domain.Note">
-	<property name="moment" value="25/10/2017" />
+	<property name="moment" value="25/10/2014" />
 	<property name="remark" value="Second" />
 	<property name="reply" value="Some" />
-	<property name="momentReply" value="08/10/2017"/>
+	<property name="momentReply" value="08/10/2015"/>
 	<property name="trip" ref="trip2" />
 	<property name="auditor" ref="auditor2" />
 	</bean>
