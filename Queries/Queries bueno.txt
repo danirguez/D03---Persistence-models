@@ -1,0 +1,123 @@
+<-------Query C/1---------->
+
+The average, the minimum, the maximum, and the standard deviation of the number of applications per trip.
+
+select avg(t.applications.size), min(t.applications.size), max(t.applications.size), sqrt(sum(t.applications.size*t.applications.size)/count(t.applications.size)-(avg(t.applications.size)*avg(t.applications.size))) from Trip t;
+
+Esta consulta accede a la tabla Trip de nuestra base de datos, devolviendo la media, el mínimo, el máximo y la desviación estándar del tamaño del número de aplicaciones de los trips. Para esto, accedemos a la propiedad applications de los trips y vemos su tamaño.
+
+
+<-------Query C/2---------->
+
+The average, the minimum, the maximum, and the standard deviation of the number of trips managed per manager.
+
+select avg(m.trips.size), min(m.trips.size), max(m.trips.size), sqrt(sum(m.trips.size*m.trips.size)/count(m.trips.size)-(avg(m.trips.size)*avg(m.trips.size))) from Manager m;
+
+
+<-------Query C/3---------->
+
+The average, the minimum, the maximum, and the standard deviation of the price of the trips.
+
+select avg(t.price), min(t.price), max(t.price), sqrt(sum(t.price*t.price)/count(t.price) - (avg(t.price) * avg(t.price))) from Trip t;
+
+
+<-------Query C/4---------->
+
+The average, the minimum, the maximum, and the standard deviation of the number trips guided per ranger.
+
+select avg(r.trips.size),min(r.trips.size),max(r.trips.size), sqrt(sum(r.trips.size*r.trips.size)/count(r.trips.size)-(avg(r.trips.size)*avg(r.trips.size))) from Ranger r;
+
+<-------Query C/5---------->
+
+The ratio of applications with status ''PENDING''.
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='PENDING';
+
+
+<-------Query C/6---------->
+
+The ratio of applications with status ''DUE''.
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='DUE';
+
+
+<-------Query C/7---------->
+
+The ratio of applications with status ''ACCEPTED''.
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='ACCEPTED';
+
+<-------Query C/8---------->
+
+The ratio of applications with status ''CANCELLED''.
+
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='CANCELLED';
+
+
+<-------Query C/9---------->
+
+The ratio of trips that have been cancelled versus the total number of trips that have been organised.
+
+select cast(count(t) as float) / (select count(t) from Trip t) from Trip t where t.cancellationReason is not null;
+
+
+<-------Query C/10---------->
+
+The listing of trips that have got at least 10% more applications than the average, ordered by number of applications
+
+select t from Trip t group by t having t.applications.size > (select avg(t2.applications.size)*1.1 from Trip t2) order by t.applications.size;
+
+<-------Query C/11---------->
+
+A table with the number of times that each legal text's been referenced.
+
+select l, l.trips.size from LegalText l;
+
+<-------Query B/1---------->
+
+The minimum, the maximum, the average, and the standard deviation of the number of notes per trip.
+
+select avg(t.note.size), min(t.note.size), max(t.note.size), sqtr(sum(t.note.size*t.note.size)/count(t.note.size)-(avg(t.note.size)*avg(t.note.size))) from Trip t
+
+
+<-------Query B/2---------->
+
+The minimum, the maximum, the average, and the standard deviation of the number of audit records per trip.
+
+select avg(t.audit.size), min(t.audit.size), max(t.audit.size), sqtr(sum(t.audit.size*t.audit.size)/count(t.audit.size)-(avg(t.audit.size)*avg(t.audit.size))) from Trip t
+
+
+<-------Query B/3---------->
+
+The ratio of trips with an audit record.
+
+
+select count(t)/((select count(t2) from Trip t2)+0.0) from Trip t where t.audits.size=1;
+
+
+<-------Query B/4---------->
+
+The ratio of rangers who have registered their curricula.
+
+select cast(count(r) as float)/(select count(rt) from Ranger rt) from Ranger r where r.curricula is not null;
+
+<-------Query B/5---------->
+
+The ratio of rangers whose curriculum's been endorsed.
+
+
+select count(c)/((select count(c2) from Curricula c2)+0.0) from Curricula c where c.endorserRecords.size>0;
+
+<-------Query B/6---------->
+
+The ratio of suspicious managers.
+
+
+select count(m)/((select count(m2) from Manager m2)+0.0) from Manager m where m.suspicious=true;
+
+<-------Query B/7---------->
+
+The ratio of suspicious rangers.
+
+select cast(count(r) as float)/(select count(r) from Ranger r) from Ranger r where r.suspicious=true;
