@@ -67,7 +67,7 @@ public abstract class Actor extends DomainEntity {
 		this.email = email;
 	}
 
-	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
+	@Pattern(regexp = "\\d+")
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -87,12 +87,7 @@ public abstract class Actor extends DomainEntity {
 	// Relationships
 
 	private UserAccount userAccount;
-	private Folder inBox;
-	private Folder outBox;
-	private Folder notificationBox;
-	private Folder trashBox;
-	private Folder spamBox;
-	private Collection<Folder> customFolders;
+	private Collection<Folder> Folders;
 	private Message received;
 	private Collection<Message> sent;
 	private Collection<SocialId> socialId;
@@ -110,68 +105,13 @@ public abstract class Actor extends DomainEntity {
 
 	@Valid
 	@NotNull
-	@OneToOne(mappedBy = "actor")
-	public Folder getInBox() {
-		return inBox;
-	}
-
-	public void setInBox(Folder inBox) {
-		this.inBox = inBox;
-	}
-
-	@Valid
-	@NotNull
-	@OneToOne(mappedBy = "actor")
-	public Folder getOutBox() {
-		return outBox;
-	}
-
-	public void setOutBox(Folder outBox) {
-		this.outBox = outBox;
-	}
-
-	@Valid
-	@NotNull
-	@OneToOne(mappedBy = "actor")
-	public Folder getNotificationBox() {
-		return notificationBox;
-	}
-
-	public void setNotificationBox(Folder notificationBox) {
-		this.notificationBox = notificationBox;
-	}
-
-	@Valid
-	@NotNull
-	@OneToOne(mappedBy = "actor")
-	public Folder getTrashBox() {
-		return trashBox;
-	}
-
-	public void setTrashBox(Folder trashBox) {
-		this.trashBox = trashBox;
-	}
-
-	@Valid
-	@NotNull
-	@OneToOne(mappedBy = "actor")
-	public Folder getSpamBox() {
-		return spamBox;
-	}
-
-	public void setSpamBox(Folder spamBox) {
-		this.spamBox = spamBox;
-	}
-
-	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "actor")
-	public Collection<Folder> getCustomFolders() {
-		return customFolders;
+	public Collection<Folder> getFolders() {
+		return Folders;
 	}
 
-	public void setCustomFolders(Collection<Folder> customFolders) {
-		this.customFolders = customFolders;
+	public void setFolders(Collection<Folder> Folders) {
+		this.Folders = Folders;
 	}
 
 	@Valid

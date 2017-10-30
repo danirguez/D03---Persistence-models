@@ -35,6 +35,15 @@ public class Folder extends DomainEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@NotNull
+	public Boolean getSystemFolder() {
+		return systemFolder;
+	}
+
+	public void setSystemFolder(Boolean systemFolder) {
+		this.systemFolder = systemFolder;
+	}
 
 	// Relationships
 
@@ -42,6 +51,7 @@ public class Folder extends DomainEntity {
 	private Actor actor;
 	private Folder customFolder;
 	private Collection<Folder> folders;
+	private Boolean systemFolder;
 
 	@Valid
 	@ManyToMany(mappedBy = "folder")

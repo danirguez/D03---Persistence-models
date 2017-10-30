@@ -1,12 +1,13 @@
 -------------------------------FALTA-----------------------
 
-En configuration countryCode es un String?
+???????????????????????En configuration countryCode es un String?
 Corregir folder, añadir atributo boolean systemFolder
-Cambiar los pattern de phone
+=======================Cambiar los pattern de phone
 Añadir socialId al XML
 Añadir Configuration al XML
 Mirar qué coño hay que hacer con TAG
 mirar la restricción de precio con menos de un euro (0,80 euros)
+añadir al UML el Boolean de Folder
 
 
 ¿Atributos todos públicos, no representan atributos de datos?

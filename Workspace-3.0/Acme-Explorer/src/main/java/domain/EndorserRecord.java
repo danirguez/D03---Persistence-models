@@ -47,7 +47,7 @@ public class EndorserRecord extends DomainEntity {
 	}
 
 	@NotBlank
-	@Pattern(regexp = "[+][1-9]{1,3} [(][1-9]{1,3}[)] [0-9]{4,}")
+	@Pattern(regexp = "\\d+")
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
