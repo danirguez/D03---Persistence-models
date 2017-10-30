@@ -140,6 +140,7 @@ public class Trip extends DomainEntity {
 	private Collection<Stage> stage;
 	private Category category;
 	private LegalText legalText;
+	private Collection<Application> application;
 
 	@Valid
 	@NotNull
@@ -232,4 +233,13 @@ public class Trip extends DomainEntity {
 		this.category = category;
 	}
 
+	@Valid
+	@OneToMany(mappedBy="trip")
+	public Collection<Application> getApplication() {
+		return application;
+	}
+
+	public void setApplication(Collection<Application> application) {
+		this.application = application;
+	}
 }

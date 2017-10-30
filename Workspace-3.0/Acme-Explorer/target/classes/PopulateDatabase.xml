@@ -1351,6 +1351,11 @@
 			<ref bean="stage2"/>
 		</list>
 	</property>
+	<property name="application">
+		<list>
+			<ref bean="application1"/>
+		</list>
+	</property>
 	</bean>
 	
 	<!-- TRIP2 -->
@@ -1385,6 +1390,11 @@
 		<list>
 			<ref bean="stage1"/>
 			<ref bean="stage2"/>
+		</list>
+	</property>
+	<property name="application">
+		<list>
+			<ref bean="application2"/>
 		</list>
 	</property>
 	</bean>
