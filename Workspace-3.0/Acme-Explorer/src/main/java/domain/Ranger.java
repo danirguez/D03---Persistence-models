@@ -22,6 +22,19 @@ public class Ranger extends Actor {
 	public Ranger() {
 		super();
 	}
+	
+	// Attributes
+	
+	private Boolean suspicious;
+
+	@NotNull
+	public Boolean getSuspicious() {
+		return suspicious;
+	}
+
+	public void setSuspicious(Boolean suspicious) {
+		this.suspicious = suspicious;
+	}
 
 	// Relationships
 

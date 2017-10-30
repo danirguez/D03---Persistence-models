@@ -64,7 +64,7 @@ public class Application extends DomainEntity {
 	private Trip trip;
 	private Explorer explorer;
 
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	@Valid
 	public Trip getTrip() {
 		return trip;
@@ -74,7 +74,7 @@ public class Application extends DomainEntity {
 		this.trip = trip;
 	}
 
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	@Valid
 	public Explorer getExplorer() {
 		return explorer;

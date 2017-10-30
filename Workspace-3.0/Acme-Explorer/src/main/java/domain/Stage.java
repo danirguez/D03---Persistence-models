@@ -3,7 +3,7 @@ package domain;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
@@ -57,7 +57,7 @@ public class Stage extends DomainEntity {
 	private Trip trip;
 
 	@Valid
-	@OneToOne(optional = true)
+	@ManyToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}

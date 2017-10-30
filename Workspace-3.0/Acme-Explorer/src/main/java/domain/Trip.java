@@ -141,6 +141,8 @@ public class Trip extends DomainEntity {
 	private Category category;
 	private LegalText legalText;
 	private Collection<Application> application;
+	private Collection<Audit> audit;
+	private Collection<Note> note;
 
 	@Valid
 	@NotNull
@@ -213,7 +215,7 @@ public class Trip extends DomainEntity {
 
 	@Valid
 	@NotEmpty
-	@OneToMany(mappedBy = "trip")
+	@OneToMany(mappedBy = "trip",cascade = CascadeType.ALL)
 	@ElementCollection
 	public Collection<Stage> getStage() {
 		return stage;
@@ -241,5 +243,29 @@ public class Trip extends DomainEntity {
 
 	public void setApplication(Collection<Application> application) {
 		this.application = application;
+	}
+
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "trip")
+	@ElementCollection
+	public Collection<Audit> getAudit() {
+		return audit;
+	}
+
+	public void setAudit(Collection<Audit> audit) {
+		this.audit = audit;
+	}
+
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "trip")
+	@ElementCollection
+	public Collection<Note> getNote() {
+		return note;
+	}
+
+	public void setNote(Collection<Note> note) {
+		this.note = note;
 	}
 }

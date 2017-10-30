@@ -840,6 +840,7 @@
 	<!-- RANGER1 -->
 	
 	<bean id="ranger1" class="domain.Ranger">
+	<property name="suspicious" value="true"/>
 	<property name="name" value="Mario" />
 	<property name="surname" value="Sánchez" />
 	<property name="email" value="codec993@gmail.com" />
@@ -879,6 +880,7 @@
 	<!-- RANGER2 -->
 	
 	<bean id="ranger2" class="domain.Ranger">
+	<property name="suspicious" value="false"/>
 	<property name="name" value="Alfonso" />
 	<property name="surname" value="Sánchez" />
 	<property name="email" value="codec993@gmail.com" />
@@ -1237,7 +1239,7 @@
 	
 	<bean id="tag2" class="domain.Tag">
 	<property name="name" value="Another" />
-	<property name="trip" ref="trip2" />
+	<property name="trip" ref="trip1" />
 	</bean>
 	
 									<!-- ADMINISTRATOR -->
@@ -1348,12 +1350,21 @@
 	<property name="stage">
 		<list>
 			<ref bean="stage1"/>
-			<ref bean="stage2"/>
 		</list>
 	</property>
 	<property name="application">
 		<list>
 			<ref bean="application1"/>
+		</list>
+	</property>
+	<property name="audit">
+		<list>
+			<ref bean="audit1"/>
+		</list>
+	</property>
+	<property name="note">
+		<list>
+			<ref bean="note1"/>
 		</list>
 	</property>
 	</bean>
@@ -1384,17 +1395,27 @@
 	</property>
 	<property name="tag">
 		<list>
+			
 		</list>
 	</property>
 	<property name="stage">
 		<list>
-			<ref bean="stage1"/>
 			<ref bean="stage2"/>
 		</list>
 	</property>
 	<property name="application">
 		<list>
 			<ref bean="application2"/>
+		</list>
+	</property>
+	<property name="audit">
+		<list>
+			<ref bean="audit2"/>
+		</list>
+	</property>
+	<property name="note">
+		<list>
+			<ref bean="note2"/>
 		</list>
 	</property>
 	</bean>
@@ -1707,6 +1728,7 @@
 		<property name="subject" value="Hola" />
 		<property name="body" value="Hola, buenas tardes" />
 		<property name="priority" value="LOW" />
+		<property name="spam" value="true" />
 		<property name="sender" ref="ranger1" />
 		<property name="recipient">
 			<list>
@@ -1727,6 +1749,7 @@
 		<property name="subject" value="Buenas" />
 		<property name="body" value="Que pasa" />
 		<property name="priority" value="LOW" />
+		<property name="spam" value="false" />
 		<property name="sender" ref="explorer1" />
 		<property name="recipient">
 			<list>
@@ -1747,6 +1770,7 @@
 		<property name="subject" value="Que tal" />
 		<property name="body" value="Eso" />
 		<property name="priority" value="LOW" />
+		<property name="spam" value="false" />
 		<property name="sender" ref="ranger1" />
 		<property name="recipient">
 			<list>
@@ -1767,6 +1791,7 @@
 		<property name="subject" value="Que tal" />
 		<property name="body" value="Eso" />
 		<property name="priority" value="LOW" />
+		<property name="spam" value="false" />
 		<property name="sender" ref="explorer1" />
 		<property name="recipient">
 			<list>
@@ -1785,6 +1810,7 @@
 	<!-- MANAGER1 -->
 	
 	<bean id="manager1" class="domain.Manager">
+	<property name="suspicious" value="true"/>
 	<property name="name" value="Juan Carlos" />
 	<property name="surname" value="Cansino" />
 	<property name="email" value="juca@gmail.com" />
@@ -1826,6 +1852,7 @@
 	<!-- MANAGER2 -->
 	
 	<bean id="manager2" class="domain.Manager">
+	<property name="suspicious" value="false"/>
 	<property name="name" value="Juan" />
 	<property name="surname" value="Cansino" />
 	<property name="email" value="juca@gmail.com" />
@@ -2078,6 +2105,26 @@
 	<bean id="gps2" class="domain.Gps">
 	<property name="latitude" value="60.0" />
 	<property name="longitude" value="100.0" />
+	</bean>
+	
+	
+										<!-- SpamWords -->
+	<bean id="spam" class="domain.SpamWords">
+	<property name="words">
+		<list>
+			<value>viagra</value>
+			<value>cialis</value>
+			<value>sex</value>
+			<value>jes extender</value>
+		</list>
+	</property>
+	</bean>
+	
+										<!-- ListSuspicious -->
+	<bean id="suspiciousList" class="domain.ListSuspicious">
+	<property name="suspicious">
+		<list></list>
+	</property>
 	</bean>
 	
 </beans>

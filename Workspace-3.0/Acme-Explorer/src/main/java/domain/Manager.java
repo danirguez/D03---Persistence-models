@@ -19,6 +19,19 @@ public class Manager extends Actor {
 	public Manager() {
 		super();
 	}
+	
+	// Attributes
+	
+	private Boolean suspicious;
+	
+	@NotNull
+	public Boolean getSuspicious() {
+		return suspicious;
+	}
+
+	public void setSuspicious(Boolean suspicious) {
+		this.suspicious = suspicious;
+	}
 
 	// Relationships
 
@@ -48,4 +61,6 @@ public class Manager extends Actor {
 	public void setTrip(Collection<Trip> trip) {
 		this.trip = trip;
 	}
+
+	
 }

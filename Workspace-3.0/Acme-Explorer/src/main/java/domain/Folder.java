@@ -57,7 +57,7 @@ public class Folder extends DomainEntity {
 	}
 
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	public Actor getActor() {
 		return actor;
 	}

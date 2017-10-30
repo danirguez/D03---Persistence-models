@@ -34,6 +34,7 @@ public class Message extends DomainEntity {
 	private String subject;
 	private String body;
 	private Priority priority;
+	private Boolean spam;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -73,6 +74,16 @@ public class Message extends DomainEntity {
 		this.priority = priority;
 	}
 
+	@NotNull
+	public Boolean getSpam() {
+		return spam;
+	}
+
+	public void setSpam(Boolean spam) {
+		this.spam = spam;
+	}
+	
+	
 	// Relationships
 
 	private Actor sender;
@@ -113,4 +124,6 @@ public class Message extends DomainEntity {
 	public void setFolder(Collection<Folder> folder) {
 		this.folder = folder;
 	}
+
+	
 }

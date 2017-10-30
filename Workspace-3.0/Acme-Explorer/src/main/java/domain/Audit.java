@@ -76,7 +76,7 @@ public class Audit extends DomainEntity {
 	private Trip trip;
 	private Auditor auditor;
 
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	@Valid
 	public Trip getTrip() {
 		return trip;

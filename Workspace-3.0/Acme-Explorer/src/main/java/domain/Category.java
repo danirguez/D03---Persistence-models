@@ -42,8 +42,8 @@ public class Category extends DomainEntity {
 	private Collection<Category> categories;
 	private Collection<Trip> trip;
 
-	@Valid
-	@ManyToOne(optional = true)
+	
+	@ManyToOne(optional = false)
 	public Category getCategoryParent() {
 		return categoryParent;
 	}

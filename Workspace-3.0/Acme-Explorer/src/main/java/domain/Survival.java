@@ -86,7 +86,7 @@ public class Survival extends DomainEntity {
 	}
 
 	@Valid
-	@ManyToOne(optional=true)
+	@ManyToOne(optional=false)
 	public Trip getTrip() {
 		return trip;
 	}
