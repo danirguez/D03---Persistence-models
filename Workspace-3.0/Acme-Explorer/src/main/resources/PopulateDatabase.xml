@@ -918,11 +918,11 @@
 	<property name="email" value="codec993@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 443632" />
 	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="123456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="http:/www.example.com" />
+	<property name="socialId">
+		<list>
+			<ref bean="socialId1"/>
+		</list>
+	</property>
 	<property name="userAccount" ref="userAccount2" />
 	<property name="curriculum" ref="curriculum1" />
 	<property name="trip">
@@ -958,11 +958,11 @@
 	<property name="email" value="codec993@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 443632" />
 	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="123456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="http://www.example.com" />
+	<property name="socialId">
+		<list>
+			<ref bean="socialId2"/>
+		</list>
+	</property>
 	<property name="curriculum" ref="curriculum2" />
 	<property name="trip">
 		<list>
@@ -1284,11 +1284,9 @@
 	<property name="email" value="dani.r.lopez@hotmail.com" />
 	<property name="phoneNumber" value="+34 (253) 4655" />
 	<property name="address" value="C/ Lugo" />
-	<property name="socialID" value="123456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="danirl" />
-	<property name="nameSocialNetwork" value="LucasFilm" />
-	<property name="socialNetwork" value="http://www.micasa.com" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount1" />
 	<property name="folders">
 		<list>
@@ -1315,11 +1313,9 @@
 	<property name="email" value="saldado@hotmail.com" />
 	<property name="phoneNumber" value="+34 (253) 5655" />
 	<property name="address" value="C/ Lugo" />
-	<property name="socialID" value="123456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="danirl" />
-	<property name="nameSocialNetwork" value="LucasFilm" />
-	<property name="socialNetwork" value="http://www.micasa.com" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount12" />
 	<property name="folders">
 		<list>
@@ -1454,11 +1450,9 @@
 	<property name="email" value="alfonsosoldado23@gmail.com" />
 	<property name="phoneNumber" value="+34 (256) 443632" />
 	<property name="address" value="C/ Madrid" />
-	<property name="socialID" value="923256180" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="alfonso23cb" />
-	<property name="nameSocialNetwork" value="SolCa" />
-	<property name="socialNetwork" value="http://www.solcainformatica.es" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount4" />
 	<property name="sponsorship">
 		<list>
@@ -1491,11 +1485,9 @@
 	<property name="email" value="juliocsponsor@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 63610" />
 	<property name="address" value="C/ Barcelona" />
-	<property name="socialID" value="6480" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="julioSponsor" />
-	<property name="nameSocialNetwork" value="Example" />
-	<property name="socialNetwork" value="http://www.example.es" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount5" />
 	<property name="sponsorship">
 		<list>
@@ -1576,11 +1568,9 @@
 	<property name="email" value="alfonsocaro@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 543421" />
 	<property name="address" value="C/ Sevilla" />
-	<property name="socialID" value="87489" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="manuelC" />
-	<property name="nameSocialNetwork" value="Example" />
-	<property name="socialNetwork" value="http://www.example.es" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount10" />
 	<property name="application" ref="application1" />
 	<property name="finder">
@@ -1624,11 +1614,9 @@
 	<property name="email" value="josecaro@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 213221" />
 	<property name="address" value="C/ Granada" />
-	<property name="socialID" value="87489" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="joseC" />
-	<property name="nameSocialNetwork" value="Example" />
-	<property name="socialNetwork" value="http://www.example.es" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount11" />
 	<property name="application" ref="application2" />
 	<property name="finder">
@@ -1842,11 +1830,9 @@
 	<property name="email" value="juca@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 543457" />
 	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="http://www.example.com" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount6" />
 	<property name="survival">
 		<list>
@@ -1884,11 +1870,9 @@
 	<property name="email" value="juca@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 543478" />
 	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="http://www.example.com" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount7" />
 	<property name="survival">
 		<list>
@@ -1927,11 +1911,9 @@
 	<property name="email" value="juca@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 543496" />
 	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="http://www.example.com" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount8" />
 	<property name="note">
 		<list>
@@ -1942,7 +1924,6 @@
 	<property name="audit">
 		<list>
 			<ref bean="audit1"/>
-			<ref bean="audit2"/>
 		</list>
 	</property>
 	<property name="folders">
@@ -1970,11 +1951,9 @@
 	<property name="email" value="juca@gmail.com" />
 	<property name="phoneNumber" value="+34 (253) 543425" />
 	<property name="address" value="C/Estrasburgo" />
-	<property name="socialID" value="113456789" />
-	<property name="photo" value="http://www.google.es" />
-	<property name="nick" value="codec" />
-	<property name="nameSocialNetwork" value="Soiram" />
-	<property name="socialNetwork" value="http://www.example.com" />
+	<property name="socialId">
+		<list></list>
+	</property>
 	<property name="userAccount" ref="userAccount9" />
 	<property name="note">
 		<list>
@@ -2148,6 +2127,22 @@
 	
 	<!-- SOCIALID1 -->
 	
+	<bean id="socialId1" class="domain.SocialId">
+	<property name="photo" value="http://www.imagendeejemplo.com" />
+	<property name="nick" value="Navas13"/>
+	<property name="nameSocialNetwork" value="Twitter" />
+	<property name="socialNetwork" value="http://www.twitter.com" />
+	<property name="actor" ref="ranger1"/>
+	</bean>
+	
 	<!-- SOCIALID2 -->
+	
+	<bean id="socialId2" class="domain.SocialId">
+	<property name="photo" value="http://www.imagendeejemplo2.com" />
+	<property name="nick" value="Perez13"/>
+	<property name="nameSocialNetwork" value="Instagram" />
+	<property name="socialNetwork" value="http://www.instagram.com" />
+	<property name="actor" ref="ranger2"/>
+	</bean>
 	
 </beans>

@@ -86,6 +86,7 @@ public class Folder extends DomainEntity {
 
 	
 	@Valid
+	@NotNull
 	@OneToMany(mappedBy="customFolder")
 	public Collection<Folder> getFolders() {
 		return folders;
