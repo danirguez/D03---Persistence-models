@@ -173,7 +173,7 @@
 		<property name="name" value="In Box" />
 		<property name="messages">
 			<list>
-				<ref bean="message2"/>
+				<ref bean="message3"/>
 			</list>
 		</property>
 		<property name="actor" ref="ranger1" />
@@ -287,7 +287,7 @@
 		<property name="name" value="In Box" />
 		<property name="messages">
 			<list>
-				<ref bean="message1"/>
+				<ref bean="message4"/>
 			</list>
 		</property>
 		<property name="actor" ref="explorer1" />
@@ -873,7 +873,7 @@
 			<ref bean="message1"/>
 		</list>
 	</property>
-	<property name="received" ref="message2"/>
+	<property name="received" ref="message4"/>
 	</bean>
 	
 	<!-- RANGER2 -->
@@ -1530,25 +1530,21 @@
 	<property name="finder">
 		<list>
 			<ref bean="finder1"/>
-			<ref bean="finder2"/>
 		</list>
 	</property>
 	<property name="emergency">
 		<list>
 			<ref bean="emergency1"/>
-			<ref bean="emergency2"/>
 		</list>
 	</property>
 	<property name="stories">
 		<list>
 			<ref bean="story1"/>
-			<ref bean="story2"/>
 		</list>
 	</property>
 	<property name="application">
 		<list>
 			<ref bean="application1"/>
-			<ref bean="application2"/>
 		</list>
 	</property>
 	<property name="inBox" ref="inBoxExplorer1"/>
@@ -1566,7 +1562,7 @@
 			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received" ref="message1"/>
+	<property name="received" ref="message3"/>
 	</bean>							
 	
 	<!-- EXPLORER2 -->
@@ -1585,24 +1581,21 @@
 	<property name="userAccount" ref="userAccount11" />
 	<property name="finder">
 		<list>
-			<ref bean="finder1"/>
 			<ref bean="finder2"/>
 		</list>
 	</property>
 	<property name="emergency">
 		<list>
-			<ref bean="emergency1"/>
+			<ref bean="emergency2"/>
 		</list>
 	</property>
 	<property name="stories">
 		<list>
-			<ref bean="story1"/>
 			<ref bean="story2"/>
 		</list>
 	</property>
 	<property name="application">
 		<list>
-			<ref bean="application1"/>
 			<ref bean="application2"/>
 		</list>
 	</property>
@@ -1712,7 +1705,6 @@
 		</property>
 		<property name="folder">
 			<list>
-				<ref bean="inBoxExplorer1"/>
 				<ref bean="outBoxRanger1"/>
 			</list> 
 		</property>
@@ -1734,12 +1726,49 @@
 		<property name="folder">
 			<list>
 				<ref bean="outBoxExplorer1"/>
-				<ref bean="inBoxRanger1"/>
 			</list> 
 		</property>
 	</bean>	
 	
+	<!-- Message3 -->
 	
+	<bean id="message3" class="domain.Message">
+		<property name="moment" value="01/01/2012 12:30" />
+		<property name="subject" value="Que tal" />
+		<property name="body" value="Eso" />
+		<property name="priority" value="LOW" />
+		<property name="sender" ref="ranger1" />
+		<property name="recipient">
+			<list>
+				<ref bean="explorer1"/>
+			</list> 
+		</property>
+		<property name="folder">
+			<list>
+				<ref bean="inBoxExplorer1"/>
+			</list> 
+		</property>
+	</bean>	
+	
+	<!-- Message4 -->
+	
+	<bean id="message4" class="domain.Message">
+		<property name="moment" value="01/01/2012 12:30" />
+		<property name="subject" value="Que tal" />
+		<property name="body" value="Eso" />
+		<property name="priority" value="LOW" />
+		<property name="sender" ref="explorer1" />
+		<property name="recipient">
+			<list>
+				<ref bean="ranger1"/>
+			</list> 
+		</property>
+		<property name="folder">
+			<list>
+				<ref bean="inBoxRanger1"/>
+			</list> 
+		</property>
+	</bean>	
 	
 										<!-- MANAGER -->
 	
