@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -38,30 +37,29 @@ public class Ranger extends Actor {
 
 	// Relationships
 
-	private CV cv;
-	private Collection<Trip> trips;
+	private Curriculum curriculum;
+	private Collection<Trip> trip;
 
 	@Valid
 	@NotNull
 	@OneToOne(mappedBy = "ranger", optional = true)
-	public CV getCV() {
-		return cv;
+	public Curriculum getCurriculum() {
+		return curriculum;
 	}
 
-	public void setCV(CV cv) {
-		this.cv = cv;
+	public void setCurriculum(Curriculum curriculum) {
+		this.curriculum = curriculum;
 	}
 
 	@Valid
 	@NotEmpty
 	@OneToMany(mappedBy = "ranger")
-	@ElementCollection
 	public Collection<Trip> getTrip() {
-		return trips;
+		return trip;
 	}
 
 	public void setTrip(Collection<Trip> trip) {
-		this.trips = trip;
+		this.trip = trip;
 	}
 
 }

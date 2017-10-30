@@ -7,7 +7,6 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -74,7 +73,6 @@ public class Trip extends DomainEntity {
 	}
 
 	@NotEmpty
-	@ElementCollection
 	public Collection<String> getRequirement() {
 		return requirement;
 	}
@@ -93,7 +91,7 @@ public class Trip extends DomainEntity {
 	}
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	public Date getPublication() {
 		return publication;
 	}
@@ -103,7 +101,7 @@ public class Trip extends DomainEntity {
 	}
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	public Date getTripStart() {
 		return tripStart;
 	}
@@ -113,7 +111,7 @@ public class Trip extends DomainEntity {
 	}
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	public Date getTripEnd() {
 		return tripEnd;
 	}
@@ -140,13 +138,13 @@ public class Trip extends DomainEntity {
 	private Collection<Stage> stage;
 	private Category category;
 	private LegalText legalText;
-	private Collection<Application> application;
+	private Application application;
 	private Collection<Audit> audit;
 	private Collection<Note> note;
 
 	@Valid
 	@NotNull
-	@OneToOne(cascade = CascadeType.ALL, optional = false)
+	@OneToOne(optional = false)
 	public LegalText getLegalText() {
 		return legalText;
 	}
@@ -169,7 +167,6 @@ public class Trip extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
-	@ElementCollection
 	public Collection<Survival> getSurvival() {
 		return survival;
 	}
@@ -192,7 +189,6 @@ public class Trip extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
-	@ElementCollection
 	public Collection<Story> getStory() {
 		return story;
 	}
@@ -204,7 +200,6 @@ public class Trip extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
-	@ElementCollection
 	public Collection<Tag> getTag() {
 		return tag;
 	}
@@ -216,7 +211,6 @@ public class Trip extends DomainEntity {
 	@Valid
 	@NotEmpty
 	@OneToMany(mappedBy = "trip",cascade = CascadeType.ALL)
-	@ElementCollection
 	public Collection<Stage> getStage() {
 		return stage;
 	}
@@ -236,19 +230,18 @@ public class Trip extends DomainEntity {
 	}
 
 	@Valid
-	@OneToMany(mappedBy="trip")
-	public Collection<Application> getApplication() {
+	@OneToOne(optional = false)
+	public Application getApplication() {
 		return application;
 	}
 
-	public void setApplication(Collection<Application> application) {
+	public void setApplication(Application application) {
 		this.application = application;
 	}
 
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
-	@ElementCollection
 	public Collection<Audit> getAudit() {
 		return audit;
 	}
@@ -260,7 +253,6 @@ public class Trip extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "trip")
-	@ElementCollection
 	public Collection<Note> getNote() {
 		return note;
 	}

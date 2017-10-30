@@ -9,4 +9,5 @@ import javax.persistence.Embeddable;
 public enum Status {
 
 	PENDING, REJECTED, DUE, ACCEPTED, CANCELLED;
+	
 }

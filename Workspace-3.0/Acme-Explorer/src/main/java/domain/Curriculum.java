@@ -6,7 +6,6 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -18,11 +17,11 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
-public class CV extends DomainEntity {
+public class Curriculum extends DomainEntity {
 
 	// Constructors
 
-	public CV() {
+	public Curriculum() {
 		super();
 	}
 
@@ -73,7 +72,6 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
-	@ElementCollection
 	public Collection<EndorserRecord> getEndorserRecord() {
 		return endorserRecord;
 	}
@@ -85,7 +83,6 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
-	@ElementCollection
 	public Collection<MiscellaneousRecord> getMiscellaneousRecord() {
 		return miscellaneousRecord;
 	}
@@ -98,7 +95,6 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
-	@ElementCollection
 	public Collection<ProfesionalRecord> getProfesionalRecord() {
 		return profesionalRecord;
 	}
@@ -111,7 +107,6 @@ public class CV extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(cascade = CascadeType.ALL)
-	@ElementCollection
 	public Collection<EducationRecord> getEducationRecord() {
 		return educationRecord;
 	}

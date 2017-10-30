@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
 @Entity
@@ -27,6 +29,7 @@ public class Finder extends DomainEntity {
 	private Double maxPrice;
 	private Date start;
 	private Date end;
+	private Collection<String> result;
 
 	public String getSingleKey() {
 		return singleKey;
@@ -70,6 +73,15 @@ public class Finder extends DomainEntity {
 
 	public void setEnd(Date end) {
 		this.end = end;
+	}
+	
+	@NotEmpty
+	public Collection<String> getResult() {
+		return result;
+	}
+
+	public void setResult(Collection<String> result) {
+		this.result = result;
 	}
 
 }

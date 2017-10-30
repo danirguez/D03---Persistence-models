@@ -1,10 +1,7 @@
 package domain;
 
-import java.util.Collection;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.validation.constraints.Pattern;
 
@@ -28,7 +25,7 @@ public class EndorserRecord extends DomainEntity {
 	private String email;
 	private String phoneNumber;
 	private String likedln;
-	private Collection<String> comment;
+	private String comment;
 
 	@NotBlank
 	public String getEndorserName() {
@@ -69,12 +66,11 @@ public class EndorserRecord extends DomainEntity {
 		this.likedln = likedln;
 	}
 
-	@ElementCollection
-	public Collection<String> getComment() {
+	public String getComment() {
 		return comment;
 	}
 
-	public void setComment(Collection<String> comment) {
+	public void setComment(String comment) {
 		this.comment = comment;
 	}
 

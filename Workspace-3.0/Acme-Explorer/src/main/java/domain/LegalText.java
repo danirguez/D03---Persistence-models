@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -51,7 +50,6 @@ public class LegalText extends DomainEntity {
 		this.body = body;
 	}
 
-	@ElementCollection
 	public Collection<String> getNumberLaw() {
 		return numberLaw;
 	}
@@ -76,7 +74,7 @@ public class LegalText extends DomainEntity {
 	private Trip trip;
 
 	@Valid
-	@OneToOne(optional = true)
+	@OneToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}

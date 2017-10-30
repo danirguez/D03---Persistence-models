@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -28,7 +27,6 @@ public class Auditor extends Actor {
 	@OneToMany(mappedBy = "auditor")
 	@Valid
 	@NotNull
-	@ElementCollection
 	public Collection<Note> getNote() {
 		return note;
 	}
@@ -40,7 +38,6 @@ public class Auditor extends Actor {
 	@OneToMany(mappedBy = "auditor")
 	@Valid
 	@NotNull
-	@ElementCollection
 	public Collection<Audit> getAudit() {
 		return audit;
 	}

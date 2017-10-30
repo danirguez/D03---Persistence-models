@@ -1,13 +1,11 @@
 package domain;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -28,7 +26,7 @@ public class Application extends DomainEntity {
 
 	private Date moment;
 	private String status;
-	private Collection<String> comment;
+	private String comment;
 
 	@Past
 	@NotNull
@@ -50,12 +48,11 @@ public class Application extends DomainEntity {
 		this.status = status;
 	}
 
-	@ElementCollection
-	public Collection<String> getComment() {
+	public String getComment() {
 		return comment;
 	}
 
-	public void setComment(Collection<String> comment) {
+	public void setComment(String comment) {
 		this.comment = comment;
 	}
 
@@ -64,7 +61,7 @@ public class Application extends DomainEntity {
 	private Trip trip;
 	private Explorer explorer;
 
-	@ManyToOne(optional = false)
+	@OneToOne(optional = false)
 	@Valid
 	public Trip getTrip() {
 		return trip;
@@ -74,7 +71,7 @@ public class Application extends DomainEntity {
 		this.trip = trip;
 	}
 
-	@ManyToOne(optional = false)
+	@OneToOne(optional = false)
 	@Valid
 	public Explorer getExplorer() {
 		return explorer;

@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -47,7 +46,6 @@ public class Folder extends DomainEntity {
 	@Valid
 	@ManyToMany(mappedBy = "folder")
 	@NotNull
-	@ElementCollection
 	public Collection<Message> getMessages() {
 		return messages;
 	}
@@ -78,7 +76,6 @@ public class Folder extends DomainEntity {
 
 	
 	@Valid
-	@ElementCollection
 	@OneToMany(mappedBy="customFolder")
 	public Collection<Folder> getFolders() {
 		return folders;

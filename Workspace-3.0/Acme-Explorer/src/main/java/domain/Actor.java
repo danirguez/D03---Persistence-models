@@ -5,7 +5,6 @@ import java.util.Collection;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -13,13 +12,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
 
 import security.UserAccount;
 
@@ -41,11 +38,6 @@ public abstract class Actor extends DomainEntity {
 	private String email;
 	private String phoneNumber;
 	private String address;
-	private Integer socialID;
-	private String photo;
-	private String nick;
-	private String nameSocialNetwork;
-	private String socialNetwork;
 
 	@NotBlank
 	public String getName() {
@@ -92,52 +84,6 @@ public abstract class Actor extends DomainEntity {
 		this.address = address;
 	}
 
-	@Min(0)
-	public Integer getSocialID() {
-		return socialID;
-	}
-
-	public void setSocialID(Integer socialID) {
-		this.socialID = socialID;
-	}
-
-	@URL
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
-	@NotBlank
-	public String getNick() {
-		return nick;
-	}
-
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
-
-	@NotBlank
-	public String getNameSocialNetwork() {
-		return nameSocialNetwork;
-	}
-
-	public void setNameSocialNetwork(String nameSocialNetwork) {
-		this.nameSocialNetwork = nameSocialNetwork;
-	}
-
-	@URL
-	@NotBlank
-	public String getSocialNetwork() {
-		return socialNetwork;
-	}
-
-	public void setSocialNetwork(String socialNetwork) {
-		this.socialNetwork = socialNetwork;
-	}
-
 	// Relationships
 
 	private UserAccount userAccount;
@@ -149,6 +95,7 @@ public abstract class Actor extends DomainEntity {
 	private Collection<Folder> customFolders;
 	private Message received;
 	private Collection<Message> sent;
+	private Collection<SocialId> socialId;
 
 	@NotNull
 	@Valid
@@ -218,7 +165,6 @@ public abstract class Actor extends DomainEntity {
 
 	@Valid
 	@NotNull
-	@ElementCollection
 	@OneToMany(mappedBy = "actor")
 	public Collection<Folder> getCustomFolders() {
 		return customFolders;
@@ -241,7 +187,6 @@ public abstract class Actor extends DomainEntity {
 	@Valid
 	@NotNull
 	@OneToMany(mappedBy = "sender")
-	@ElementCollection
 	public Collection<Message> getSent() {
 		return sent;
 	}
@@ -249,4 +194,14 @@ public abstract class Actor extends DomainEntity {
 	public void setSent(Collection<Message> sent) {
 		this.sent = sent;
 	}
+
+	@OneToMany(mappedBy = "actor")
+	public Collection<SocialId> getSocialId() {
+		return socialId;
+	}
+
+	public void setSocialId(Collection<SocialId> socialId) {
+		this.socialId = socialId;
+	}
+	
 }

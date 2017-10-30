@@ -1,11 +1,9 @@
 package domain;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -29,10 +27,10 @@ public class ProfesionalRecord extends DomainEntity {
 
 	private String companyName;
 	private Date start;
-	private Date endOrActual;
+	private Date end;
 	private String rol;
 	private String link;
-	private Collection<String> comment;
+	private String comment;
 
 	@NotBlank
 	public String getCompanyName() {
@@ -55,12 +53,12 @@ public class ProfesionalRecord extends DomainEntity {
 	}
 
 	@Temporal(TemporalType.DATE)
-	public Date getEndOrActual() {
-		return endOrActual;
+	public Date getEnd() {
+		return end;
 	}
 
-	public void setEndOrActual(Date endOrActual) {
-		this.endOrActual = endOrActual;
+	public void setEnd(Date end) {
+		this.end = end;
 	}
 
 	@NotBlank
@@ -81,12 +79,11 @@ public class ProfesionalRecord extends DomainEntity {
 		this.link = link;
 	}
 
-	@ElementCollection
-	public Collection<String> getComment() {
+	public String getComment() {
 		return comment;
 	}
 
-	public void setComment(Collection<String> comment) {
+	public void setComment(String comment) {
 		this.comment = comment;
 	}
 

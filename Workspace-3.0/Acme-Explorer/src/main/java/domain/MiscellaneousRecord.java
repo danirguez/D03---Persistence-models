@@ -1,10 +1,7 @@
 package domain;
 
-import java.util.Collection;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -24,7 +21,7 @@ public class MiscellaneousRecord extends DomainEntity {
 
 	private String title;
 	private String link;
-	private Collection<String> comment;
+	private String comment;
 
 	@NotBlank
 	public String getTitle() {
@@ -44,12 +41,11 @@ public class MiscellaneousRecord extends DomainEntity {
 		this.link = link;
 	}
 
-	@ElementCollection
-	public Collection<String> getComment() {
+	public String getComment() {
 		return comment;
 	}
 
-	public void setComment(Collection<String> comment) {
+	public void setComment(String comment) {
 		this.comment = comment;
 	}
 

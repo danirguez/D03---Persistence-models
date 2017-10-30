@@ -9,4 +9,5 @@ import javax.persistence.Embeddable;
 public enum Priority {
 
 	HIGH, NEUTRAL, LOW;
+	
 }
