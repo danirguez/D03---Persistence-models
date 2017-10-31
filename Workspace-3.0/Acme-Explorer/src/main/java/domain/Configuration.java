@@ -2,12 +2,18 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
+@Entity
+@Access(AccessType.PROPERTY)
 public class Configuration extends DomainEntity {
 
 	// Constructors
@@ -46,9 +52,11 @@ public class Configuration extends DomainEntity {
 	}
 	
 	@NotEmpty
+	@ElementCollection
 	public Collection<String> getSpamWords() {
 		return spamWords;
 	}
+	
 	public void setSpamWords(Collection<String> spamWords) {
 		this.spamWords = spamWords;
 	}
@@ -70,6 +78,7 @@ public class Configuration extends DomainEntity {
 	}
 	
 	@NotEmpty
+	@ElementCollection
 	public Collection<String> getCatalogueTag() {
 		return catalogueTag;
 	}
@@ -78,6 +87,7 @@ public class Configuration extends DomainEntity {
 	}
 	
 	@NotEmpty
+	@ElementCollection
 	public Collection<String> getTreeCategory() {
 		return treeCategory;
 	}
@@ -86,6 +96,7 @@ public class Configuration extends DomainEntity {
 	}
 	
 	@NotEmpty
+	@ElementCollection
 	public Collection<String> getCatalogueText() {
 		return catalogueText;
 	}
@@ -93,6 +104,7 @@ public class Configuration extends DomainEntity {
 		this.catalogueText = catalogueText;
 	}
 	
+	@ElementCollection
 	public Collection<String> getOther() {
 		return other;
 	}
