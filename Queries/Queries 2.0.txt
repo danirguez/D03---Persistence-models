@@ -1,0 +1,162 @@
+﻿<-------Query C/1---------->
+
+The average, the minimum, the maximum, and the standard deviation of the number of applications per trip.
+
+select avg(t.application.size), min(t.application.size), max(t.application.size), sqrt(sum(t.application.size*t.application.size)/count(t.application.size)-(avg(t.application.size)*avg(t.application.size))) from Trip t;
+
+Esta consulta accede a la tabla Trip de nuestra base de datos, devolviendo la media, el mínimo, el máximo y la desviación estándar del tamaño del número de aplicaciones de los trips. Para esto, accedemos a la propiedad applications de los trips y vemos su tamaño.
+
+
+<-------Query C/2---------->
+
+The average, the minimum, the maximum, and the standard deviation of the number of trips managed per manager.
+
+select avg(m.trip.size), min(m.trip.size), max(m.trip.size), sqrt(sum(m.trip.size*m.trip.size)/count(m.trip.size)-(avg(m.trip.size)*avg(m.trip.size))) from Manager m;
+
+Esta consulta accede a la tabla Manager de nuestra base de datos, devolviendo la media, el mínimo, el máximo y la desviación estándar del tamaño del número de trips de los Manager. Para esto, accedemos a la propiedad trips de los Manager y vemos su tamaño.
+
+
+<-------Query C/3---------->
+
+The average, the minimum, the maximum, and the standard deviation of the price of the trips.
+
+select avg(t.price), min(t.price), max(t.price), sqrt(sum(t.price*t.price)/count(t.price) - (avg(t.price) * avg(t.price))) from Trip t;
+
+Esta consulta accede a la tabla Trip de nuestra base de datos, devolviendo la media, el mínimo, el máximo y la desviación estándar del tamaño del precio de los trips. Para esto, accedemos a la propiedad price de los trips para ver su precio.
+
+<-------Query C/4---------->
+
+The average, the minimum, the maximum, and the standard deviation of the number trips guided per ranger.
+
+select avg(r.trip.size),min(r.trip.size),max(r.trip.size), sqrt(sum(r.trip.size*r.trip.size)/count(r.trip.size)-(avg(r.trip.size)*avg(r.trip.size))) from Ranger r;
+
+Esta consulta accede a la tabla Ranger de nuestra base de datos, devolviendo la media, el mínimo, el máximo y la desviación estándar del tamaño del numero de trips de los Ranger. Para esto, accedemos a la propiedad trips de los Ranger y vemos su tamaño
+
+<-------Query C/5---------->
+
+The ratio of applications with status ''PENDING''.
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='PENDING';
+
+Calcula el ratio entre el número de application con status PENDING (accediendo a la tabla Application y contando aquellas cuyo status sea PENDING) y el número total de aplications (accediendo a la tabla Application y contando en este caso todas las entradas de la misma). Realizamos un cast para poder devolver números decimales.
+
+
+<-------Query C/6---------->
+
+The ratio of applications with status ''DUE''.
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='DUE';
+
+Calcula el ratio entre el número de application con status DUE (accediendo a la tabla Application y contando aquellas cuyo status sea DUE) y el número total de aplications (accediendo a la tabla Application y contando en este caso todas las entradas de la misma). Realizamos un cast para poder devolver números decimales.
+
+
+<-------Query C/7---------->
+
+The ratio of applications with status ''ACCEPTED''.
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='ACCEPTED';
+
+Calcula el ratio entre el número de application con status ACCEPTED (accediendo a la tabla Application y contando aquellas cuyo status sea ACCEPTED) y el número total de aplications (accediendo a la tabla Application y contando en este caso todas las entradas de la misma). Realizamos un cast para poder devolver números decimales.
+
+<-------Query C/8---------->
+
+The ratio of applications with status ''CANCELLED''.
+
+
+select cast(count(a) as float)/(select count(a) from Application a) from Application a where a.status='CANCELLED';
+
+Calcula el ratio entre el número de application con status CANCELLED (accediendo a la tabla Application y contando aquellas cuyo status sea CANCELLED) y el número total de aplications (accediendo a la tabla Application y contando en este caso todas las entradas de la misma). Realizamos un cast para poder devolver números decimales.
+
+<-------Query C/9---------->
+
+
+The ratio of trips that have been cancelled versus the total number of trips that have been organised.
+
+select (select count(t) from Trip t) /cast(count(t) as float)  from Trip t where t.reason is not null;
+
+Calcula el ratio entre el numero de trips que han sido cancelados(accediendo a la tabla Trip y entrando a los que tengan el atributo reason no nulo) y el numero total de Trips (accediendo a la tabla Trip y contando en este caso todas las entradas de la misma). Realizamos un cast para poder devolver numeros decimales.
+
+
+<-------Query C/10---------->
+
+The listing of trips that have got at least 10% more applications than the average, ordered by number of applications
+
+select t from Trip t group by t having t.application.size > (select avg(t2.application.size)*1.1 from Trip t2) order by t.application.size;
+
+Esta consulta devuelve una lista de trips. Para ello, debemos agrupar por Trip y seleccionar con la ayuda de having aquellos trips que tienen un número de application que es al menos un diez porciento mayor que la media de las applications de los trips (creando una consulta anidada para hacer la media de las applications de los trips). Establecemos por último el orden con la ayuda de order by. Para todo esto, hemos accedido a la propiedad applications de los trips y a su tamaño.
+
+<-------Query C/11---------->
+
+//PROBAR
+
+A table with the number of times that each legal text's been referenced.
+
+select t.legalText.numberLaw from Trip t;
+
+
+En esta consulta accedemos a la tabla LegalText y devolvemos cada legalText con el número de veces que ha sido referenciado, accediendo a su propiedad trips y viendo su tamaño.
+
+
+<-------Query B/1---------->
+//mirar conectividad de Trip hacia Note
+
+The minimum, the maximum, the average, and the standard deviation of the number of notes per trip.
+
+select avg(t.note.size), min(t.note.size), max(t.note.size), sqrt(sum(t.note.size*t.note.size)/count(t.note.size)-(avg(t.note.size)*avg(t.note.size))) from Trip t;
+
+Accede a la tabla Trip de nuestra base de datos, devolviendo el mínimo, el máximo, la media y su desviación estándar del número de notes de los trips. Para esto, accedemos a la propiedad notes de los trips y vemos su tamaño.
+
+
+<-------Query B/2---------->
+
+The minimum, the maximum, the average, and the standard deviation of the number of audit records per trip.
+
+select avg(t.audit.size), min(t.audit.size), max(t.audit.size), sqrt(sum(t.audit.size*t.audit.size)/count(t.audit.size)-(avg(t.audit.size)*avg(t.audit.size))) from Trip t;
+
+Acccede a la tabla Trip de nuestra base de datos, devolviendo el mínimo, el máximo, la media y su desviación estándar del número de audits de los trips. Para esto, accedemos a la propiedad audits de los trips y vemos su tamaño.
+
+
+<-------Query B/3---------->
+
+The ratio of trips with an audit record.
+
+
+select count(t)/((select count(t2) from Trip t2)+0.0) from Trip t where t.audit.size=1;
+
+Calcula el ratio entre el número trips que tienen un audit (accediendo a la tabla Trip y contando aquellos que tengan un audit) y el número total de trips (accediendo a la tabla Trip y contando en este caso todas las entradas de la misma). Hemos sumado 0.0 para poder devolver números decimales, es una alternativa al uso de cast.
+
+
+<-------Query B/4---------->
+
+The ratio of rangers who have registered their curricula.
+
+select cast(count(r) as float)/(select count(rt) from Ranger rt) from Ranger r where r.curriculum is not null;
+
+Calcula el ratio entre el número rangers que tienen un curricula (accediendo a la tabla Ranger y contando aquellos cuya curricula sea distinta de null) y el número total de rangers (accediendo a la tabla Ranger y contando en este caso todas las entradas de la misma). Hemos hecho un cast para poder devolver números decimales.
+
+<-------Query B/5---------->
+//falta por implementar endorserRecord
+
+The ratio of rangers whose curriculum's been endorsed.
+
+select count(c)/((select count(c2) from Curriculum c2)+0.0) from Curriculum c where c.endorserRecord.size>0;
+
+Calcula el ratio entre el número rangers que tienen un curricula con endorserRecord (accediendo a la tabla Curricula y contando aquellos que tengan algún endorserRecord) y el número total de curriculas (accediendo a la tabla Curricula y contando en este caso todas las entradas de la misma). Hemos sumado 0.0 para poder devolver números decimales, es una alternativa al uso de cast.
+
+<-------Query B/6---------->
+//falta por implementar suspicious
+
+The ratio of suspicious managers.
+
+select count(m)/((select count(m2) from Manager m2)+0.0) from Manager m where m.suspicious=true;
+
+Calcula el ratio entre el número de managers suspicious (accediendo a la tabla Manager y contando aquellos que tengan suspicious a true) y el número total de managers (accediendo a la tabla Manager y contando en este caso todas las entradas de la misma). Hemos sumado 0.0 para poder devolver números decimales, es una alternativa al uso de cast. 
+
+<-------Query B/7---------->
+//falta por implementar suspicious
+
+The ratio of suspicious rangers.
+
+select cast(count(r) as float)/(select count(r) from Ranger r) from Ranger r where r.suspicious=true;
+
+calcula el ratio entre el número de rangers suspicious (accediendo a la tabla Ranger y contando aquellos que tengan suspicious a true) y el número total de rangers (accediendo a la tabla Ranger y contando en este caso todas las entradas de la misma). Hemos hecho un cast para poder devolver números decimales. 
