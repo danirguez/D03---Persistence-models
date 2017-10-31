@@ -136,13 +136,13 @@ public class Trip extends DomainEntity {
 	private Collection<Survival> survival;
 	private Manager manager;
 	private Collection<Story> story;
-	private Collection<Tag> tag;
 	private Collection<Stage> stage;
 	private Category category;
 	private LegalText legalText;
 	private Application application;
 	private Collection<Audit> audit;
 	private Collection<Note> note;
+	private Collection<Value> value;
 
 	@Valid
 	@OneToOne(optional = true)
@@ -199,14 +199,13 @@ public class Trip extends DomainEntity {
 	}
 
 	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "trip")
-	public Collection<Tag> getTag() {
-		return tag;
+	public Collection<Value> getValue() {
+		return value;
 	}
 
-	public void setTag(Collection<Tag> tag) {
-		this.tag = tag;
+	public void setValue(Collection<Value> value) {
+		this.value = value;
 	}
 
 	@Valid

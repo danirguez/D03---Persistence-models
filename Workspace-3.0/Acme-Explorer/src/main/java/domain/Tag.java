@@ -34,17 +34,19 @@ public class Tag extends DomainEntity {
 	
 	// Relationships
 	
-	private Trip trip;
+	private Value value;
 
-	@NotNull
 	@Valid
+	@NotNull
 	@ManyToOne(optional = false)
-	public Trip getTrip() {
-		return trip;
+	public Value getValue() {
+		return value;
 	}
 
-	public void setTrip(Trip trip) {
-		this.trip = trip;
+	public void setValue(Value value) {
+		this.value = value;
 	}
+	
+	
 	
 }
