@@ -7,7 +7,6 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -50,7 +49,6 @@ public class Folder extends DomainEntity {
 
 	private Collection<Message> messages;
 	private Folder customFolder;
-	private Collection<Folder> folders;
 
 	@Valid
 	@ManyToMany(mappedBy = "folder")
@@ -71,17 +69,6 @@ public class Folder extends DomainEntity {
 
 	public void setCustomFolder(Folder customFolder) {
 		this.customFolder = customFolder;
-	}
-	
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy="customFolder")
-	public Collection<Folder> getFolders() {
-		return folders;
-	}
-
-	public void setFolders(Collection<Folder> folders) {
-		this.folders = folders;
 	}
 
 }

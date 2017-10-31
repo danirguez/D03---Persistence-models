@@ -145,8 +145,7 @@ public class Trip extends DomainEntity {
 	private Collection<Note> note;
 
 	@Valid
-	@NotNull
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public LegalText getLegalText() {
 		return legalText;
 	}
@@ -232,7 +231,7 @@ public class Trip extends DomainEntity {
 	}
 
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public Application getApplication() {
 		return application;
 	}

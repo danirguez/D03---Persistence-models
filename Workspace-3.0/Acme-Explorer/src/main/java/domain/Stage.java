@@ -57,7 +57,7 @@ public class Stage extends DomainEntity {
 	private Trip trip;
 
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	public Trip getTrip() {
 		return trip;
 	}

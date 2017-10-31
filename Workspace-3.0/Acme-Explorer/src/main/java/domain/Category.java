@@ -42,7 +42,7 @@ public class Category extends DomainEntity {
 	private Collection<Trip> trip;
 
 	
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	public Category getCategoryParent() {
 		return categoryParent;
 	}

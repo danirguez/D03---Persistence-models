@@ -842,7 +842,7 @@
 	<property name="name" value="Mario" />
 	<property name="surname" value="Sánchez" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 443632" />
+	<property name="phoneNumber" value="654343632" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialId">
 		<list>
@@ -881,7 +881,7 @@
 	<property name="name" value="Alfonso" />
 	<property name="surname" value="Sánchez" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 443632" />
+	<property name="phoneNumber" value="3253443632" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialId">
 		<list>
@@ -977,7 +977,7 @@
 	<bean id="endorserRecord1" class="domain.EndorserRecord">
 	<property name="endorserName" value="Mario" />
 	<property name="email" value="codec993@gmail.com" />
-	<property name="phoneNumber" value="+34 (25) 443632" />
+	<property name="phoneNumber" value="674443632" />
 	<property name="likedln" value="http://www.likedlin.com" />
 	<property name="comment" value="Comentario"/>
 	</bean>
@@ -987,7 +987,7 @@
 	<bean id="endorserRecord2" class="domain.EndorserRecord">
 	<property name="endorserName" value="Daniel" />
 	<property name="email" value="codeada3@gmail.com" />
-	<property name="phoneNumber" value="+34 (256) 445232" />
+	<property name="phoneNumber" value="671143642" />
 	<property name="likedln" value="http://www.likedlin.com" />
 	<property name="comment" value="Comentario"/>
 	</bean>
@@ -1066,7 +1066,7 @@
 	<property name="name" value="Mario" />
 	<property name="photo" value="http://www.google.es" />
 	<property name="email" value="marigo@hotmail.com" />
-	<property name="phoneNumber" value="+34 (253) 443659" />
+	<property name="phoneNumber" value="688843632" />
 	<property name="likedln" value="http://www.likedlin.com" />
 	</bean>
 	
@@ -1076,7 +1076,7 @@
 	<property name="name" value="Dani" />
 	<property name="photo" value="http://www.google.com" />
 	<property name="email" value="danigo@hotmail.com" />
-	<property name="phoneNumber" value="+34 (283) 443659" />
+	<property name="phoneNumber" value="954443632" />
 	<property name="likedln" value="http://www.likedlin.com" />
 	</bean>
 	
@@ -1086,7 +1086,7 @@
 	
 	<bean id="CATEGORY" class="domain.Category">
 	<property name="name" value="CATEGORY" />
-	<property name="categoryParent" ref="category1"/>
+	<property name="categoryParent"><null/></property>
 	<property name="categories">
 		<list></list>
 	</property>
@@ -1202,7 +1202,7 @@
 	<property name="name" value="Dani" />
 	<property name="surname" value="Radriguez" />
 	<property name="email" value="dani.r.lopez@hotmail.com" />
-	<property name="phoneNumber" value="+34 (253) 4655" />
+	<property name="phoneNumber" value="694443000" />
 	<property name="address" value="C/ Lugo" />
 	<property name="socialId">
 		<list></list>
@@ -1231,7 +1231,7 @@
 	<property name="name" value="Alfonso" />
 	<property name="surname" value="Saldado" />
 	<property name="email" value="saldado@hotmail.com" />
-	<property name="phoneNumber" value="+34 (253) 5655" />
+	<property name="phoneNumber" value="672713610" />
 	<property name="address" value="C/ Lugo" />
 	<property name="socialId">
 		<list></list>
@@ -1317,7 +1317,12 @@
 	<property name="title" value="Beach1" />
 	<property name="description" value="Something" />
 	<property name="price" value="800.0" />
-	<property name="requirement" value="Other" />
+	<property name="requirement">
+		<list>
+			<value>Requirement 3</value>
+			<value>Requirement 4</value>
+		</list>
+	</property>
 	<property name="publication" value="25/10/17" />
 	<property name="tripStart" value="25/12/17" />
 	<property name="tripEnd" value="28/12/17" />
@@ -1367,7 +1372,7 @@
 	<property name="name" value="Alfonso" />
 	<property name="surname" value="Soldado" />
 	<property name="email" value="alfonsosoldado23@gmail.com" />
-	<property name="phoneNumber" value="+34 (256) 443632" />
+	<property name="phoneNumber" value="674433632" />
 	<property name="address" value="C/ Madrid" />
 	<property name="socialId">
 		<list></list>
@@ -1376,7 +1381,6 @@
 	<property name="sponsorship">
 		<list>
 			<ref bean="sponsorship1"/>
-			<ref bean="sponsorship2"/>
 		</list>
 	</property>
 	<property name="folders">
@@ -1402,7 +1406,7 @@
 	<property name="name" value="Julio" />
 	<property name="surname" value="Caro" />
 	<property name="email" value="juliocsponsor@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 63610" />
+	<property name="phoneNumber" value="621443632" />
 	<property name="address" value="C/ Barcelona" />
 	<property name="socialId">
 		<list></list>
@@ -1410,7 +1414,6 @@
 	<property name="userAccount" ref="userAccount5" />
 	<property name="sponsorship">
 		<list>
-			<ref bean="sponsorship1"/>
 			<ref bean="sponsorship2"/>
 		</list>
 	</property>
@@ -1440,6 +1443,7 @@
 	<property name="infoPage" value="http://www.example.es" />
 	<property name="creditCard" ref="creditCard1" />
 	<property name="sponsor" ref="sponsor1" />
+	<property name="trip" ref="trip1" />
 	</bean>
 	
 	<!-- SPONSORSHIP2 -->
@@ -1449,6 +1453,7 @@
 	<property name="infoPage" value="http://www.example2.es" />
 	<property name="creditCard" ref="creditCard2" />
 	<property name="sponsor" ref="sponsor2" />
+	<property name="trip" ref="trip2" />
 	</bean>
 	
 									<!-- CREDITCARD -->
@@ -1483,7 +1488,7 @@
 	<property name="name" value="Manuel" />
 	<property name="surname" value="Caro" />
 	<property name="email" value="alfonsocaro@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543421" />
+	<property name="phoneNumber" value="674443111" />
 	<property name="address" value="C/ Sevilla" />
 	<property name="socialId">
 		<list></list>
@@ -1529,7 +1534,7 @@
 	<property name="name" value="Jose" />
 	<property name="surname" value="Caro" />
 	<property name="email" value="josecaro@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 213221" />
+	<property name="phoneNumber" value="834443632" />
 	<property name="address" value="C/ Granada" />
 	<property name="socialId">
 		<list></list>
@@ -1607,7 +1612,7 @@
 	<bean id="emergency1" class="domain.Emergency">
 	<property name="name" value="Emergency 1" />
 	<property name="email" value="emer@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 2333221" />
+	<property name="phoneNumber" value="061" />
 	</bean>
 	
 	<!-- EMERGENCY2 -->
@@ -1615,7 +1620,7 @@
 	<bean id="emergency2" class="domain.Emergency">
 	<property name="name" value="Emergency 2" />
 	<property name="email" value="emer2@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 13998221" />
+	<property name="phoneNumber" value="112" />
 	</bean>
 	
 								<!-- STORY -->
@@ -1753,7 +1758,7 @@
 	<property name="name" value="Juan Carlos" />
 	<property name="surname" value="Cansino" />
 	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543457" />
+	<property name="phoneNumber" value="614443132" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialId">
 		<list></list>
@@ -1793,7 +1798,7 @@
 	<property name="name" value="Juan" />
 	<property name="surname" value="Cansino" />
 	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543478" />
+	<property name="phoneNumber" value="674441234" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialId">
 		<list></list>
@@ -1834,7 +1839,7 @@
 	<property name="name" value="Juan Carlos" />
 	<property name="surname" value="Cansino" />
 	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543496" />
+	<property name="phoneNumber" value="974443632" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialId">
 		<list></list>
@@ -1873,7 +1878,7 @@
 	<property name="name" value="Juan Carlos" />
 	<property name="surname" value="Cansino" />
 	<property name="email" value="juca@gmail.com" />
-	<property name="phoneNumber" value="+34 (253) 543425" />
+	<property name="phoneNumber" value="674438632" />
 	<property name="address" value="C/Estrasburgo" />
 	<property name="socialId">
 		<list></list>

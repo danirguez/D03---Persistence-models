@@ -63,8 +63,7 @@ public class Explorer extends Actor {
 	}
 
 	@Valid
-	@NotNull
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	public Application getApplication() {
 		return application;
 	}
