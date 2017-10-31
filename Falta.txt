@@ -13,7 +13,5 @@ mirar la restricción de precio con menos de un euro (0,80 euros)
 
 Añadir al projetsii
 
-- Reunión al comenzar el trabajo sobre la comprensión del enunciado.
-- Planificación para asignar las tareas.
-- Tarea de crear entregable, otra de revisar lo que se ha preparado.
+ 
 - Tarea reunión recapitulación al final de todo lo hecho.
