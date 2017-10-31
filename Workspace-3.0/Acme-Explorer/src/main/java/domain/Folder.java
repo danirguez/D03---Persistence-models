@@ -26,6 +26,7 @@ public class Folder extends DomainEntity {
 	// Attributes
 
 	private String name;
+	private Boolean systemFolder;
 
 	@NotBlank
 	public String getName() {
@@ -48,10 +49,8 @@ public class Folder extends DomainEntity {
 	// Relationships
 
 	private Collection<Message> messages;
-	private Actor actor;
 	private Folder customFolder;
 	private Collection<Folder> folders;
-	private Boolean systemFolder;
 
 	@Valid
 	@ManyToMany(mappedBy = "folder")
@@ -65,16 +64,6 @@ public class Folder extends DomainEntity {
 	}
 
 	@Valid
-	@ManyToOne(optional = false)
-	public Actor getActor() {
-		return actor;
-	}
-
-	public void setActor(Actor actor) {
-		this.actor = actor;
-	}
-
-	@Valid
 	@ManyToOne(optional = true)
 	public Folder getCustomFolder() {
 		return customFolder;
@@ -83,7 +72,6 @@ public class Folder extends DomainEntity {
 	public void setCustomFolder(Folder customFolder) {
 		this.customFolder = customFolder;
 	}
-
 	
 	@Valid
 	@NotNull

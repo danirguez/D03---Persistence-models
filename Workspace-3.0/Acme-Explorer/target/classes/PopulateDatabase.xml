@@ -176,7 +176,6 @@
 			<list>
 			</list>
 		</property>
-		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBoxRanger1" />
 	</bean>
 	
@@ -188,7 +187,6 @@
 				<ref bean="message1"/>
 			</list>
 		</property>
-		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBoxRanger1" />
 	</bean>
 	
@@ -198,7 +196,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBoxRanger1" />
 	</bean>
 	
@@ -208,7 +205,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBoxRanger1" />
 	</bean>
 	
@@ -218,7 +214,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger1" />
 		<property name="customFolder" ref="customBoxRanger1" />
 	</bean>
 	
@@ -228,7 +223,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger1" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -238,7 +232,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger2" />
 		<property name="customFolder" ref="customBoxRanger2" />
 	</bean>
 	
@@ -248,7 +241,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger2" />
 		<property name="customFolder" ref="customBoxRanger2" />
 	</bean>
 	
@@ -258,7 +250,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger2" />
 		<property name="customFolder" ref="customBoxRanger2" />
 	</bean>
 	
@@ -268,7 +259,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger2" />
 		<property name="customFolder" ref="customBoxRanger2" />
 	</bean>
 	
@@ -278,7 +268,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger2" />
 		<property name="customFolder" ref="customBoxRanger2" />
 	</bean>
 	
@@ -288,7 +277,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="ranger2" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -301,7 +289,6 @@
 			<list>
 			</list>
 		</property>
-		<property name="actor" ref="explorer1" />
 		<property name="customFolder" ref="customBoxExplorer1" />
 	</bean>
 	
@@ -313,7 +300,6 @@
 				<ref bean="message2"/>
 			</list>
 		</property>
-		<property name="actor" ref="explorer1" />
 		<property name="customFolder" ref="customBoxExplorer1" />
 	</bean>
 	
@@ -323,7 +309,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer1" />
 		<property name="customFolder" ref="customBoxExplorer1" />
 	</bean>
 	
@@ -333,7 +318,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer1" />
 		<property name="customFolder" ref="customBoxExplorer1" />
 	</bean>
 	
@@ -343,7 +327,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer1" />
 		<property name="customFolder" ref="customBoxExplorer1" />
 	</bean>
 	
@@ -353,7 +336,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer1" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -363,7 +345,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer2" />
 		<property name="customFolder" ref="customBoxExplorer2" />
 	</bean>
 	
@@ -373,7 +354,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer2" />
 		<property name="customFolder" ref="customBoxExplorer2" />
 	</bean>
 	
@@ -383,7 +363,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer2" />
 		<property name="customFolder" ref="customBoxExplorer2" />
 	</bean>
 	
@@ -393,7 +372,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer2" />
 		<property name="customFolder" ref="customBoxExplorer2" />
 	</bean>
 	
@@ -403,7 +381,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer2" />
 		<property name="customFolder" ref="customBoxExplorer2" />
 	</bean>
 	
@@ -413,7 +390,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="explorer2" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -425,7 +401,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator1" />
 		<property name="customFolder" ref="customBoxAdministrator1" />
 	</bean>
 	
@@ -435,7 +410,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator1" />
 		<property name="customFolder" ref="customBoxAdministrator1" />
 	</bean>
 	
@@ -445,7 +419,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator1" />
 		<property name="customFolder" ref="customBoxAdministrator1" />
 	</bean>
 	
@@ -455,7 +428,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator1" />
 		<property name="customFolder" ref="customBoxAdministrator1" />
 	</bean>
 	
@@ -465,7 +437,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator1" />
 		<property name="customFolder" ref="customBoxAdministrator1" />
 	</bean>
 	
@@ -475,7 +446,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator1" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -485,7 +455,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator2" />
 		<property name="customFolder" ref="customBoxAdministrator2" />
 	</bean>
 	
@@ -495,7 +464,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator2" />
 		<property name="customFolder" ref="customBoxAdministrator2" />
 	</bean>
 	
@@ -505,7 +473,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator2" />
 		<property name="customFolder" ref="customBoxAdministrator2" />
 	</bean>
 	
@@ -515,7 +482,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator2" />
 		<property name="customFolder" ref="customBoxAdministrator2" />
 	</bean>
 	
@@ -525,7 +491,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator2" />
 		<property name="customFolder" ref="customBoxAdministrator2" />
 	</bean>
 	
@@ -535,7 +500,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="administrator2" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -547,7 +511,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor1" />
 		<property name="customFolder" ref="customBoxSponsor1" />
 	</bean>
 	
@@ -557,7 +520,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor1" />
 		<property name="customFolder" ref="customBoxSponsor1" />
 	</bean>
 	
@@ -567,7 +529,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor1" />
 		<property name="customFolder" ref="customBoxSponsor1" />
 	</bean>
 	
@@ -577,7 +538,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor1" />
 		<property name="customFolder" ref="customBoxSponsor1" />
 	</bean>
 	
@@ -587,7 +547,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor1" />
 		<property name="customFolder" ref="customBoxSponsor1" />
 	</bean>
 	
@@ -597,7 +556,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor1" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -607,7 +565,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor2" />
 		<property name="customFolder" ref="customBoxSponsor2" />
 	</bean>
 	
@@ -617,7 +574,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor2" />
 		<property name="customFolder" ref="customBoxSponsor2" />
 	</bean>
 	
@@ -627,7 +583,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor2" />
 		<property name="customFolder" ref="customBoxSponsor2" />
 	</bean>
 	
@@ -637,7 +592,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor2" />
 		<property name="customFolder" ref="customBoxSponsor2" />
 	</bean>
 	
@@ -647,7 +601,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor2" />
 		<property name="customFolder" ref="customBoxSponsor2" />
 	</bean>
 	
@@ -657,7 +610,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="sponsor2" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -669,7 +621,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager1" />
 		<property name="customFolder" ref="customBoxManager1" />
 	</bean>
 	
@@ -679,7 +630,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager1" />
 		<property name="customFolder" ref="customBoxManager1" />
 	</bean>
 	
@@ -689,7 +639,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager1" />
 		<property name="customFolder" ref="customBoxManager1" />
 	</bean>
 	
@@ -699,7 +648,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager1" />
 		<property name="customFolder" ref="customBoxManager1" />
 	</bean>
 	
@@ -709,7 +657,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager1" />
 		<property name="customFolder" ref="customBoxManager1" />
 	</bean>
 	
@@ -719,7 +666,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager1" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -729,7 +675,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager2" />
 		<property name="customFolder" ref="customBoxManager2" />
 	</bean>
 	
@@ -739,7 +684,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager2" />
 		<property name="customFolder" ref="customBoxManager2" />
 	</bean>
 	
@@ -749,7 +693,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager2" />
 		<property name="customFolder" ref="customBoxManager2" />
 	</bean>
 	
@@ -759,7 +702,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager2" />
 		<property name="customFolder" ref="customBoxManager2" />
 	</bean>
 	
@@ -769,7 +711,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager2" />
 		<property name="customFolder" ref="customBoxManager2" />
 	</bean>
 	
@@ -779,7 +720,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="manager2" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -791,7 +731,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor1" />
 		<property name="customFolder" ref="customBoxAuditor1" />
 	</bean>
 	
@@ -801,7 +740,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor1" />
 		<property name="customFolder" ref="customBoxAuditor1" />
 	</bean>
 	
@@ -811,7 +749,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor1" />
 		<property name="customFolder" ref="customBoxAuditor1" />
 	</bean>
 	
@@ -821,7 +758,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor1" />
 		<property name="customFolder" ref="customBoxAuditor1" />
 	</bean>
 	
@@ -831,7 +767,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor1" />
 		<property name="customFolder" ref="customBoxAuditor1" />
 	</bean>
 	
@@ -841,7 +776,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor1" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -851,7 +785,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor2" />
 		<property name="customFolder" ref="customBoxAuditor2" />
 	</bean>
 	
@@ -861,7 +794,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor2" />
 		<property name="customFolder" ref="customBoxAuditor2" />
 	</bean>
 	
@@ -871,7 +803,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor2" />
 		<property name="customFolder" ref="customBoxAuditor2" />
 	</bean>
 	
@@ -881,7 +812,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor2" />
 		<property name="customFolder" ref="customBoxAuditor2" />
 	</bean>
 	
@@ -891,7 +821,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor2" />
 		<property name="customFolder" ref="customBoxAuditor2" />
 	</bean>
 	
@@ -901,7 +830,6 @@
 		<property name="messages">
 			<list></list>
 		</property>
-		<property name="actor" ref="auditor2" />
 		<property name="customFolder"><null/></property>
 	</bean>
 	
@@ -926,7 +854,6 @@
 	<property name="trip">
 		<list>
 			<ref bean="trip1"/>
-			<ref bean="trip2"/>
 		</list>
 	</property>
 	<property name="folders">
@@ -964,7 +891,6 @@
 	<property name="curriculum" ref="curriculum2" />
 	<property name="trip">
 		<list>
-			<ref bean="trip1"/>
 			<ref bean="trip2"/>
 		</list>
 	</property>
@@ -1166,8 +1092,6 @@
 	</property>
 	<property name="trip">
 		<list>
-			<ref bean="trip1"/>
-			<ref bean="trip2"/>
 		</list>
 	</property>
 	</bean>
@@ -1183,7 +1107,6 @@
 	<property name="trip">
 		<list>
 			<ref bean="trip1"/>
-			<ref bean="trip2"/>
 		</list>
 	</property>
 	</bean>
@@ -1198,7 +1121,6 @@
 	</property>
 	<property name="trip">
 		<list>
-			<ref bean="trip1"/>
 			<ref bean="trip2"/>
 		</list>
 	</property>
@@ -1258,7 +1180,7 @@
 	
 							<!-- TAG -->
 	
-	<!-- TAG1 -->	
+	<!-- TAG1 -->
 		
 	<bean id="tag1" class="domain.Tag">
 	<property name="name" value="Adventure" />
@@ -1269,7 +1191,7 @@
 	
 	<bean id="tag2" class="domain.Tag">
 	<property name="name" value="Another" />
-	<property name="trip" ref="trip1" />
+	<property name="trip" ref="trip2" />
 	</bean>
 	
 									<!-- ADMINISTRATOR -->
@@ -1359,19 +1281,16 @@
 	<property name="survival">
 		<list>
 			<ref bean="survival1"/>
-			<ref bean="survival2"/>
 		</list>
 	</property>
 	<property name="story">
 		<list>
 			<ref bean="story1"/>
-			<ref bean="story2"/>
 		</list>
 	</property>
 	<property name="tag">
 		<list>
 			<ref bean="tag1"/>
-			<ref bean="tag2"/>
 		</list>
 	</property>
 	<property name="stage">
@@ -1404,21 +1323,23 @@
 	<property name="tripEnd" value="28/12/17" />
 	<property name="reason" value="Because I want" />
 	<property name="ranger" ref="ranger2" />
-	<property name="manager" ref="manager1" />
+	<property name="manager" ref="manager2" />
 	<property name="legalText" ref="legalText2" />
 	<property name="category" ref="category2" />
 	<property name="application" ref="application2"/>
 	<property name="survival">
 		<list>
+			<ref bean="survival2"/>
 		</list>
 	</property>
 	<property name="story">
 		<list>
+			<ref bean="story2"/>
 		</list>
 	</property>
 	<property name="tag">
 		<list>
-			
+			<ref bean="tag2"/>
 		</list>
 	</property>
 	<property name="stage">
@@ -1519,7 +1440,6 @@
 	<property name="infoPage" value="http://www.example.es" />
 	<property name="creditCard" ref="creditCard1" />
 	<property name="sponsor" ref="sponsor1" />
-	<property name="trip" ref="trip1" />
 	</bean>
 	
 	<!-- SPONSORSHIP2 -->
@@ -1529,7 +1449,6 @@
 	<property name="infoPage" value="http://www.example2.es" />
 	<property name="creditCard" ref="creditCard2" />
 	<property name="sponsor" ref="sponsor2" />
-	<property name="trip" ref="trip2" />
 	</bean>
 	
 									<!-- CREDITCARD -->
@@ -1924,7 +1843,6 @@
 	<property name="note">
 		<list>
 			<ref bean="note1"/>
-			<ref bean="note2"/>
 		</list>
 	</property>
 	<property name="audit">
