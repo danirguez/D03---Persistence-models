@@ -2074,4 +2074,44 @@
 	<property name="actor" ref="ranger2"/>
 	</bean>
 	
+	<!-- CONFIGURATION -->
+	
+	<bean id="configuration" class="domain.Configuration">
+	<property name="banner" value="http://creek-tours.com/wp-content/uploads/Kenya-Tanzania-Family-Safari-banner.jpg" />
+	<property name="message" value="Tanzanika is an adven-ture company that makes your explorer’s dreams true”, “Tanzanika es la empresa de aven-turas que hará tus sueños de explorador realidad"/>
+	<property name="spamWords">
+		<list>
+			<value>viagra</value>
+			<value>cialis</value>
+			<value>sex</value>
+			<value>jes extender</value>
+		</list>
+	</property>
+	<property name="tax" value="0.21" />
+	<property name="countryCode" value="+34"/>
+	<property name="catalogueTag">
+		<list>
+			<value>country</value>
+			<value>expertise</value>
+			<value>dangerousness</value>
+		</list>
+	</property>
+	<property name="treeCategory">
+		<list>
+			<value>CATEGORY -> Safari -> (Ground -> (Savana, Mountain), Water -> (Lake, River)), Climbing -> (Mountain, River))</value>
+		</list>
+	</property>
+		<property name="catalogueText">
+		<list>
+			<value>Legal Text 1</value>
+			<value>Texto Legal 1</value>
+		</list>
+	</property>
+	<property name="other">
+		<list>
+			<value>Other</value>
+		</list>
+	</property>
+	</bean>
+	
 </beans>
