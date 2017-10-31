@@ -907,6 +907,7 @@
 	</property>
 	<property name="sent">
 		<list>
+			<ref bean="message2"/>
 		</list>
 	</property>
 	<property name="received"><null/></property>
@@ -1184,14 +1185,26 @@
 		
 	<bean id="tag1" class="domain.Tag">
 	<property name="name" value="Adventure" />
-	<property name="trip" ref="trip1" />
+	<property name="value" ref="value1" />
 	</bean>
 	
 	<!-- TAG2 -->
 	
 	<bean id="tag2" class="domain.Tag">
 	<property name="name" value="Another" />
+	<property name="value" ref="value2" />
+	</bean>
+	
+							<!-- VALUE -->
+	
+	<bean id="value1" class="domain.Value">
+	<property name="trip" ref="trip1" />
+	<property name="tag" ref="tag1" />
+	</bean>
+	
+	<bean id="value2" class="domain.Value">
 	<property name="trip" ref="trip2" />
+	<property name="tag" ref="tag2" />
 	</bean>
 	
 									<!-- ADMINISTRATOR -->
@@ -1288,9 +1301,9 @@
 			<ref bean="story1"/>
 		</list>
 	</property>
-	<property name="tag">
+	<property name="value">
 		<list>
-			<ref bean="tag1"/>
+			<ref bean="value1"/>
 		</list>
 	</property>
 	<property name="stage">
@@ -1342,9 +1355,9 @@
 			<ref bean="story2"/>
 		</list>
 	</property>
-	<property name="tag">
+	<property name="value">
 		<list>
-			<ref bean="tag2"/>
+			<ref bean="value2"/>
 		</list>
 	</property>
 	<property name="stage">
@@ -1522,10 +1535,9 @@
 	</property>
 	<property name="sent">
 		<list>
-			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received"><null/></property>
+	<property name="received" ref="message1"/>
 	</bean>							
 	
 	<!-- EXPLORER2 -->
@@ -1570,7 +1582,7 @@
 		<list>
 		</list>
 	</property>
-	<property name="received"><null/></property>
+	<property name="received" ref="message2"/>
 	</bean>
 	
 								<!-- FINDER -->
@@ -1674,6 +1686,7 @@
 		<property name="folder">
 			<list>
 				<ref bean="outBoxRanger1"/>
+				<ref bean="inBoxExplorer1"/>
 			</list> 
 		</property>
 	</bean>
@@ -1686,23 +1699,22 @@
 		<property name="body" value="Que pasa" />
 		<property name="priority" value="LOW" />
 		<property name="spam" value="false" />
-		<property name="sender" ref="explorer1" />
+		<property name="sender" ref="ranger2" />
 		<property name="recipient">
 			<list>
-				<ref bean="ranger1"/>
+				<ref bean="explorer2"/>
 			</list> 
 		</property>
 		<property name="folder">
 			<list>
-				<ref bean="outBoxExplorer1"/>
+				<ref bean="outBoxExplorer2"/>
+				<ref bean="inBoxRanger2"/>
 			</list> 
 		</property>
 	</bean>	
 	
 	<!-- Message3 -->
-	
-	<!--  
-	
+	<!--
 	<bean id="message3" class="domain.Message">
 		<property name="moment" value="01/01/2012 12:30" />
 		<property name="subject" value="Que tal" />
@@ -1721,9 +1733,7 @@
 			</list> 
 		</property>
 	</bean>	
-	
 	-->
-	
 	<!-- Message4 -->
 	
 	<!--  
@@ -2072,6 +2082,46 @@
 	<property name="nameSocialNetwork" value="Instagram" />
 	<property name="socialNetwork" value="http://www.instagram.com" />
 	<property name="actor" ref="ranger2"/>
+	</bean>
+	
+	<!-- CONFIGURATION -->
+	
+	<bean id="configuration" class="domain.Configuration">
+	<property name="banner" value="http://creek-tours.com/wp-content/uploads/Kenya-Tanzania-Family-Safari-banner.jpg" />
+	<property name="message" value="Tanzanika is an adven-ture company that makes your explorer’s dreams true”, “Tanzanika es la empresa de aven-turas que hará tus sueños de explorador realidad"/>
+	<property name="spamWords">
+		<list>
+			<value>viagra</value>
+			<value>cialis</value>
+			<value>sex</value>
+			<value>jes extender</value>
+		</list>
+	</property>
+	<property name="tax" value="0.21" />
+	<property name="countryCode" value="+34"/>
+	<property name="catalogueTag">
+		<list>
+			<value>country</value>
+			<value>expertise</value>
+			<value>dangerousness</value>
+		</list>
+	</property>
+	<property name="treeCategory">
+		<list>
+			<value>CATEGORY -> Safari -> (Ground -> (Savana, Mountain), Water -> (Lake, River)), Climbing -> (Mountain, River))</value>
+		</list>
+	</property>
+		<property name="catalogueText">
+		<list>
+			<value>Legal Text 1</value>
+			<value>Texto Legal 1</value>
+		</list>
+	</property>
+	<property name="other">
+		<list>
+			<value>Other</value>
+		</list>
+	</property>
 	</bean>
 	
 </beans>
