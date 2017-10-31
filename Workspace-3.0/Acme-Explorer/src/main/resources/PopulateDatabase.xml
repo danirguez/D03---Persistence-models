@@ -1083,7 +1083,6 @@
 	<property name="personalRecord" ref="personalRecord2" />
 	<property name="endorserRecord">
 		<list>
-			<ref bean="endorserRecord2"/>
 		</list>
 	</property>
 	<property name="miscellaneousRecord">
@@ -1441,6 +1440,7 @@
 	<property name="audit">
 		<list>
 			<ref bean="audit1"/>
+			<ref bean="audit2"/>
 		</list>
 	</property>
 	<property name="note">
@@ -1498,7 +1498,6 @@
 	</property>
 	<property name="audit">
 		<list>
-			<ref bean="audit2"/>
 		</list>
 	</property>
 	<property name="note">
@@ -1996,7 +1995,7 @@
 	<!-- MANAGER1 -->
 	
 	<bean id="manager1" class="domain.Manager">
-	<property name="suspicious" value="true"/>
+	<property name="suspicious" value="false"/>
 	<property name="name" value="Juan Carlos" />
 	<property name="surname" value="Cansino" />
 	<property name="email" value="juca@gmail.com" />
@@ -2202,7 +2201,7 @@
 	<property name="moment" value="02/10/2014" />
 	<property name="title" value="Second" />
 	<property name="description" value="thing" />
-	<property name="trip" ref="trip2" />
+	<property name="trip" ref="trip1" />
 	<property name="auditor" ref="auditor2" />
 	<property name="attachment">
 		<list>
