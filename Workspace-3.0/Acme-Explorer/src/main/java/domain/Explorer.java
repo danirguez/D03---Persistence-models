@@ -52,7 +52,6 @@ public class Explorer extends Actor {
 	}
 
 	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "writer")
 	public Collection<Story> getStories() {
 		return stories;
@@ -63,7 +62,8 @@ public class Explorer extends Actor {
 	}
 
 	@Valid
-	@OneToOne(optional = true)
+	@NotNull
+	@OneToOne(optional = false)
 	public Application getApplication() {
 		return application;
 	}

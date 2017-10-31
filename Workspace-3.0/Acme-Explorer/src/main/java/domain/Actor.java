@@ -125,7 +125,6 @@ public abstract class Actor extends DomainEntity {
 	}
 
 	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "sender")
 	public Collection<Message> getSent() {
 		return sent;
