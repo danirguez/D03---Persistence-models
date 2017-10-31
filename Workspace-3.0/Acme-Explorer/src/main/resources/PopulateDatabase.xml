@@ -907,6 +907,7 @@
 	</property>
 	<property name="sent">
 		<list>
+			<ref bean="message2"/>
 		</list>
 	</property>
 	<property name="received"><null/></property>
@@ -1534,10 +1535,9 @@
 	</property>
 	<property name="sent">
 		<list>
-			<ref bean="message2"/>
 		</list>
 	</property>
-	<property name="received"><null/></property>
+	<property name="received" ref="message1"/>
 	</bean>							
 	
 	<!-- EXPLORER2 -->
@@ -1582,7 +1582,7 @@
 		<list>
 		</list>
 	</property>
-	<property name="received"><null/></property>
+	<property name="received" ref="message2"/>
 	</bean>
 	
 								<!-- FINDER -->
@@ -1686,6 +1686,7 @@
 		<property name="folder">
 			<list>
 				<ref bean="outBoxRanger1"/>
+				<ref bean="inBoxExplorer1"/>
 			</list> 
 		</property>
 	</bean>
@@ -1698,23 +1699,22 @@
 		<property name="body" value="Que pasa" />
 		<property name="priority" value="LOW" />
 		<property name="spam" value="false" />
-		<property name="sender" ref="explorer1" />
+		<property name="sender" ref="ranger2" />
 		<property name="recipient">
 			<list>
-				<ref bean="ranger1"/>
+				<ref bean="explorer2"/>
 			</list> 
 		</property>
 		<property name="folder">
 			<list>
-				<ref bean="outBoxExplorer1"/>
+				<ref bean="outBoxExplorer2"/>
+				<ref bean="inBoxRanger2"/>
 			</list> 
 		</property>
 	</bean>	
 	
 	<!-- Message3 -->
-	
-	<!--  
-	
+	<!--
 	<bean id="message3" class="domain.Message">
 		<property name="moment" value="01/01/2012 12:30" />
 		<property name="subject" value="Que tal" />
@@ -1733,9 +1733,7 @@
 			</list> 
 		</property>
 	</bean>	
-	
 	-->
-	
 	<!-- Message4 -->
 	
 	<!--  

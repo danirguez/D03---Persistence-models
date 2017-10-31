@@ -71,13 +71,13 @@ public class Application extends DomainEntity {
 		this.trip = trip;
 	}
 
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	@Valid
 	public Explorer getExplorer() {
 		return explorer;
 	}
 
-	public void setExplorer(final Explorer explorer) {
+	public void setExplorer(Explorer explorer) {
 		this.explorer = explorer;
 	}
 

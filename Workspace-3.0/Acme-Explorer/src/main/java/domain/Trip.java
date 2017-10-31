@@ -188,7 +188,6 @@ public class Trip extends DomainEntity {
 	}
 
 	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "trip")
 	public Collection<Story> getStory() {
 		return story;
@@ -230,7 +229,8 @@ public class Trip extends DomainEntity {
 	}
 
 	@Valid
-	@OneToOne(optional = true)
+	@NotNull
+	@OneToOne(optional = false)
 	public Application getApplication() {
 		return application;
 	}
