@@ -72,7 +72,7 @@ Calcula el ratio entre el número de application con status CANCELLED (accediend
 
 The ratio of trips that have been cancelled versus the total number of trips that have been organised.
 
-select (select count(t) from Trip t) /cast(count(t) as float)  from Trip t where t.reason is not null;
+select cast(count(t) as float) /(select count(t) from Trip t)  from Trip t where t.reason is not null;
 
 Calcula el ratio entre el numero de trips que han sido cancelados(accediendo a la tabla Trip y entrando a los que tengan el atributo reason no nulo) y el numero total de Trips (accediendo a la tabla Trip y contando en este caso todas las entradas de la misma). Realizamos un cast para poder devolver numeros decimales.
 
@@ -87,7 +87,6 @@ Esta consulta devuelve una lista de trips. Para ello, debemos agrupar por Trip y
 
 <-------Query C/11---------->
 
-//PROBAR
 
 A table with the number of times that each legal text's been referenced.
 
@@ -98,7 +97,7 @@ En esta consulta accedemos a la tabla LegalText y devolvemos cada legalText con 
 
 
 <-------Query B/1---------->
-//mirar conectividad de Trip hacia Note
+
 
 The minimum, the maximum, the average, and the standard deviation of the number of notes per trip.
 

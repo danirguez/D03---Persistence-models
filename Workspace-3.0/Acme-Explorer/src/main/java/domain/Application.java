@@ -73,7 +73,8 @@ public class Application extends DomainEntity {
 	}
 	
 	@Valid
-	@OneToOne(optional = true)
+	@NotNull
+	@OneToOne(optional = false)
 	public Explorer getExplorer() {
 		return explorer;
 	}

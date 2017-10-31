@@ -163,6 +163,30 @@
 		</property>
 	</bean>
 	
+	<bean id="userAccount13" class="security.UserAccount">
+		<property name="username" value="explorer03" />
+		<property name="password" value="f8416a65cae0bc4fd49e1e91f78b8df4" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="EXPLORER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount14" class="security.UserAccount">
+		<property name="username" value="explorer04" />
+		<property name="password" value="b51b810db049503046746591ecabd235" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="EXPLORER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
 	<!-- Other domain beans come here -->	
 	
 									<!-- Folder -->
@@ -385,6 +409,114 @@
 	</bean>
 	
 	<bean id="customBoxExplorer2" class="domain.Folder">
+		<property name="name" value="customBox" />
+		<property name="systemFolder" value="false"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder"><null/></property>
+	</bean>
+	
+	<bean id="inBoxExplorer3" class="domain.Folder">
+		<property name="name" value="In Box" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer3" />
+	</bean>
+	
+	<bean id="outBoxExplorer3" class="domain.Folder">
+		<property name="name" value="Out Box" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer3" />
+	</bean>
+	
+	<bean id="notificationBoxExplorer3" class="domain.Folder">
+		<property name="name" value="Notification" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer3" />
+	</bean>
+	
+	<bean id="trashBoxExplorer3" class="domain.Folder">
+		<property name="name" value="Trash" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer3" />
+	</bean>
+	
+	<bean id="spamBoxExplorer3" class="domain.Folder">
+		<property name="name" value="Spam" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer3" />
+	</bean>
+	
+	<bean id="customBoxExplorer3" class="domain.Folder">
+		<property name="name" value="customBox" />
+		<property name="systemFolder" value="false"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder"><null/></property>
+	</bean>
+	
+	<bean id="inBoxExplorer4" class="domain.Folder">
+		<property name="name" value="In Box" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer4" />
+	</bean>
+	
+	<bean id="outBoxExplorer4" class="domain.Folder">
+		<property name="name" value="Out Box" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer4" />
+	</bean>
+	
+	<bean id="notificationBoxExplorer4" class="domain.Folder">
+		<property name="name" value="Notification" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer4" />
+	</bean>
+	
+	<bean id="trashBoxExplorer4" class="domain.Folder">
+		<property name="name" value="Trash" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer4" />
+	</bean>
+	
+	<bean id="spamBoxExplorer4" class="domain.Folder">
+		<property name="name" value="Spam" />
+		<property name="systemFolder" value="true"/>
+		<property name="messages">
+			<list></list>
+		</property>
+		<property name="customFolder" ref="customBoxExplorer4" />
+	</bean>
+	
+	<bean id="customBoxExplorer4" class="domain.Folder">
 		<property name="name" value="customBox" />
 		<property name="systemFolder" value="false"/>
 		<property name="messages">
@@ -1277,6 +1409,7 @@
 	<property name="application">
 		<list>
 			<ref bean="application1"/>
+			<ref bean="application3"/>
 		</list>
 	</property>
 	<property name="requirement">
@@ -1312,7 +1445,6 @@
 	</property>
 	<property name="note">
 		<list>
-			<ref bean="note1"/>
 		</list>
 	</property>
 	</bean>
@@ -1333,14 +1465,15 @@
 	<property name="publication" value="25/10/17" />
 	<property name="tripStart" value="25/12/17" />
 	<property name="tripEnd" value="28/12/17" />
-	<property name="reason" value="Because I want" />
+	<property name="reason"><null/></property>
 	<property name="ranger" ref="ranger2" />
-	<property name="manager" ref="manager2" />
+	<property name="manager" ref="manager1" />
 	<property name="legalText" ref="legalText2" />
 	<property name="category" ref="category2" />
 	<property name="application">
 		<list>
 			<ref bean="application2"/>
+			<ref bean="application4"/>
 		</list>
 	</property>
 	<property name="survival">
@@ -1370,6 +1503,7 @@
 	</property>
 	<property name="note">
 		<list>
+			<ref bean="note1"/>
 			<ref bean="note2"/>
 		</list>
 	</property>
@@ -1583,6 +1717,90 @@
 	<property name="received" ref="message2"/>
 	</bean>
 	
+	<!-- EXPLORER3 -->
+	
+	<bean id="explorer3" class="domain.Explorer">
+	<property name="name" value="Pepe" />
+	<property name="surname" value="Caro" />
+	<property name="email" value="pepecaro@gmail.com" />
+	<property name="phoneNumber" value="774443632" />
+	<property name="address" value="C/ Granada" />
+	<property name="socialId">
+		<list></list>
+	</property>
+	<property name="userAccount" ref="userAccount13" />
+	<property name="application" ref="application3" />
+	<property name="finder">
+		<list>
+		</list>
+	</property>
+	<property name="emergency">
+		<list>
+			<ref bean="emergency3"/>
+		</list>
+	</property>
+	<property name="stories">
+		<list>
+		</list>
+	</property>
+	<property name="folders">
+		<list>
+			<ref bean="inBoxExplorer3"/>
+			<ref bean="outBoxExplorer3"/>
+			<ref bean="notificationBoxExplorer3"/>
+			<ref bean="trashBoxExplorer3"/>
+			<ref bean="spamBoxExplorer3"/>
+			<ref bean="customBoxExplorer3"/>
+		</list>
+	</property>
+	<property name="sent">
+		<list>
+		</list>
+	</property>
+	<property name="received"><null/></property>
+	</bean>
+	
+	<bean id="explorer4" class="domain.Explorer">
+	<property name="name" value="Pepe" />
+	<property name="surname" value="Caro" />
+	<property name="email" value="pepecaro@gmail.com" />
+	<property name="phoneNumber" value="774443632" />
+	<property name="address" value="C/ Granada" />
+	<property name="socialId">
+		<list></list>
+	</property>
+	<property name="userAccount" ref="userAccount14" />
+	<property name="application" ref="application4" />
+	<property name="finder">
+		<list>
+		</list>
+	</property>
+	<property name="emergency">
+		<list>
+			<ref bean="emergency4"/>
+		</list>
+	</property>
+	<property name="stories">
+		<list>
+		</list>
+	</property>
+	<property name="folders">
+		<list>
+			<ref bean="inBoxExplorer4"/>
+			<ref bean="outBoxExplorer4"/>
+			<ref bean="notificationBoxExplorer4"/>
+			<ref bean="trashBoxExplorer4"/>
+			<ref bean="spamBoxExplorer4"/>
+			<ref bean="customBoxExplorer4"/>
+		</list>
+	</property>
+	<property name="sent">
+		<list>
+		</list>
+	</property>
+	<property name="received"><null/></property>
+	</bean>	
+	
 								<!-- FINDER -->
 	
 	<!-- FINDER1 -->
@@ -1631,6 +1849,22 @@
 	<property name="name" value="Emergency 2" />
 	<property name="email" value="emer2@gmail.com" />
 	<property name="phoneNumber" value="112" />
+	</bean>
+	
+	<!-- EMERGENCY3 -->
+	
+	<bean id="emergency3" class="domain.Emergency">
+	<property name="name" value="Emergency 3" />
+	<property name="email" value="emer2@gmail.com" />
+	<property name="phoneNumber" value="162" />
+	</bean>
+	
+	<!-- EMERGENCY4 -->
+	
+	<bean id="emergency4" class="domain.Emergency">
+	<property name="name" value="Emergency 4" />
+	<property name="email" value="emer2@gmail.com" />
+	<property name="phoneNumber" value="132" />
 	</bean>
 	
 								<!-- STORY -->
@@ -1780,6 +2014,7 @@
 	<property name="trip">
 		<list>
 			<ref bean="trip1"/>
+			<ref bean="trip2"/>
 		</list>
 	</property>
 	<property name="folders">
@@ -1819,7 +2054,7 @@
 	</property>
 	<property name="trip">
 		<list>
-			<ref bean="trip2"/>
+			
 		</list>
 	</property>
 	<property name="folders">
@@ -1986,7 +2221,7 @@
 	<property name="remark" value="First" />
 	<property name="reply" value="Something" />
 	<property name="momentReply" value="05/10/2014"/>
-	<property name="trip" ref="trip1" />
+	<property name="trip" ref="trip2" />
 	<property name="auditor" ref="auditor1" />
 	</bean>
 	
@@ -2021,6 +2256,26 @@
 	<property name="explorer" ref="explorer2" />
 	<property name="trip" ref="trip2" />
 	<property name="status" value="ACCEPTED" />
+	</bean>
+	
+	<!-- APPLICATION3 -->
+	
+	<bean id="application3" class="domain.Application">
+	<property name="moment" value="10/09/2014" />
+	<property name="comment" value="Comentario"/>
+	<property name="explorer" ref="explorer3" />
+	<property name="trip" ref="trip1"/>
+	<property name="status" value="PENDING" />
+	</bean>
+	
+	<!-- APPLICATION4 -->
+	
+	<bean id="application4" class="domain.Application">
+	<property name="moment" value="10/09/2014" />
+	<property name="comment" value="Comentario"/>
+	<property name="explorer" ref="explorer4" />
+	<property name="trip" ref="trip2"/>
+	<property name="status" value="PENDING" />
 	</bean>
 	
 										<!-- GPS -->
