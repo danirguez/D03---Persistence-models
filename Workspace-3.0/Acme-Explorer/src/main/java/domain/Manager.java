@@ -37,9 +37,9 @@ public class Manager extends Actor {
 	private Collection<Survival> survival;
 	private Collection<Trip> trip;
 
-	@OneToMany(mappedBy = "manager")
 	@Valid
 	@NotNull
+	@OneToMany(mappedBy = "manager")
 	public Collection<Survival> getSurvival() {
 		return this.survival;
 	}

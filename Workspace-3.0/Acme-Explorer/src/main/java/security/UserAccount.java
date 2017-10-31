@@ -78,7 +78,6 @@ public class UserAccount extends DomainEntity implements UserDetails {
 	@Valid
 	@ElementCollection
 	@Override
-	//TODO: cascade???
 	public Collection<Authority> getAuthorities() {
 		// WARNING: Should return an unmodifiable copy, but it's not possible with hibernate!
 		return this.authorities;

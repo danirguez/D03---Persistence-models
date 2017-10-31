@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -61,8 +62,8 @@ public class Application extends DomainEntity {
 	private Trip trip;
 	private Explorer explorer;
 
-	@OneToOne(optional = false)
 	@Valid
+	@ManyToOne(optional = true)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -70,9 +71,9 @@ public class Application extends DomainEntity {
 	public void setTrip(Trip trip) {
 		this.trip = trip;
 	}
-
-	@OneToOne(optional = true)
+	
 	@Valid
+	@OneToOne(optional = true)
 	public Explorer getExplorer() {
 		return explorer;
 	}

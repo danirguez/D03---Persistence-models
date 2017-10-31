@@ -24,9 +24,9 @@ public class Auditor extends Actor {
 	private Collection<Note> note;
 	private Collection<Audit> audit;
 
-	@OneToMany(mappedBy = "auditor")
 	@Valid
 	@NotNull
+	@OneToMany(mappedBy = "auditor")
 	public Collection<Note> getNote() {
 		return note;
 	}
@@ -35,9 +35,9 @@ public class Auditor extends Actor {
 		this.note = note;
 	}
 
-	@OneToMany(mappedBy = "auditor")
 	@Valid
 	@NotNull
+	@OneToMany(mappedBy = "auditor")
 	public Collection<Audit> getAudit() {
 		return audit;
 	}

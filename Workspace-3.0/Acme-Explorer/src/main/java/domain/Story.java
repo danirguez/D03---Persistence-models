@@ -8,6 +8,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -62,7 +63,8 @@ public class Story extends DomainEntity {
 	private Explorer writer;
 
 	@Valid
-	@ManyToOne(optional = true)
+	@NotNull
+	@ManyToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -72,7 +74,8 @@ public class Story extends DomainEntity {
 	}
 
 	@Valid
-	@ManyToOne(optional = true)
+	@NotNull
+	@ManyToOne(optional = false)
 	public Explorer getWriter() {
 		return writer;
 	}

@@ -60,9 +60,9 @@ public class Category extends DomainEntity {
 	public void setCategories(Collection<Category> categories) {
 		this.categories = categories;
 	}
-
-	@NotNull
+	
 	@Valid
+	@NotNull
 	@OneToMany(mappedBy = "category")
 	public Collection<Trip> getTrip() {
 		return trip;

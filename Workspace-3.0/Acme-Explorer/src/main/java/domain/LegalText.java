@@ -1,11 +1,9 @@
 package domain;
 
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -30,7 +28,7 @@ public class LegalText extends DomainEntity {
 
 	private String title;
 	private String body;
-	private Collection<String> numberLaw;
+	private Integer numberLaw;
 	private Date moment;
 
 	@NotBlank
@@ -51,12 +49,11 @@ public class LegalText extends DomainEntity {
 		this.body = body;
 	}
 
-	@ElementCollection
-	public Collection<String> getNumberLaw() {
+	public Integer getNumberLaw() {
 		return numberLaw;
 	}
 
-	public void setNumberLaw(Collection<String> numberLaw) {
+	public void setNumberLaw(Integer numberLaw) {
 		this.numberLaw = numberLaw;
 	}
 

@@ -1134,12 +1134,7 @@
 	<bean id="legalText1" class="domain.LegalText">
 	<property name="title" value="Second" />
 	<property name="body" value="A comment of something" />
-	<property name="numberLaw">
-		<list>
-			<value>Law 1</value>
-			<value>Law 2</value>
-		</list>
-	</property>
+	<property name="numberLaw" value = "10" />
 	<property name="moment" value="23/10/2013" />
 	<property name="trip" ref="trip1" />
 	</bean>
@@ -1149,12 +1144,7 @@
 	<bean id="legalText2" class="domain.LegalText">
 	<property name="title" value="Second" />
 	<property name="body" value="A comment of something" />
-	<property name="numberLaw">
-		<list>
-			<value>Law 1</value>
-			<value>Law 2</value>
-		</list>
-	</property>
+	<property name="numberLaw" value = "285" />
 	<property name="moment" value="23/10/2015" />
 	<property name="trip" ref="trip2" />
 	</bean>
@@ -1284,7 +1274,11 @@
 	<property name="manager" ref="manager1" />
 	<property name="legalText" ref="legalText1" />
 	<property name="category" ref="category1" />
-	<property name="application" ref="application1"/>
+	<property name="application">
+		<list>
+			<ref bean="application1"/>
+		</list>
+	</property>
 	<property name="requirement">
 		<list>
 			<value>Requirement 1</value>
@@ -1344,7 +1338,11 @@
 	<property name="manager" ref="manager2" />
 	<property name="legalText" ref="legalText2" />
 	<property name="category" ref="category2" />
-	<property name="application" ref="application2"/>
+	<property name="application">
+		<list>
+			<ref bean="application2"/>
+		</list>
+	</property>
 	<property name="survival">
 		<list>
 			<ref bean="survival2"/>
