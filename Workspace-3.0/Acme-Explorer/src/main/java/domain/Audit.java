@@ -76,8 +76,8 @@ public class Audit extends DomainEntity {
 	private Trip trip;
 	private Auditor auditor;
 
-	@ManyToOne(optional = false)
 	@Valid
+	@ManyToOne(optional = false)
 	public Trip getTrip() {
 		return trip;
 	}
@@ -86,9 +86,9 @@ public class Audit extends DomainEntity {
 		this.trip = trip;
 	}
 
-	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
+	@ManyToOne(optional = false)
 	public Auditor getAuditor() {
 		return auditor;
 	}

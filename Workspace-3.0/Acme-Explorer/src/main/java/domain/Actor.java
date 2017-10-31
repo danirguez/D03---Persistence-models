@@ -92,8 +92,8 @@ public abstract class Actor extends DomainEntity {
 	private Collection<Message> sent;
 	private Collection<SocialId> socialId;
 
-	@NotNull
 	@Valid
+	@NotNull
 	@OneToOne(cascade = CascadeType.ALL, optional = false)
 	public UserAccount getUserAccount() {
 		return userAccount;
